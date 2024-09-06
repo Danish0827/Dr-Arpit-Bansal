@@ -9,8 +9,8 @@ const GoogleFeed = () => {
 
       // Iterate through each anchor tag
       anchorTags.forEach((anchor) => {
-        // Check if the anchor tag's text content matches the target text
-        if (anchor.textContent.trim() === "Free Google Reviews widget") {
+        // Check if the anchor tag's text content exists and matches the target text
+        if (anchor.textContent && anchor.textContent.trim() === "Free Google Reviews widget") {
           // Apply the display: none; style
           anchor.style.display = "none";
         }
@@ -31,5 +31,4 @@ const GoogleFeed = () => {
   );
 };
 
-
-export default GoogleFeed
+export default GoogleFeed;

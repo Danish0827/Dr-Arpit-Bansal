@@ -45,8 +45,7 @@ const Gallery = () => {
   return (
     <div className={`container mx-auto px-4 py-16`}>
       <h5 className="text-xl md:text-2xl lg:text-3xl font-bold text-center pb-5 lg:pb-7 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#171f58]">
-      Dr. Arpit Bansal
-
+        Dr. Arpit Bansal
       </h5>
       {/* <div className="m-auto block text-center pb-10">
         <button
@@ -72,17 +71,20 @@ const Gallery = () => {
       > */}
       <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
         {portfolioDatas.map((item: PortfolioData) => (
-          <Image.PreviewGroup>
-            <Image
-              key={item.id}
-              src={item.image.src} // Access the src from the image object
-              alt={item.heading}
-              className="rounded-lg"
-            //   layout="responsive"
-            //   width={item.image.width}
-            //   height={item.image.height}
-            />
-          </Image.PreviewGroup>
+          <div key={item.id}>
+            {" "}
+            {/* Add a wrapper div with a unique key */}
+            <Image.PreviewGroup>
+              <Image
+                src={item.image.src} // Access the src from the image object
+                alt={item.heading}
+                className="rounded-lg"
+                // layout="responsive"
+                // width={item.image.width}
+                // height={item.image.height}
+              />
+            </Image.PreviewGroup>
+          </div>
         ))}
       </div>
       {/* </div> */}

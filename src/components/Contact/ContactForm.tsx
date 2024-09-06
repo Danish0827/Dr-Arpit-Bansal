@@ -17,11 +17,11 @@ const ContactForm: React.FC = () => {
     setSubmitting(true);
 
     const emailSent = await sendContactForm(
-      name,
-      email,
-      phoneCode,
-      phone,
-      message
+      name || undefined, // Convert null to undefined
+      email || undefined,
+      phoneCode || undefined,
+      phone || undefined,
+      message || undefined
     );
 
     if (emailSent) {
@@ -49,10 +49,10 @@ const ContactForm: React.FC = () => {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              name,
-              email,
-              contact: `${phone}`,
-              message,
+              name: name || "",
+              email: email || "",
+              contact: `${phone || ""}`,
+              message: message || "",
             }),
           }
         );
@@ -116,7 +116,7 @@ const ContactForm: React.FC = () => {
           </div>
           <div className="mb-6">
             <textarea
-              rows="6"
+              rows={6}
               required
               name="message"
               value={message || ""}

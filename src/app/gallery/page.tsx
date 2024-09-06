@@ -1,9 +1,13 @@
-"use client";
 import RequestAppointment from "@/components/Contact/RequestAppointment";
 import Gallery from "@/components/Gallary/Gallery";
 import BreadCrumb from "@/components/Layout/BreadCrump/BreadCrump";
-import React, { useEffect } from "react";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Gallery | Dr Arpit Bansal",
+  description:
+    "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS Is one of the renowned & Advanced Laparoscopic & Onco Surgeon & Male Infertility consultant.",
+};
 const testimonial = () => {
   return (
     <>
