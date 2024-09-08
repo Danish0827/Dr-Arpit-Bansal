@@ -1,6 +1,6 @@
 import About from "@/components/About/About";
 import RequestAppointment from "@/components/Contact/RequestAppointment";
-import GoogleFeed from "@/components/InstagramFeed /GoogleFeed";
+import GoogleFeed from "@/components/InstagramFeed/GoogleFeed";
 import BreadCrumb from "@/components/Layout/BreadCrump/BreadCrump";
 import { Metadata } from "next";
 import React from "react";

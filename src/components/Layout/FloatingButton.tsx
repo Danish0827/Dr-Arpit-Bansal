@@ -23,7 +23,7 @@ const FloatingButton = () => {
       <a
         target="_blank"
         href={
-          "https://wa.me/+919619828276?text=Hello%20Acharya%20Shiv%2C%20I%20am%20interested%20in%20learning%20more%20about%20your%20yoga%20classes%20and%20counseling%20services.%20Could%20you%20please%20provide%20me%20with%20more%20information%3F%20Thank%20you!"
+          "https://wa.me/+919336150888?text=Hello"
         }
         className="absolute rounded-full transition-all cursor-pointer duration-[0.2s] ease-out scale-y-0 group-hover:scale-y-100 group-hover:-translate-x-16 flex p-2.5 hover:p-3 bg-dark scale-100 hover:bg-[#171f58] text-[#171f58] hover:text-white"
       >
@@ -31,14 +31,14 @@ const FloatingButton = () => {
       </a>
       <a
         target="_blank"
-        href={"tel:9619828276"}
+        href={"tel:93361 50888"}
         className="absolute rounded-full transition-all cursor-pointer duration-[0.2s] ease-out scale-x-0 group-hover:scale-x-100 group-hover:-translate-y-16  flex  p-2.5 hover:p-3 bg-dark hover:bg-[#171f58]  text-[#171f58] hover:text-white"
       >
         <MdCall className="text-2xl" />
       </a>
       <a
         target="_blank"
-        href={"mailto:yogawithshivhelp@gmail.com"}
+        href={"mailto:s.danish0827@gmail.com"}
         className="absolute rounded-full transition-all cursor-pointer duration-[0.2s] ease-out scale-x-0 group-hover:scale-x-100 group-hover:-translate-y-14 group-hover:-translate-x-14 flex  p-2.5 hover:p-3 bg-dark hover:bg-[#171f58] text-[#171f58] hover:text-white"
       >
         <CgMail className="text-2xl" />

@@ -15,7 +15,7 @@ interface ContactItem {
 interface MenuProps {
   showCatMenu: boolean;
   setShowCatMenu: React.Dispatch<React.SetStateAction<boolean>>;
-  subMenuData: SubMenuItem[];
+  subMenuData: SubMenuItem[]; // Ensure it's always an array
   contactData: ContactItem[];
   setShowContactMenu: React.Dispatch<React.SetStateAction<boolean>>;
   showContactMenu: boolean;
@@ -24,8 +24,8 @@ interface MenuProps {
 const Menu: React.FC<MenuProps> = ({
   showCatMenu,
   setShowCatMenu,
-  subMenuData,
-  contactData,
+  subMenuData = [], // Provide default empty array
+  contactData = [], // Provide default empty array
   setShowContactMenu,
   showContactMenu,
 }) => {
@@ -62,11 +62,6 @@ const Menu: React.FC<MenuProps> = ({
       name: "Patients Education",
       url: "/patients-education",
     },
-    // {
-    //   id: 7,
-    //   name: "Book Appointment",
-    //   url: "/book-appointment",
-    // },
   ];
 
   return (

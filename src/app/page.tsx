@@ -1,7 +1,7 @@
 import Blog from "@/components/Blog/Blog";
 import RequestAppointment from "@/components/Contact/RequestAppointment";
 import Slider from "@/components/Home/Slider";
-import InstaFeed from "@/components/InstagramFeed /InstaFeed";
+import InstaFeed from "@/components/InstagramFeed/InstaFeed";
 import Treatments from "@/components/Treatments/Treatments";
 import { Metadata } from "next";
 

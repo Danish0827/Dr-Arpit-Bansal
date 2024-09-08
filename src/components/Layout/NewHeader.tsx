@@ -6,7 +6,12 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
 import MenuMobile from "./MenuMobile";
 import { Phone } from "lucide-react";
-import logo from "@/assets/images/logo.png";
+
+// Define types for SubMenuItem
+interface SubMenuItem {
+  slug: string;
+  name: string;
+}
 
 const SocialIcons = () => {
   return (
@@ -24,25 +29,25 @@ const SocialIcons = () => {
   );
 };
 
+
 const NewHeader = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [showCatMenu, setShowCatMenu] = useState(false);
   const [showContactMenu, setShowContactMenu] = useState(false);
   const [subMenuData, setSubMenuData] = useState(null);
-  const [showSearch, setShowSearch] = useState(false);
-  const divRef = useRef(null);
 
-  const handleCloseDiv = (event: any) => {
-    if (divRef.current && !divRef.current.contains(event.target)) {
+  const [showSearch, setShowSearch] = useState(false);
+  const divRef = useRef<HTMLDivElement | null>(null);
+
+  const handleCloseDiv = (event: MouseEvent) => {
+    if (divRef.current && !divRef.current.contains(event.target as Node)) {
       setShowSearch(false);
     }
   };
 
   useEffect(() => {
-    // Attach the event listener when the component mounts
     document.addEventListener("mousedown", handleCloseDiv);
 
-    // Detach the event listener when the component unmounts
     return () => {
       document.removeEventListener("mousedown", handleCloseDiv);
     };
@@ -55,7 +60,7 @@ const NewHeader = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 200) {
-        setHeaderClass("fixed top-0  z-50 bg-gray-100 shadow-md w-full px-2");
+        setHeaderClass("fixed top-0 z-50 bg-gray-100 shadow-md w-full px-2");
       } else {
         setHeaderClass("sticky top-0 z-50 bg-gray-100 w-full");
       }
@@ -71,20 +76,9 @@ const NewHeader = () => {
     <header
       className={`${headerClass} w-full px-5 py-10 xl:px-12 h-[8svh] block lg:flex items-center justify-between transition-transform duration-300`}
     >
-      {/* <div className="flex justify-between"> */}
       <Link href={"/"} className="hidden lg:block p-5">
-        {/* <img
-          src={logo.src}
-          className="w-[180px] md:w-[200px]  lg:w-[160px] xl:w-[200px]"
-          alt="ruby"
-          onClick={() => setMobileMenu(false)}
-        /> */}
         <span className="dancinglogo text-2xl md:text-3xl xl:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#171f58]">
-          <strong
-          //  className="dancinglogo"
-          >
-            Dr Arpit Bansal
-          </strong>
+          <strong>Dr Arpit Bansal</strong>
         </span>
       </Link>
 
@@ -93,13 +87,13 @@ const NewHeader = () => {
         setShowCatMenu={setShowCatMenu}
         showContactMenu={showContactMenu}
         setShowContactMenu={setShowContactMenu}
-        subMenuData={subMenuData}
-        setMobileMenu={setMobileMenu}
+        subMenuData={subMenuData || []} // Ensure it's always an array
+        contactData={[]} // Provide default empty array if not used
       />
 
       {mobileMenu && (
         <MenuMobile
-          subMenuData={subMenuData}
+          subMenuData={subMenuData} // Ensure it's always an array
           showCatMenu={showCatMenu}
           showContactMenu={showContactMenu}
           setShowCatMenu={setShowCatMenu}
@@ -107,32 +101,29 @@ const NewHeader = () => {
           setMobileMenu={setMobileMenu}
         />
       )}
+
       <div className="hidden lg:block">
         <Link href="/book-appointment">
-          <button className="px-6 py-2 bg-gradient-to-r from-[#171f58] to-blue-500 text-white font-semibold rounded-full shadow-md  transition duration-300">
+          <button className="px-6 py-2 bg-gradient-to-r from-[#171f58] to-blue-500 text-white font-semibold rounded-full shadow-md transition duration-300">
             Book Appointment
           </button>
         </Link>
       </div>
-      {/* </div> */}
+
       <div className="flex items-center gap-2 justify-between w-full md:w-auto lg:hidden text-black -mt-5 md:-mt-6">
         <div className="hidden lg:flex gap-3 rounded-full justify-center md:justify-between items-center cursor-pointer relative">
           <SocialIcons />
         </div>
-        <Link href={"/"} className="block ">
-        <span className="dancinglogo text-2xl md:text-3xl xl:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#171f58]">
-          <strong
-          //  className="dancinglogo"
-          >
-            Dr Arpit Bansal
-          </strong>
-        </span>
+        <Link href={"/"} className="block">
+          <span className="dancinglogo text-2xl md:text-3xl xl:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#171f58]">
+            <strong>Dr Arpit Bansal</strong>
+          </span>
         </Link>
-        {/* Mobile Icon Start */}
+
         <div className="flex gap-2 items-center">
           <div className="lg:hidden">
             <Link href="/book-appointment">
-              <button className="px-4 py-2 bg-gradient-to-r from-[#171f58] to-blue-500 text-white font-semibold rounded-full shadow-md  transition duration-300">
+              <button className="px-4 py-2 bg-gradient-to-r from-[#171f58] to-blue-500 text-white font-semibold rounded-full shadow-md transition duration-300">
                 Book Now
               </button>
             </Link>
