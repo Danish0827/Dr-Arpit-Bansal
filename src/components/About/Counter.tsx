@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import 'swiper/swiper.min.css';
-import 'swiper/css/navigation';
+// import 'swiper/css/navigation';
 // import { Navigation } from 'swiper';
 
 interface SlideData {
