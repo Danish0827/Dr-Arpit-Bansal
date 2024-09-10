@@ -3,6 +3,7 @@ import RequestAppointment from "@/components/Contact/RequestAppointment";
 import BreadCrumb from "@/components/Layout/BreadCrump/BreadCrump";
 import { Metadata } from "next";
 import React from "react";
+import abouts from '@/assets/images/breadcrump/4.png'
 
 export const metadata: Metadata = {
   title: "Patients Education | Dr Arpit Bansal",
@@ -16,7 +17,7 @@ const patientsEducation = () => {
       <BreadCrumb
         title={"Patients Education"}
         page={"Patients Education"}
-        img="https://www.fcps.edu/sites/default/files/styles/hero_desktop_1x/public/media/hero/medical-retiree.jpg?h=bb7ee3f0&itok=ONGOOHrf"
+        img={abouts.src}
         version={false}
       />
       <Blog title="blog" />

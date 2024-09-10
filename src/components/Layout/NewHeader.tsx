@@ -29,7 +29,6 @@ const SocialIcons = () => {
   );
 };
 
-
 const NewHeader = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [showCatMenu, setShowCatMenu] = useState(false);
@@ -77,8 +76,10 @@ const NewHeader = () => {
       className={`${headerClass} w-full px-5 py-10 xl:px-12 h-[8svh] block lg:flex items-center justify-between transition-transform duration-300`}
     >
       <Link href={"/"} className="hidden lg:block p-5">
-        <span className="dancinglogo text-xl sm:text-2xl md:text-3xl xl:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#171f58]">
-          <strong>Dr Arpit Bansal</strong>
+        <span className="dancinglogo text-xl sm:text-2xl pr-3 md:text-3xl xl:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#171f58]">
+          {/* <strong> */}
+          Dr. Arpit Bansal
+          {/* </strong> */}
         </span>
       </Link>
 
@@ -105,7 +106,7 @@ const NewHeader = () => {
       <div className="hidden lg:block">
         <Link href="/book-appointment">
           <button className="px-6 py-2 bg-gradient-to-r from-[#171f58] to-blue-500 text-white font-semibold rounded-full shadow-md transition duration-300">
-            Book Appointment
+            Contact Us
           </button>
         </Link>
       </div>
@@ -115,19 +116,21 @@ const NewHeader = () => {
           <SocialIcons />
         </div>
         <Link href={"/"} className="block">
-          <span className="dancinglogo text-xl sm:text-2xl md:text-3xl xl:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#171f58]">
-            <strong>Dr Arpit Bansal</strong>
+          <span className="dancinglogo pr-3 text-xl sm:text-2xl md:text-3xl xl:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#171f58]">
+            {/* <strong> */}
+            Dr. Arpit Bansal
+            {/* </strong> */}
           </span>
         </Link>
 
         <div className="flex gap-2 items-center">
-          <div className="lg:hidden">
+          {/* <div className="lg:hidden">
             <Link href="/book-appointment">
               <button className="px-4 py-2 bg-gradient-to-r from-[#171f58] to-blue-500 text-white font-semibold rounded-full shadow-md transition duration-300">
-                Book Now
+                Contact Us
               </button>
             </Link>
-          </div>
+          </div> */}
           <div className="w-8 lg:w-12 h-8 md:h-12 rounded-full flex lg:hidden justify-center items-center cursor-pointer relative -mr-2">
             {mobileMenu ? (
               <VscChromeClose

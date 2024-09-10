@@ -109,7 +109,7 @@ const ContactForm: React.FC = () => {
               required
               name="phone"
               value={phone || ""}
-              placeholder="9876543210"
+              placeholder="Your Phone"
               onChange={(e) => setPhone(e.target.value)}
               className="dark:border-dark-3 border-gray-300 dark:text-dark-6 dark:bg-dark text-body-color focus:border-primary w-full rounded-xl shadow-md  border py-3 px-[14px] text-base outline-none"
             />

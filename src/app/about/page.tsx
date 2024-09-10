@@ -4,6 +4,8 @@ import GoogleFeed from "@/components/InstagramFeed/GoogleFeed";
 import BreadCrumb from "@/components/Layout/BreadCrump/BreadCrump";
 import { Metadata } from "next";
 import React from "react";
+import abouts from "@/assets/images/breadcrump/1.png";
+import Counter from "@/components/About/Counter";
 
 export const metadata: Metadata = {
   title: "About | Dr Arpit Bansal",
@@ -17,10 +19,11 @@ const about = () => {
       <BreadCrumb
         title={"Dr. Arpit Bansal"}
         page={"About Dr. Arpit Bansal"}
-        img="https://www.fcps.edu/sites/default/files/styles/hero_desktop_1x/public/media/hero/medical-retiree.jpg?h=bb7ee3f0&itok=ONGOOHrf"
+        img={abouts.src}
         version={false}
       />
       <About />
+      <Counter />
       <div className="bg-white">
         <GoogleFeed />
       </div>

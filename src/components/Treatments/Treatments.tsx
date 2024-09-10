@@ -64,7 +64,7 @@ const TreatmentsPost = ({ post, loading }: any) => {
           </div>
         </div>
       ) : (
-        <div className="relative overflow-hidden rounded-lg ">
+        <div className="relative overflow-hidden rounded-lg animate-fade-in-right">
           <a href={`/treatments/${post.slug}`} title={post.title}>
             <img
               src={post.image}

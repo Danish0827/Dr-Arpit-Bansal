@@ -6,7 +6,7 @@ import gallery5 from "@/assets/images/gallery/5.webp";
 import gallery6 from "@/assets/images/gallery/6.webp";
 import gallery7 from "@/assets/images/gallery/7.webp";
 import gallery8 from "@/assets/images/gallery/8.webp";
-import gallery9 from "@/assets/images/gallery/9.webp";
+// import gallery9 from "@/assets/images/gallery/9.webp";
 import gallery10 from "@/assets/images/gallery/10.webp";
 import gallery11 from "@/assets/images/gallery/11.webp";
 import gallery12 from "@/assets/images/gallery/12.webp";
@@ -37,7 +37,7 @@ const portfolioDatas = [
   { id: 6, image: gallery6, heading: "PROJECT 4" },
   { id: 7, image: gallery7, heading: "PROJECT 5" },
   { id: 8, image: gallery8, heading: "PROJECT 6" },
-  { id: 9, image: gallery9, heading: "PROJECT 7" },
+  // { id: 9, image: gallery9, heading: "PROJECT 7" },
   { id: 10, image: gallery10, heading: "PROJECT 8" },
   { id: 11, image: gallery11, heading: "PROJECT 9" },
   { id: 12, image: gallery12, heading: "PROJECT 10" },

@@ -2,6 +2,8 @@
 import { Modal } from "antd";
 import React, { useState } from "react";
 import ContactForm from "../Contact/ContactForm";
+import about from "@/assets/images/dr-arpit-image.jpg";
+import "animate.css/animate.min.css";
 
 const About = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -32,10 +34,10 @@ const About = () => {
     <>
       <section className="about  py-20" id="about">
         <div className="container mx-auto grid gap-6 lg:grid-cols-2 lg:gap-16">
-          <div className="relative flex justify-center item-center mb-10">
+          <div className="relative flex justify-center item-center mb-10 animate-fade-in-left duration-300">
             <div className="relative lg:-ml-20 -ml-8">
               <img
-                src="https://yt3.googleusercontent.com/FEb5JG7G4NrYMTNsjT11WAIrlJTqT-zcCpQEEaqNtUuIENDcE1s7YWaJVUFhiTYwVPSKlCChZK0=s900-c-k-c0x00ffffff-no-rj"
+                src={about.src}
                 alt="Profile"
                 className="md:w-96 w-80 border-4 border-white rounded-lg shadow-lg m-auto relative z-20 scale-x-[-1]"
               />
@@ -44,7 +46,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="lg:pl-8 px-3">
+          <div className="lg:pl-8 px-3 animate-fade-in-right duration-300">
             <h2 className="text-3xl font-bold text-left mb-2 relative">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#171f58]">
                 About Dr. Arpit Bansal
@@ -75,18 +77,10 @@ const About = () => {
               >
                 <i className="ri-send-plane-line mr-2"></i> Book Appointment
               </a>
-              {/* <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center border-2 border-black text-black py-2 px-4 rounded-lg hover:border-[#171f56] hover:text-[#171f56] transition"
-              >
-                <i className="ri-linkedin-box-line"></i>
-              </a> */}
             </div>
           </div>
         </div>
-        <div className="md:pt-10 px-3 md:px-16 lg:px-24">
+        <div className="md:pt-10 px-3 md:px-16 lg:px-24 animate-fade-in-bottom duration-1000">
           <p className="text-base text-gray-800 mb-4 text-justify">
             Dr Arpit Bansal always wanted to be a doctor, owing to his
             empathetic nature. Dr Bansal is the Director of the 200-bedded NABH
@@ -162,14 +156,6 @@ const About = () => {
             >
               <i className="ri-send-plane-line mr-2"></i> Book Appointment
             </a>
-            {/* <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center border-2 border-black text-black py-2 px-4 rounded-lg hover:border-[#171f56] hover:text-[#171f56] transition"
-              >
-                <i className="ri-linkedin-box-line"></i>
-              </a> */}
           </div>
         </div>
         <Modal

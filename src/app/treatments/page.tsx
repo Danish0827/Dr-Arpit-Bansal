@@ -2,6 +2,7 @@ import BreadCrumb from "@/components/Layout/BreadCrump/BreadCrump";
 import Treatments from "@/components/Treatments/Treatments";
 import { Metadata } from "next";
 import React from "react";
+import abouts from '@/assets/images/breadcrump/2.png'
 
 export const metadata: Metadata = {
   title: "Our Treatments | Dr Arpit Bansal",
@@ -15,7 +16,7 @@ const treatments = () => {
       <BreadCrumb
         title={"Our Treatments"}
         page={"Our Treatments"}
-        img="https://www.fcps.edu/sites/default/files/styles/hero_desktop_1x/public/media/hero/medical-retiree.jpg?h=bb7ee3f0&itok=ONGOOHrf"
+        img={abouts.src}
         version={false}
       />
       <Treatments title="treatment" />

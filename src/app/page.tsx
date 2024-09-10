@@ -2,6 +2,7 @@ import Blog from "@/components/Blog/Blog";
 import RequestAppointment from "@/components/Contact/RequestAppointment";
 import Slider from "@/components/Home/Slider";
 import InstaFeed from "@/components/InstagramFeed/InstaFeed";
+import FloatingAppointment from "@/components/Layout/FloatingAppointment";
 import Treatments from "@/components/Treatments/Treatments";
 import { Metadata } from "next";
 
@@ -19,6 +20,7 @@ export default function Home() {
       <Blog title="home" />
       <InstaFeed />
       <RequestAppointment/>
+      {/* <FloatingAppointment /> */}
     </>
   );
 }

@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 import React from "react";
 
@@ -32,6 +33,7 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
     { id: 4, name: "Our Treatments", url: "/treatments" },
     { id: 5, name: "Schedule", url: "/schedule" },
     { id: 6, name: "Patients Education", url: "/patients-education" },
+    { id: 6, name: "Contact Us", url: "/book-appointment" },
   ];
 
   return (

@@ -3,7 +3,12 @@ import { MessageCircle } from "lucide-react";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { CgMail } from "react-icons/cg";
-import { FaWhatsapp } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaWhatsapp,
+  FaYoutube,
+} from "react-icons/fa";
 import { MdCall } from "react-icons/md";
 
 const FloatingButton = () => {
@@ -22,26 +27,24 @@ const FloatingButton = () => {
       </div>
       <a
         target="_blank"
-        href={
-          "https://wa.me/+919336150888?text=Hello"
-        }
-        className="absolute rounded-full transition-all cursor-pointer duration-[0.2s] ease-out scale-y-0 group-hover:scale-y-100 group-hover:-translate-x-16 flex p-2.5 hover:p-3 bg-dark scale-100 hover:bg-[#171f58] text-[#171f58] hover:text-white"
+        href={"https://www.instagram.com/drarpitbansal.surgeon/"}
+        className="absolute rounded-full transition-all cursor-pointer duration-[0.2s] ease-out bg-white shadow-xl scale-y-0 group-hover:scale-y-100 group-hover:-translate-x-16 flex p-2.5 hover:p-3 bg-dark scale-100 hover:bg-[#171f58] text-[#171f58] hover:text-white"
       >
-        <FaWhatsapp className="text-2xl" />
+        <FaInstagram className="text-2xl" />
       </a>
       <a
         target="_blank"
-        href={"tel:93361 50888"}
-        className="absolute rounded-full transition-all cursor-pointer duration-[0.2s] ease-out scale-x-0 group-hover:scale-x-100 group-hover:-translate-y-16  flex  p-2.5 hover:p-3 bg-dark hover:bg-[#171f58]  text-[#171f58] hover:text-white"
+        href={"https://www.facebook.com/drarpitbansal/"}
+        className="absolute rounded-full transition-all cursor-pointer duration-[0.2s] bg-white shadow-xl ease-out scale-x-0 group-hover:scale-x-100 group-hover:-translate-y-16  flex  p-2.5 hover:p-3 bg-dark hover:bg-[#171f58]  text-[#171f58] hover:text-white"
       >
-        <MdCall className="text-2xl" />
+        <FaFacebookF className="text-2xl" />
       </a>
       <a
         target="_blank"
-        href={"mailto:s.danish0827@gmail.com"}
-        className="absolute rounded-full transition-all cursor-pointer duration-[0.2s] ease-out scale-x-0 group-hover:scale-x-100 group-hover:-translate-y-14 group-hover:-translate-x-14 flex  p-2.5 hover:p-3 bg-dark hover:bg-[#171f58] text-[#171f58] hover:text-white"
+        href={"https://www.youtube.com/@DRARPITBANSAL"}
+        className="absolute rounded-full transition-all cursor-pointer duration-[0.2s] bg-white shadow-xl ease-out scale-x-0 group-hover:scale-x-100 group-hover:-translate-y-14 group-hover:-translate-x-14 flex  p-2.5 hover:p-3 bg-dark hover:bg-[#171f58] text-[#171f58] hover:text-white"
       >
-        <CgMail className="text-2xl" />
+        <FaYoutube className="text-2xl" />
       </a>
     </div>
   );

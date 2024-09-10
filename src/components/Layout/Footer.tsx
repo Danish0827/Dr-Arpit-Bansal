@@ -57,11 +57,11 @@ const Footer = async () => {
       <div className=" px-4 pt-10 pb-5 mx-auto sm:px-6 lg:px-16 space-y-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
-            <span className="dancinglogo text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#171f58]">
+            <span className="dancinglogo text-4xl pr-3 font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#171f58]">
               <strong
-              //  className="dancinglogo"
+               className="dancinglogo"
               >
-                Dr Arpit Bansal
+                Dr. Arpit Bansal
               </strong>
             </span>
             <p className="mt-5 text-base font-light text-justify">
