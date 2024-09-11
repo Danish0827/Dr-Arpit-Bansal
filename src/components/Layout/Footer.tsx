@@ -20,93 +20,73 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 const Footer = async () => {
   const currentYear = new Date().getFullYear();
-  const links = [
-    {
-      href: "https://www.instagram.com/drarpitbansal.surgeon/",
-      icon: <FaInstagram />,
-      name: "Instagram",
-    },
-    // {
-    //   href: "https://www.facebook.com/drarpit/",
-    //   icon: <FaFacebook />,
-    //   name: "Facebook",
-    // },
-    {
-      href: "https://www.youtube.com/@DRARPITBANSAL",
-      icon: <FaYoutube />,
-      name: "YouTube",
-    },
-    {
-      href: "https://www.linkedin.com/in/dr-arpit-bansal-0b39891b/",
-      icon: <FaLinkedin />,
-      name: "LinkedIn",
-    },
-    // {
-    //   href: "https://www.instagram.com/drarpitbansal/",
-    //   icon: <FaInstagram />,
-    //   name: "Instagram",
-    // },
-    {
-      href: "https://www.facebook.com/drarpitbansal/",
-      icon: <FaFacebook />,
-      name: "Facebook",
-    },
-  ];
+
   return (
     <footer className="bg-gray-100 text-gray-800 border-t pt-5">
       <div className=" px-4 pt-10 pb-5 mx-auto sm:px-6 lg:px-16 space-y-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
-            <span className="dancinglogo text-4xl pr-3 font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#171f58]">
-              <strong
-               className="dancinglogo"
-              >
-                Dr. Arpit Bansal
-              </strong>
+            <span className="dancinglogo text-4xl pr-3 font-black text-[#232c77]">
+              <strong className="dancinglogo">Dr. Arpit Bansal</strong>
             </span>
-            <p className="mt-5 text-base font-light text-justify">
-              Laparoscopic Surgeon,General Surgeon,Bariatric Surgeon, Special
-              Interest in Surgical Oncology 15 Years Experience Overall (10
-              years as specialist)
+            <p className="mt-5 text-base font-medium text-justify">
+              Dr Arpit Bansal, an Advanced Laparoscopy and Cancer Surgeon, has
+              mastered an art, which many struggle to understand. A man of
+              varied interests, he has created a fine balance between his
+              profession and passion. According to Dr Arpit Bansal, with time
+              management and focus, one can excel in both fields. His journey
+              stands testament to his extraordinary talent and unyielding
+              determination.
             </p>
-            <ul className="flex justify-start pt-5 items-center gap-3">
-              {links.map((link, index) => (
-                <li key={index} className="flex items-center ">
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-blue-600 hover:text-blue-800 transition-colors"
-                  >
-                    <span className="text-2xl">{link.icon}</span>
-                    {/* <span className="ml-2">{link.name}</span> */}
-                  </a>
-                </li>
-              ))}
-            </ul>
           </div>
           <div className="grid grid-cols-1 gap-5 px-3 lg:px-10 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-3">
             <div className="space-y-2">
-              <p className="font-bold text-xl">Specialist</p>
+              <p className="font-bold text-xl">Our Speciality</p>
               <div className="w-20 h-0.5 bg-primary rounded-full"></div>
-              <div className="flex flex-col mt-4 space-y-2 text-base">
-                <span className="hover:text-primary">Neurologist</span>
-                <span className="hover:text-primary">
-                  Special Interest in Neuroimmunology, Epilepsy
-                </span>
+              <div className="flex flex-col mt-4 space-y-3 text-base">
+                <Link
+                  className=" flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
+                  href={"/speciality/cancer-surgery"}
+                >
+                  <ArrowRight size={16} />
+                  <span className="hover:text-primary">Cancer Surgery</span>
+                </Link>
+                <Link
+                  className=" flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
+                  href={"/speciality/piles-surgery"}
+                >
+                  <ArrowRight size={16} />
+                  <span className="hover:text-primary">piles-surgery</span>
+                </Link>
+                <Link
+                  className=" flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
+                  href={"/speciality/hernia-surgery"}
+                >
+                  <ArrowRight size={16} />
+                  <span className="hover:text-primary">Hernia Surgery</span>
+                </Link>
+                <Link
+                  className=" flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
+                  href={"/speciality/stone-surgery"}
+                >
+                  <ArrowRight size={16} />
+                  <span className="hover:text-primary">Stone Surgery</span>
+                </Link>
+                <Link
+                  className=" flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
+                  href={"/speciality/laparoscopy"}
+                >
+                  <ArrowRight size={16} />
+                  <span className="hover:text-primary">Laparoscopy</span>
+                </Link>
 
-                <span className="hover:text-primary">
-                  Professor & Head of Neurology
-                </span>
-
-                <span className="hover:text-primary">
-                  Fellowship in Clinical Neurophysiology / EEG and Epilepsy,
-                  Cleveland Clinic, USA
-                </span>
-
-                {/* <span className="hover:text-primary">Neurologist</span>
-
-                <span className="hover:text-primary">Neurologist</span> */}
+                {/* <Link
+                  className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
+                  href={"/book-appointment"}
+                >
+                  <ArrowRight className="" size={16} />
+                  <span className="hover:text-primary">Book Appointment </span>
+                </Link> */}
               </div>
             </div>
             <div className="space-y-2">
@@ -167,13 +147,12 @@ const Footer = async () => {
                     <MapPin size={20} color="#00008b" />
                   </div>
                   <h6 className="text-justify">
-                    ROOM NO 23, JEEVAN JYOTI HOSPITAL CAMPUS, 162, Himmat Ganj,
-                    Bai Ka Bagh, Prayagraj, Uttar Pradesh 211003
+                  Jeevan Jyoti Hospital, 162 Bai Ka Bagh, Prayagraj 211003, India. 
                   </h6>
                 </div>
                 <div className="flex items-center gap-2">
                   <PhoneCall size={20} color="#00008b" />
-                  <a href="tel:+919336150888">+91 93361 50888</a>
+                  <a href="tel:+918141402111">+91 81414 02111</a>
                 </div>
                 {/* <div className="flex items-center gap-2">
                   <PhoneCall size={20} color="#00008b" />
@@ -182,7 +161,7 @@ const Footer = async () => {
 
                 <div className="flex items-center gap-2">
                   <MailIcon size={20} color="#00008b" />
-                  <a href="mailto:ruby.e.works@gmail.com">sample@gmail.com</a>
+                  <a href="mailto:drarpitbansal@gmail.com ">drarpitbansal@gmail.com </a>
                 </div>
               </div>
             </div>

@@ -23,7 +23,7 @@ const about = () => {
         version={false}
       />
       <About />
-      {/* <Counter /> */}
+      <Counter />
       <div className="bg-white">
         <GoogleFeed />
       </div>

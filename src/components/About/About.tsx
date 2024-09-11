@@ -48,7 +48,7 @@ const About = () => {
 
           <div className="lg:pl-8 px-3 animate-fade-in-right duration-300">
             <h2 className="text-3xl font-bold text-left mb-2 relative">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#171f58]">
+              <span className="text-[#232c77] font-bold">
                 About Dr. Arpit Bansal
               </span>
               <div className="absolute top-0 right-0 w-10 h-7 bg-[#171f56] opacity-20 rotate-45"></div>
@@ -57,7 +57,7 @@ const About = () => {
               MBBS, MS - General Surgery
             </span>
             <p className="text-base text-gray-800 my-4 text-justify">
-              Laparoscopic Surgeon,General Surgeon,Bariatric Surgeon, Special
+            Laparoscopic Surgeon, General Surgeon, Bariatric Surgeon, Special
               Interest in Surgical Oncology 15 Years Experience Overall (10
               years as specialist)
             </p>
@@ -73,7 +73,7 @@ const About = () => {
             <div className="hidden md:flex gap-4">
               <a
                 onClick={showLoading}
-                className="flex items-center bg-gradient-to-r from-[#171f58] to-blue-500 text-white py-2 px-4 rounded-lg hover:bg-[#171f56] transition"
+                className="flex items-center bg-[#232c77] text-white py-2 px-4 rounded-lg hover:bg-[#171f56] transition"
               >
                 <i className="ri-send-plane-line mr-2"></i> Book Appointment
               </a>
@@ -152,7 +152,7 @@ const About = () => {
           <div className="flex md:hidden  gap-4">
             <a
               onClick={showLoading}
-              className="flex items-center bg-gradient-to-r from-[#171f58] to-blue-500 text-white py-2 px-4 rounded-lg hover:bg-[#171f56] transition"
+              className="flex items-center bg-[#232c77] text-white py-2 px-4 rounded-lg hover:bg-[#171f56] transition"
             >
               <i className="ri-send-plane-line mr-2"></i> Book Appointment
             </a>

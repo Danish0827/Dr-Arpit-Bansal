@@ -1,52 +1,28 @@
 "use client";
-import { Modal } from "antd";
-import React, { useState } from "react";
-import ContactForm from "../Contact/ContactForm";
+import React from "react";
+
+import gallery1 from "@/assets/images/gallery/27.webp";
 
 const AboutHome = () => {
-  const [open, setOpen] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(true);
-
-  const SkeletonLoader = () => {
-    return (
-      <div className="space-y-4 p-7">
-        {Array.from({ length: 16 }).map((_, index) => (
-          <div
-            key={index}
-            className="w-full h-4 bg-gray-300 rounded-md animate-pulse"
-          ></div>
-        ))}
-      </div>
-    );
-  };
-  const showLoading = () => {
-    setOpen(true);
-    setLoading(true);
-
-    // Simple loading mock. You should add cleanup logic in real world.
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  };
   return (
     <>
       <section className="about  py-20" id="about">
         <div className="container mx-auto grid gap-6 lg:grid-cols-2 lg:gap-16">
-          <div className="relative flex justify-center item-center ">
+          <div className="relative flex justify-center item-center animate-fade-in-left duration-300">
             <div className="relative lg:-ml-20 -ml-8">
               <img
-                src="https://yt3.googleusercontent.com/FEb5JG7G4NrYMTNsjT11WAIrlJTqT-zcCpQEEaqNtUuIENDcE1s7YWaJVUFhiTYwVPSKlCChZK0=s900-c-k-c0x00ffffff-no-rj"
+                src={gallery1.src}
                 alt="Profile"
-                className="md:w-96 w-80 border-4 border-white rounded-lg shadow-lg m-auto relative z-20 scale-x-[-1]"
+                className="md:w-96 w-80 h-96 object-cover object-top border-4 border-white rounded-lg shadow-lg m-auto relative z-20 scale-x-[-1]"
               />
               <div className="absolute w-80 md:w-96 h-[380px] md:h-[450px] bg-gray-300 -top-8 -right-8 rounded-lg border-b-4 border-[#171f56]"></div>
               <div className="absolute w-16 h-16 bg-[#171f56] -top-4 -right-4 rounded-lg"></div>
             </div>
           </div>
 
-          <div className="lg:pl-8 px-3">
+          <div className="lg:pl-8 px-3 animate-fade-in-right duration-300">
             <h2 className="text-3xl font-bold text-left mb-2 relative">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#171f58]">
+              <span className="text-[#232c77] font-bold">
                 About Dr. Arpit Bansal
               </span>
               <div className="absolute top-0 right-0 w-10 h-7 bg-[#171f56] opacity-20 rotate-45"></div>
@@ -55,7 +31,7 @@ const AboutHome = () => {
               MBBS, MS - General Surgery
             </span>
             <p className="text-base text-gray-800 my-4 text-justify">
-              Laparoscopic Surgeon,General Surgeon,Bariatric Surgeon, Special
+              Laparoscopic Surgeon, General Surgeon, Bariatric Surgeon, Special
               Interest in Surgical Oncology 15 Years Experience Overall (10
               years as specialist)
             </p>
@@ -69,10 +45,10 @@ const AboutHome = () => {
             </p>
             <div className="flex gap-4">
               <a
-                onClick={showLoading}
-                className="flex items-center bg-gradient-to-r from-[#171f58] to-blue-500 text-white py-2 px-4 rounded-lg hover:bg-[#171f56] transition"
+                href="/about"
+                className="flex items-center bg-[#232c77] text-white py-2 px-4 rounded-lg hover:bg-[#171f56] transition"
               >
-                <i className="ri-send-plane-line mr-2"></i> Book Appointment
+                <i className="ri-send-plane-line mr-2"></i> About Dr Arpit
               </a>
               {/* <a
                 href="https://www.linkedin.com/"
@@ -85,14 +61,6 @@ const AboutHome = () => {
             </div>
           </div>
         </div>
-        <Modal
-          centered
-          footer={false}
-          open={open}
-          onCancel={() => setOpen(false)}
-        >
-          {loading ? <SkeletonLoader /> : <ContactForm />}
-        </Modal>
       </section>
     </>
   );

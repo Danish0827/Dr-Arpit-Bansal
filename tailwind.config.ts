@@ -54,12 +54,17 @@ const config: Config = {
             transform: 'translateY(0)',
           },
         },
+        'marquee': {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
       },
       animation: {
         'fade-in-left': 'fade-in-left 0.5s ease-out',
         'fade-in-right': 'fade-in-right 0.5s ease-out',
         'fade-in-top': 'fade-in-top 0.5s ease-out',
         'fade-in-bottom': 'fade-in-bottom 0.5s ease-out',
+        'marquee': 'marquee 8s linear infinite',
       },
     },
   },

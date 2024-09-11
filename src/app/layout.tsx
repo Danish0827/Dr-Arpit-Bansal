@@ -4,6 +4,7 @@ import "./globals.css";
 import NewHeader from "@/components/Layout/NewHeader";
 import Announcement from "@/components/Layout/Announcement";
 import Footer from "@/components/Layout/Footer";
+import FloatingAppointment from "@/components/Layout/FloatingAppointment";
 import FloatingButton from "@/components/Layout/FloatingButton";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -25,7 +26,7 @@ export default function RootLayout({
         <Announcement />
         <NewHeader />
         {children}
-        
+        <FloatingAppointment />
         <FloatingButton />
         <Footer />
       </body>

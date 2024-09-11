@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { Modal } from "antd";
 import React, { useState } from "react";
 import ContactForm from "./ContactForm";
@@ -29,7 +29,7 @@ const RequestAppointment: React.FC = () => {
     }, 1000);
   };
   return (
-    <div className="appointment bg-gradient-to-r from-[#171f58] to-blue-500 py-12">
+    <div className="appointment bg-[#414cb1] py-12">
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
           {/* Left section with heading and description */}
@@ -39,14 +39,13 @@ const RequestAppointment: React.FC = () => {
             </h3>
             <p className="text-white mt-4 text-center md:text-left">
               If the hospitals{" "}
-              <a
+              {/* <a
                 href="#hospitals"
                 className="font-bold text-teal-500 hover:text-teal-700"
-              >
-                mentioned above
-              </a>{" "}
-              are not reachable, you can book an appointment online and we will
-              get back to you.
+              > */}
+              mentioned above
+              {/* </a>*/} are not reachable, you can book an appointment online
+              and we will get back to you.
             </p>
           </div>
 
@@ -56,7 +55,6 @@ const RequestAppointment: React.FC = () => {
               onClick={showLoading}
               type="button"
               className="px-6 py-3 bg-teal-500 text-white font-semibold rounded-lg shadow-md hover:bg-teal-600 transition duration-300"
-              
             >
               Request Appointment
             </button>

@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { ElfsightWidget } from "react-elfsight-widget";
 
-const GoogleFeed = () => {
+const GoogleAll = () => {
   useEffect(() => {
     const hideAnchorTags = () => {
       const anchorTags = document.querySelectorAll("a");
@@ -32,9 +32,9 @@ const GoogleFeed = () => {
       <h5 className="text-xl md:text-2xl lg:text-3xl font-bold text-center pb-5 lg:pb-7 text-[#232c77]">
         What our Patients say
       </h5>
-      <ElfsightWidget widgetId={"f6b152b5-a1ce-4254-8ea7-f34a28e0b4e8"} />
+      <ElfsightWidget widgetId={"a83ead89-8ce9-45e6-8b13-1f2774c56535"} />
     </div>
   );
 };
 
-export default GoogleFeed;
+export default GoogleAll;

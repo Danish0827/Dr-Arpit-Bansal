@@ -114,7 +114,7 @@ const Blog = ({ title }: { title: string }) => {
         title === "home" ? "py-0 pt-10" : "py-16"
       }`}
     >
-      <h5 className="text-xl md:text-2xl lg:text-3xl font-bold text-center pb-5 lg:pb-7 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-[#171f58]">
+      <h5 className="text-xl md:text-2xl lg:text-3xl font-bold text-center pb-5 lg:pb-7 text-[#232c77]">
         Patients Education
       </h5>
 
@@ -132,7 +132,7 @@ const Blog = ({ title }: { title: string }) => {
         <div className="flex justify-center mt-8">
           <a
             href="/patients-education"
-            className="flex items-center bg-gradient-to-r from-[#171f58] to-blue-500 text-white py-2 px-4 rounded-lg hover:bg-[#171f56] transition"
+            className="flex items-center bg-[#171f56] text-white py-2 px-4 rounded-lg hover:bg-[#171f56] transition"
           >
             View More
           </a>
@@ -147,7 +147,7 @@ const Blog = ({ title }: { title: string }) => {
             className={`flex items-center py-2 px-4 rounded-lg transition ${
               currentPage === 1
                 ? "bg-gray-400 cursor-not-allowed text-white"
-                : "bg-gradient-to-r from-[#171f58] to-blue-500 text-white hover:bg-[#171f56]"
+                : "bg-[#171f56] text-white hover:bg-[#171f56]"
             }`}
           >
             Previous
@@ -161,7 +161,7 @@ const Blog = ({ title }: { title: string }) => {
             className={`flex items-center py-2 px-4 rounded-lg transition ${
               currentPage === totalPages
                 ? "bg-gray-400 cursor-not-allowed text-white"
-                : "bg-gradient-to-r from-[#171f58] to-blue-500 text-white hover:bg-[#171f56]"
+                : "bg-[#171f56] text-white hover:bg-[#171f56]"
             }`}
           >
             Next

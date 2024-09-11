@@ -1,6 +1,7 @@
 import { ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import bread from "@/assets/images/breadcrump/2.png"
 
 interface BreadCrumbProps {
   title: string;
@@ -24,7 +25,7 @@ const BreadCrumb: React.FC<BreadCrumbProps> = ({
         version
           ? undefined
           : {
-              backgroundImage: `url(${img ? img : "/breadcrumbImage.webp"})`,
+              backgroundImage: `url(${bread.src})`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
               backgroundPosition: "top center",
