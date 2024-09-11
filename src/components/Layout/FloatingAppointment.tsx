@@ -52,10 +52,10 @@ const FloatingAppointment = () => {
   return (
     <>
       {/* For large screens */}
-      <AppointmentLinks className="hidden lg:block fixed -right-[60px] z-50 -rotate-90 px-4 pt-3 pb-1 rounded-t-xl bottom-[50%] bg-[#232c77]" />
+      <AppointmentLinks className=":block fixed -right-[60px] z-50 -rotate-90 px-4 pt-3 pb-1 rounded-t-xl bottom-[50%] bg-[#232c77]" />
 
       {/* For small screens */}
-      <AppointmentLinks className="lg:hidden fixed z-50 px-4 pt-3 pb-1 rounded-t-xl bottom-0 left-5 bg-[#232c77]" />
+      {/* <AppointmentLinks className="lg:hidden fixed z-50 px-4 pt-3 pb-1 rounded-t-xl bottom-0 left-5 bg-[#232c77]" /> */}
     </>
   );
 };

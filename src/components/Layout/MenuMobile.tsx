@@ -53,11 +53,11 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
         { id: 5, name: "Laparoscopy", url: "/speciality/laparoscopy" },
       ],
     },
-    {
-      id: 4,
-      name: "Our Treatments",
-      url: "/treatments",
-    },
+    // {
+    //   id: 4,
+    //   name: "Our Treatments",
+    //   url: "/treatments",
+    // },
     {
       id: 5,
       name: "Gallery",

@@ -51,7 +51,7 @@ const Announcement = () => {
               <MapPin size={17} strokeWidth={2} color="white" />
             </span>
             <a style={{ color: "white" }} className=" text-white">
-              62 Bai Ka Bagh, Prayagraj 211003, India.
+              162 Bai Ka Bagh, Prayagraj 211003, India.
             </a>
           </li>
         </ul>
