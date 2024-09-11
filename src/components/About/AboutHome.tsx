@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-import gallery1 from "@/assets/images/gallery/27.webp";
+import gallery1 from "@/assets/images/gallery/13.webp";
 
 const AboutHome = () => {
   return (
@@ -13,7 +13,7 @@ const AboutHome = () => {
               <img
                 src={gallery1.src}
                 alt="Profile"
-                className="md:w-96 w-80 h-96 object-cover object-top border-4 border-white rounded-lg shadow-lg m-auto relative z-20 scale-x-[-1]"
+                className="md:w-96 w-80 h-96 object-cover object-top border-4 border-white rounded-lg shadow-lg mr-auto relative z-20 "
               />
               <div className="absolute w-80 md:w-96 h-[380px] md:h-[450px] bg-gray-300 -top-8 -right-8 rounded-lg border-b-4 border-[#171f56]"></div>
               <div className="absolute w-16 h-16 bg-[#171f56] -top-4 -right-4 rounded-lg"></div>
