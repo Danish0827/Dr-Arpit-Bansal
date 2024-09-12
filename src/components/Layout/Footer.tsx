@@ -43,9 +43,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 xl:grid-cols-3">
           {/* About Section */}
           <div>
-            <span className="dancinglogo text-4xl pr-3 font-black text-[#232c77]">
-              <strong>Dr. Arpit Bansal</strong>
+            <span className="dancinglogo text-2xl pr-3 md:text-3xl xl:text-4xl font-black text-transparent bg-clip-text bg-[#232c77]">
+              Dr Arpit Bansal
             </span>
+
             <p className="mt-5 text-base font-medium text-justify">
               Dr. Arpit Bansal, an Advanced Laparoscopy and Cancer Surgeon, has
               mastered an art, which many struggle to understand. A man of

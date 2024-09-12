@@ -82,10 +82,10 @@ const FloatingAppointment = () => {
     <>
       {/* Large screen button */}
       <div
-        className="block cursor-pointer fixed -right-[99px] z-50 -rotate-90 px-4 pt-2 rounded-t-xl bottom-[61%] bg-[#232c77]"
+        className="block cursor-pointer fixed -right-[99px] z-50 -rotate-90 px-7 py-2 rounded-t-xl bottom-[63%] bg-[#232c77]"
         onClick={handleAppointmentClick}
       >
-        <h2 className="text-white">Book An Appointment</h2>
+        <h2 className="text-white">Book Appointment</h2>
       </div>
 
       {/* Social links for large screens */}
