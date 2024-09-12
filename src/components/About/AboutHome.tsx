@@ -8,8 +8,8 @@ const AboutHome = () => {
     <>
       <section className="about bg-white py-20" id="about">
         <div className="container mx-auto">
-          <div className=" flex flex-wrap justify-center items-center">
-            <div className="relative flex justify-center items-start w-full lg:w-1/3 mb-10 animate-fade-in-left duration-300">
+          <div className=" flex flex-wrap justify-center items-start">
+            <div className="relative flex justify-center items-center w-full lg:w-1/3 mb-10 animate-fade-in-left duration-300">
               <div className="relative lg:-ml-20 -ml-8">
                 <img
                   src={gallery1.src}
