@@ -12,10 +12,9 @@ import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 const Announcement = () => {
-  
   return (
     <div className="hidden md:flex h-[6svh] px-16 bg-[#232c77] items-center justify-between">
-      <div>
+      <div className="md:hidden lg:block">
         <ul className="flex gap-5">
           <li className="flex text-white text-sm gap-2 items-center">
             <span>
@@ -39,12 +38,13 @@ const Announcement = () => {
           </li>
         </ul>
       </div>
-      <div className="xl:px-28 text-xl text-white overflow-hidden whitespace-nowrap">
+      {/* <div className="xl:px-28 text-xl lg:w-40 xl:w-60 text-white overflow-hidden whitespace-nowrap">
         <div className="inline-block whitespace-nowrap animate-marquee">
-          Dr Arpit Bansal
+          <marquee>  Esteemed Laparoscopic Surgeon, Wildlife Photographer, and Advocate for Longevity and Blue Mind Movement</marquee>
+      
         </div>
-      </div>
-      <div>
+      </div> */}
+      <div className="md:hidden lg:block">
         <ul>
           <li className="flex text-white text-sm gap-2 items-center">
             <span>

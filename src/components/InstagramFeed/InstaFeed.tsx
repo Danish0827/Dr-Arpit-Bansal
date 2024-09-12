@@ -2,16 +2,20 @@
 import React, { useEffect } from "react";
 import { ElfsightWidget } from "react-elfsight-widget";
 
-const InstaFeed = () => {
+const InstaFeed: React.FC = () => {
   useEffect(() => {
     const hideAnchorTags = () => {
-      const anchorTags = document.querySelectorAll("a");
+      // Query all anchor tags in the DOM
+      const anchorTags = document.querySelectorAll<HTMLAnchorElement>("a");
 
       // Iterate through each anchor tag
       anchorTags.forEach((anchor) => {
-        // Check if the anchor tag's text content exists and matches the target text
-        if (anchor.textContent && anchor.textContent.trim() === "Free Instagram Feed widget") {
-          // Apply the display: none; style
+        // Check if textContent is not null and contains specific keywords
+        if (
+          anchor.href.includes("elfsight.com") || 
+          (anchor.textContent && anchor.textContent.includes("Widget is deactivated"))
+        ) {
+          // Hide the anchor tag by setting display: none;
           anchor.style.display = "none";
         }
       });
@@ -26,7 +30,7 @@ const InstaFeed = () => {
 
   return (
     <div className="p-5 md:p-10 lg:p-16">
-      <ElfsightWidget widgetId={"322cf0f5-d835-46a3-9fc2-f0cfbe53b3ff"} />
+      <ElfsightWidget widgetId="322cf0f5-d835-46a3-9fc2-f0cfbe53b3ff" />
     </div>
   );
 };

@@ -21,7 +21,7 @@ export default function Home() {
       <Slider />
       <AboutHome/>
       <SpecialityComp/>
-      <Treatments title="home" />
+      {/* <Treatments title="home" /> */}
       <Blog title="home" />
       <InstaFeed />
       <GoogleFeed />

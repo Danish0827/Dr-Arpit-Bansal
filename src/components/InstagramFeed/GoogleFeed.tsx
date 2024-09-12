@@ -28,7 +28,7 @@ const GoogleFeed = () => {
   }, []);
 
   return (
-    <div className="p-5 md:p-10 lg:p-16">
+    <div className="p-5 md:p-10 lg:p-16 bg-white">
       <h5 className="text-xl md:text-2xl lg:text-3xl font-bold text-center pb-5 lg:pb-7 text-[#232c77]">
         What our Patients say
       </h5>

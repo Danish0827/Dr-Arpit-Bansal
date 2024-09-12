@@ -1,7 +1,7 @@
 "use client";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Define types for props
 interface SubMenuItem {
@@ -19,6 +19,14 @@ interface MenuMobileProps {
   subMenuData: SubMenuItem[] | null; // Allow it to be an array or null
 }
 
+interface Treatment {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+  slug: string;
+}
+
 const MenuMobile: React.FC<MenuMobileProps> = ({
   showCatMenu,
   setShowCatMenu,
@@ -28,6 +36,30 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
   subMenuData,
 }) => {
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
+  const [treatments, setTreatments] = useState<Treatment[]>([]); // State for treatments data
+
+  // Fetch the treatments data from the API
+  useEffect(() => {
+    const fetchTreatments = async () => {
+      try {
+        const response = await fetch(
+          "https://drarpitbck.demo-web.live/wp-json/custom/v1/getAllTreatments?per_page=1000"
+        );
+        const data = await response.json();
+
+        // Ensure we get an array of treatments
+        if (data?.treatments && Array.isArray(data.treatments)) {
+          setTreatments(data.treatments);
+        } else {
+          console.error("Unexpected data format:", data);
+        }
+      } catch (error) {
+        console.error("Error fetching treatments:", error);
+      }
+    };
+
+    fetchTreatments();
+  }, []);
 
   const menuItems = [
     {
@@ -45,19 +77,7 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
       name: "Our Speciality",
       url: "#",
       hasDropdown: true, // Mark this item as having a dropdown
-      subMenu: [
-        { id: 1, name: "Cancer Surgery", url: "/speciality/cancer-surgery" },
-        { id: 2, name: "Piles Surgery", url: "/speciality/piles-surgery" },
-        { id: 3, name: "Hernia Surgery", url: "/speciality/hernia-surgery" },
-        { id: 4, name: "Stone Surgery", url: "/speciality/stone-surgery" },
-        { id: 5, name: "Laparoscopy", url: "/speciality/laparoscopy" },
-      ],
     },
-    // {
-    //   id: 4,
-    //   name: "Our Treatments",
-    //   url: "/treatments",
-    // },
     {
       id: 5,
       name: "Gallery",
@@ -80,7 +100,8 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
   };
 
   return (
-    <ul className="flex flex-col lg:hidden w-full font-normal text-lg absolute top-20 h-[100vh] left-0 bg-white border-t text-black z-50">
+    <div className="flex flex-col lg:hidden w-full font-normal text-lg absolute top-20 h-[100vh] overflow-x-auto left-0 bg-white border-t text-black z-50">
+    <ul className="flex flex-col lg:hidden w-full font-normal text-lg  h-[85vh] overflow-x-auto left-0 bg-white border-t text-black z-50">
       {menuItems.map((item) => (
         <React.Fragment key={item.id}>
           <li className="py-4 px-5 border-b">
@@ -93,17 +114,19 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
                   <span>{item.name}</span>
                   <span>{activeDropdown === item.id ? "-" : "+"}</span>
                 </div>
+
+                {/* Dropdown for 'Our Speciality' */}
                 {activeDropdown === item.id && (
-                  <ul className="pl-5">
-                    {item.subMenu?.map((subItem) => (
-                      <li key={subItem.id} className="py-2">
+                  <ul className="pl-3 pt-2">
+                    {treatments.map((treatment) => (
+                      <li key={treatment.id} className="py-2">
                         <Link
                           className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
-                          href={subItem.url}
+                          href={`/speciality/${treatment.slug}`}
                         >
                           <ArrowRight size={16} />
                           <span onClick={() => setMobileMenu(false)}>
-                            {subItem.name}
+                            {treatment.title}
                           </span>
                         </Link>
                       </li>
@@ -134,6 +157,7 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
         </div>
       )}
     </ul>
+    </div>
   );
 };
 

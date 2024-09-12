@@ -8,9 +8,12 @@ import MenuMobile from "./MenuMobile";
 import { Phone } from "lucide-react";
 
 // Define types for SubMenuItem
+
 interface SubMenuItem {
-  slug: string;
+  id: number;
   name: string;
+  slug: string;
+  url: string;
 }
 
 const SocialIcons = () => {
@@ -33,25 +36,26 @@ const NewHeader = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [showCatMenu, setShowCatMenu] = useState(false);
   const [showContactMenu, setShowContactMenu] = useState(false);
-  const [subMenuData, setSubMenuData] = useState(null);
-
+  const [subMenuData, setSubMenuData] = useState<SubMenuItem[] | null>(null);
   const [showSearch, setShowSearch] = useState(false);
   const divRef = useRef<HTMLDivElement | null>(null);
 
+  // Handle closing the search div when clicking outside
   const handleCloseDiv = (event: MouseEvent) => {
     if (divRef.current && !divRef.current.contains(event.target as Node)) {
       setShowSearch(false);
     }
   };
 
+  // Add event listener for clicks outside the search box
   useEffect(() => {
     document.addEventListener("mousedown", handleCloseDiv);
-
     return () => {
       document.removeEventListener("mousedown", handleCloseDiv);
     };
   }, []);
 
+  // Handle header style changes on scroll
   const [headerClass, setHeaderClass] = useState(
     "sticky top-0 z-50 bg-gray-100 w-full"
   );
@@ -71,15 +75,27 @@ const NewHeader = () => {
     };
   }, []);
 
+  // Control body overflow when the mobile menu is toggled
+  useEffect(() => {
+    if (mobileMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    // Cleanup on component unmount or mobile menu close
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [mobileMenu]);
+
   return (
     <header
       className={`${headerClass} w-full px-5 py-10 xl:px-12 h-[8svh] block lg:flex items-center justify-between transition-transform duration-300`}
     >
       <Link href={"/"} className="hidden lg:block p-5">
         <span className="dancinglogo text-2xl pr-3 md:text-3xl xl:text-4xl font-black text-transparent bg-clip-text bg-[#232c77]">
-          {/* <strong> */}
           Dr Arpit Bansal
-          {/* </strong> */}
         </span>
       </Link>
 
@@ -94,7 +110,7 @@ const NewHeader = () => {
 
       {mobileMenu && (
         <MenuMobile
-          subMenuData={subMenuData} // Ensure it's always an array
+          subMenuData={subMenuData || []}
           showCatMenu={showCatMenu}
           showContactMenu={showContactMenu}
           setShowCatMenu={setShowCatMenu}
@@ -117,20 +133,11 @@ const NewHeader = () => {
         </div>
         <Link href={"/"} className="block">
           <span className="dancinglogo pr-3 text-2xl md:text-3xl xl:text-4xl font-black text-transparent bg-clip-text bg-[#232c77]">
-            {/* <strong> */}
             Dr Arpit Bansal
-            {/* </strong> */}
           </span>
         </Link>
 
         <div className="flex gap-2 items-center">
-          {/* <div className="lg:hidden">
-            <Link href="/book-appointment">
-              <button className="px-4 py-2 bg-gradient-to-r from-[#171f58] to-blue-500 text-white font-semibold rounded-full shadow-md transition duration-300">
-                Contact Us
-              </button>
-            </Link>
-          </div> */}
           <div className="w-8 lg:w-12 h-8 md:h-12 rounded-full flex lg:hidden justify-center items-center cursor-pointer relative -mr-2">
             {mobileMenu ? (
               <VscChromeClose

@@ -109,65 +109,69 @@ const Blog = ({ title }: { title: string }) => {
   const data = title === "home" ? blogPosts.slice(0, 3) : blogPosts;
 
   return (
-    <div
-      className={`container mx-auto px-4 ${
-        title === "home" ? "py-0 pt-10" : "py-16"
-      }`}
-    >
-      <h5 className="text-xl md:text-2xl lg:text-3xl font-bold text-center pb-5 lg:pb-7 text-[#232c77]">
-        Patients Education
-      </h5>
+    <div className={title === "home" ? "bg-white" : ""}>
+      <div
+        className={`container mx-auto px-4 ${
+          title === "home" ? "py-10 pt-10 " : "py-16"
+        }`}
+      >
+        <h5 className="text-xl md:text-2xl lg:text-3xl font-bold text-center pb-5 lg:pb-7 text-[#232c77]">
+          Patients Education
+        </h5>
 
-      <div className="flex flex-wrap -mx-4">
-        {loading
-          ? // Show skeleton loader while loading
-            Array.from({ length: countSkeleton }).map((_, index) => (
-              <BlogPostSkeleton key={index} />
-            ))
-          : // Render blog posts if not loading
-            data.map((post) => <BlogPostComponent key={post.ID} post={post} />)}
+        <div className="flex flex-wrap -mx-4">
+          {loading
+            ? // Show skeleton loader while loading
+              Array.from({ length: countSkeleton }).map((_, index) => (
+                <BlogPostSkeleton key={index} />
+              ))
+            : // Render blog posts if not loading
+              data.map((post) => (
+                <BlogPostComponent key={post.ID} post={post} />
+              ))}
+        </div>
+
+        {title === "home" && !loading && (
+          <div className="flex justify-center mt-8">
+            <a
+              href="/patients-education"
+              className="flex items-center bg-[#171f56] text-white py-2 px-4 rounded-lg hover:bg-[#171f56] transition"
+            >
+              View More
+            </a>
+          </div>
+        )}
+
+        {title !== "home" && totalPages > 1 && !loading && (
+          <div className="flex justify-between items-center mt-8 space-x-4">
+            <button
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              className={`flex items-center py-2 px-4 rounded-lg transition ${
+                currentPage === 1
+                  ? "bg-gray-400 cursor-not-allowed text-white"
+                  : "bg-[#171f56] text-white hover:bg-[#171f56]"
+              }`}
+            >
+              Previous
+            </button>
+            <span className="text-lg">
+              Page {currentPage} of {totalPages}
+            </span>
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className={`flex items-center py-2 px-4 rounded-lg transition ${
+                currentPage === totalPages
+                  ? "bg-gray-400 cursor-not-allowed text-white"
+                  : "bg-[#171f56] text-white hover:bg-[#171f56]"
+              }`}
+            >
+              Next
+            </button>
+          </div>
+        )}
       </div>
-
-      {title === "home" && !loading && (
-        <div className="flex justify-center mt-8">
-          <a
-            href="/patients-education"
-            className="flex items-center bg-[#171f56] text-white py-2 px-4 rounded-lg hover:bg-[#171f56] transition"
-          >
-            View More
-          </a>
-        </div>
-      )}
-
-      {title !== "home" && totalPages > 1 && !loading && (
-        <div className="flex justify-between items-center mt-8 space-x-4">
-          <button
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-            className={`flex items-center py-2 px-4 rounded-lg transition ${
-              currentPage === 1
-                ? "bg-gray-400 cursor-not-allowed text-white"
-                : "bg-[#171f56] text-white hover:bg-[#171f56]"
-            }`}
-          >
-            Previous
-          </button>
-          <span className="text-lg">
-            Page {currentPage} of {totalPages}
-          </span>
-          <button
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-            className={`flex items-center py-2 px-4 rounded-lg transition ${
-              currentPage === totalPages
-                ? "bg-gray-400 cursor-not-allowed text-white"
-                : "bg-[#171f56] text-white hover:bg-[#171f56]"
-            }`}
-          >
-            Next
-          </button>
-        </div>
-      )}
     </div>
   );
 };

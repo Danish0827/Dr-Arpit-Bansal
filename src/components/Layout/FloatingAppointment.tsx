@@ -1,6 +1,9 @@
+"use client";
+import { Modal } from "antd";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import ContactForm from "../Contact/ContactForm";
 
 // Social links array
 const socialLinks = [
@@ -23,7 +26,7 @@ const socialLinks = [
 ];
 
 // SocialLink component
-const SocialLink = ({ href, Icon }: { href: any; Icon:any }) => (
+const SocialLink = ({ href, Icon }: { href: string; Icon: any }) => (
   <li className="flex items-center rotate-90">
     <a
       href={href}
@@ -36,7 +39,7 @@ const SocialLink = ({ href, Icon }: { href: any; Icon:any }) => (
   </li>
 );
 
-// Common AppointmentLinks component
+// AppointmentLinks component for rendering social links
 const AppointmentLinks = ({ className }: { className: string }) => (
   <div className={className}>
     <ul className="flex items-center gap-2 pb-4">
@@ -47,15 +50,56 @@ const AppointmentLinks = ({ className }: { className: string }) => (
   </div>
 );
 
+// SkeletonLoader component for loading state
+const SkeletonLoader = () => (
+  <div className="space-y-4 p-7">
+    {Array.from({ length: 16 }).map((_, index) => (
+      <div
+        key={index}
+        className="w-full h-4 bg-gray-300 rounded-md animate-pulse"
+      ></div>
+    ))}
+  </div>
+);
+
 // FloatingAppointment component
 const FloatingAppointment = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  // Show loading and open modal
+  const handleAppointmentClick = () => {
+    setIsOpen(true);
+    setIsLoading(true);
+
+    // Simulate loading delay
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  };
+
   return (
     <>
-      {/* For large screens */}
-      <AppointmentLinks className=":block fixed -right-[60px] z-50 -rotate-90 px-4 pt-3 pb-1 rounded-t-xl bottom-[50%] bg-[#232c77]" />
+      {/* Large screen button */}
+      <div
+        className="block cursor-pointer fixed -right-[99px] z-50 -rotate-90 px-4 pt-2 rounded-t-xl bottom-[61%] bg-[#232c77]"
+        onClick={handleAppointmentClick}
+      >
+        <h2 className="text-white">Book An Appointment</h2>
+      </div>
 
-      {/* For small screens */}
-      {/* <AppointmentLinks className="lg:hidden fixed z-50 px-4 pt-3 pb-1 rounded-t-xl bottom-0 left-5 bg-[#232c77]" /> */}
+      {/* Social links for large screens */}
+      <AppointmentLinks className="block fixed -right-[60px] z-50 -rotate-90 px-4 pt-3 pb-1 rounded-t-xl bottom-[30%] bg-[#232c77]" />
+
+      {/* Modal for appointment form */}
+      <Modal
+        centered
+        footer={null}
+        open={isOpen}
+        onCancel={() => setIsOpen(false)}
+      >
+        {isLoading ? <SkeletonLoader /> : <ContactForm />}
+      </Modal>
     </>
   );
 };

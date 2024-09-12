@@ -1,143 +1,145 @@
 "use client";
-import {
-  ArrowRight,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Mail,
-  MailIcon,
-  MapPin,
-  MapPinned,
-  Phone,
-  PhoneCall,
-  Twitter,
-  Youtube,
-} from "lucide-react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import React from "react";
+import { ArrowRight, MapPin, PhoneCall, MailIcon } from "lucide-react";
 import logo from "@/assets/images/logo.png";
-import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 
-const Footer = async () => {
+interface Treatment {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+  slug: string;
+}
+
+const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [treatments, setTreatments] = useState<Treatment[]>([]);
+
+  useEffect(() => {
+    const fetchTreatments = async () => {
+      try {
+        const response = await fetch(
+          "https://drarpitbck.demo-web.live/wp-json/custom/v1/getAllTreatments?per_page=1000"
+        );
+        const data = await response.json();
+
+        if (data?.treatments && Array.isArray(data.treatments)) {
+          setTreatments(data.treatments);
+        } else {
+          console.error("Unexpected data format:", data);
+        }
+      } catch (error) {
+        console.error("Error fetching treatments:", error);
+      }
+    };
+
+    fetchTreatments();
+  }, []);
 
   return (
     <footer className="bg-gray-100 text-gray-800 border-t pt-5">
-      <div className=" px-4 pt-10 pb-5 mx-auto sm:px-6 lg:px-16 space-y-8">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <div className="px-4 pt-10 pb-5 mx-auto sm:px-6 lg:px-16 space-y-8">
+        <div className="grid grid-cols-1 gap-8 xl:grid-cols-3">
+          {/* About Section */}
           <div>
             <span className="dancinglogo text-4xl pr-3 font-black text-[#232c77]">
-              <strong className="dancinglogo">Dr. Arpit Bansal</strong>
+              <strong>Dr. Arpit Bansal</strong>
             </span>
             <p className="mt-5 text-base font-medium text-justify">
-              Dr Arpit Bansal, an Advanced Laparoscopy and Cancer Surgeon, has
+              Dr. Arpit Bansal, an Advanced Laparoscopy and Cancer Surgeon, has
               mastered an art, which many struggle to understand. A man of
               varied interests, he has created a fine balance between his
-              profession and passion. According to Dr Arpit Bansal, with time
+              profession and passion. According to Dr. Arpit Bansal, with time
               management and focus, one can excel in both fields. His journey
               stands testament to his extraordinary talent and unyielding
               determination.
             </p>
           </div>
+
+          {/* Speciality Section */}
           <div className="grid grid-cols-1 gap-5 px-3 lg:px-10 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-3">
             <div className="space-y-2">
               <p className="font-bold text-xl">Our Speciality</p>
               <div className="w-20 h-0.5 bg-primary rounded-full"></div>
-              <div className="flex flex-col mt-4 space-y-3 text-base">
-                <Link
-                  className=" flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
-                  href={"/speciality/cancer-surgery"}
-                >
-                  <ArrowRight size={16} />
-                  <span className="hover:text-primary">Cancer Surgery</span>
-                </Link>
-                <Link
-                  className=" flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
-                  href={"/speciality/piles-surgery"}
-                >
-                  <ArrowRight size={16} />
-                  <span className="hover:text-primary">piles-surgery</span>
-                </Link>
-                <Link
-                  className=" flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
-                  href={"/speciality/hernia-surgery"}
-                >
-                  <ArrowRight size={16} />
-                  <span className="hover:text-primary">Hernia Surgery</span>
-                </Link>
-                <Link
-                  className=" flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
-                  href={"/speciality/stone-surgery"}
-                >
-                  <ArrowRight size={16} />
-                  <span className="hover:text-primary">Stone Surgery</span>
-                </Link>
-                <Link
-                  className=" flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
-                  href={"/speciality/laparoscopy"}
-                >
-                  <ArrowRight size={16} />
-                  <span className="hover:text-primary">Laparoscopy</span>
-                </Link>
-
-                {/* <Link
-                  className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
-                  href={"/book-appointment"}
-                >
-                  <ArrowRight className="" size={16} />
-                  <span className="hover:text-primary">Book Appointment </span>
-                </Link> */}
-              </div>
+              <ul className="flex flex-col mt-4 space-y-2 text-base">
+                {treatments.slice(0, 6).map((treatment) => (
+                  <li key={treatment.id}>
+                    <Link
+                      className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
+                      href={`/speciality/${treatment.slug}`}
+                    >
+                      <ArrowRight size={16} />
+                      <span>{treatment.title}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
+
+            {/* Quick Links Section */}
             <div className="space-y-2">
               <p className="font-bold text-xl">Quick Links</p>
               <div className="w-20 h-0.5 bg-primary rounded-full"></div>
-              <div className="flex flex-col mt-4 space-y-2 text-base">
-                <Link
-                  className=" flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
-                  href={"/"}
-                >
-                  <ArrowRight size={16} />
-                  <span className="hover:text-primary">Home</span>
-                </Link>
-                <Link
-                  className=" flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
-                  href={"/about"}
-                >
-                  <ArrowRight size={16} />
-                  <span className="hover:text-primary">About Me</span>
-                </Link>
-                <Link
-                  className=" flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
-                  href={"/treatments"}
-                >
-                  <ArrowRight size={16} />
-                  <span className="hover:text-primary">Our Treatments</span>
-                </Link>
-                <Link
-                  className=" flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
-                  href={"/schedule"}
-                >
-                  <ArrowRight size={16} />
-                  <span className="hover:text-primary">Schedule</span>
-                </Link>
-                <Link
-                  className=" flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
-                  href={"/patients-education"}
-                >
-                  <ArrowRight size={16} />
-                  <span className="hover:text-primary">Patients Education</span>
-                </Link>
-
-                <Link
-                  className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
-                  href={"/book-appointment"}
-                >
-                  <ArrowRight className="" size={16} />
-                  <span className="hover:text-primary">Book Appointment </span>
-                </Link>
-              </div>
+              <ul className="flex flex-col mt-4 space-y-2 text-base">
+                <li>
+                  <Link
+                    className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
+                    href={"/"}
+                  >
+                    <ArrowRight size={16} />
+                    <span>Home</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
+                    href={"/about"}
+                  >
+                    <ArrowRight size={16} />
+                    <span>About Me</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
+                    href={"/treatments"}
+                  >
+                    <ArrowRight size={16} />
+                    <span>Our Treatments</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
+                    href={"/schedule"}
+                  >
+                    <ArrowRight size={16} />
+                    <span>Schedule</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
+                    href={"/patients-education"}
+                  >
+                    <ArrowRight size={16} />
+                    <span>Patients Education</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
+                    href={"/book-appointment"}
+                  >
+                    <ArrowRight size={16} />
+                    <span>Book Appointment</span>
+                  </Link>
+                </li>
+              </ul>
             </div>
+
+            {/* Contact Info Section */}
             <div className="space-y-2">
               <p className="font-bold text-xl">Contact Info</p>
               <div className="w-20 h-0.5 bg-primary rounded-full"></div>
@@ -147,32 +149,38 @@ const Footer = async () => {
                     <MapPin size={20} color="#00008b" />
                   </div>
                   <h6 className="text-justify">
-                  Jeevan Jyoti Hospital, 162 Bai Ka Bagh, Prayagraj 211003, India. 
+                    <a href="https://www.google.com/maps?sca_esv=9783522cabc36d5f&sxsrf=ADLYWIIq8DgeJ3WC8yuIto4Ny0mNMvFSoA:1726059590343&lsig=AB86z5W8LVVMCDKPemXbeL-hE1XF&shndl=-1&shem=lsde,vslcca&kgs=5f63309b8c4d9278&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KU2KAgEwNYU5MeWlbyLiD6NC&daddr=ROOM+NO+23,+JEEVAN+JYOTI+HOSPITAL+CAMPUS,+162,+Himmat+Ganj,+Bai+Ka+Bagh,+Prayagraj,+Uttar+Pradesh+211003">
+                      {" "}
+                      Jeevan Jyoti Hospital, 162 Bai Ka Bagh, Prayagraj 211003,
+                      India.{" "}
+                    </a>
                   </h6>
                 </div>
                 <div className="flex items-center gap-2">
                   <PhoneCall size={20} color="#00008b" />
                   <a href="tel:+918141402111">+91 81414 02111</a>
                 </div>
-                {/* <div className="flex items-center gap-2">
-                  <PhoneCall size={20} color="#00008b" />
-                  <a href="tel:+919594082134">+91 95940 82134</a>
-                </div> */}
-
                 <div className="flex items-center gap-2">
                   <MailIcon size={20} color="#00008b" />
-                  <a href="mailto:drarpitbansal@gmail.com ">drarpitbansal@gmail.com </a>
+                  <a href="mailto:drarpitbansal@gmail.com">
+                    drarpitbansal@gmail.com
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <hr />
-        <p className=" text-base text-center">
+        <p className="text-base text-center">
           © {currentYear} All Rights Reserved{" "}
-          <a href="/" className="text-primary" target="_blank">
+          <a
+            href="/"
+            className="text-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Dr. Arpit Bansal
-          </a>{" "}
+          </a>
         </p>
       </div>
     </footer>

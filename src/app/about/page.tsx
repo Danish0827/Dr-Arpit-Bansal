@@ -23,14 +23,13 @@ const about = () => {
         version={false}
       />
       <About />
-      <Counter />
       <div className="bg-white">
-        <GoogleFeed />
+        <Counter />
       </div>
+
       <RequestAppointment />
     </>
   );
 };
-
 
 export default about;

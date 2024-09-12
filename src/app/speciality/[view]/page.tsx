@@ -13,7 +13,7 @@ const speciality = ({params}:any) => {
         img={abouts.src}
         version={false}
       />
-     <Speciality title={title}/>
+     <Speciality title={params.view}/>
     </>
   )
 }

@@ -2,7 +2,7 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // Define types for props
 interface SubMenuItem {
@@ -23,6 +23,14 @@ interface MenuProps {
   showContactMenu: boolean;
 }
 
+interface Treatment {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+  slug: string;
+}
+
 const Menu: React.FC<MenuProps> = ({
   showCatMenu,
   setShowCatMenu,
@@ -32,8 +40,31 @@ const Menu: React.FC<MenuProps> = ({
   showContactMenu,
 }) => {
   const path = usePathname();
-
+  const [treatments, setTreatments] = useState<Treatment[]>([]); // Initialize as an array of Treatment objects
   const [showSpecialityMenu, setShowSpecialityMenu] = useState(false); // State for dropdown
+
+  // Fetch the data from the API
+  useEffect(() => {
+    const fetchTreatments = async () => {
+      try {
+        const response = await fetch(
+          "https://drarpitbck.demo-web.live/wp-json/custom/v1/getAllTreatments?per_page=1000"
+        );
+        const data = await response.json();
+
+        // Make sure to extract the treatments array from the data
+        if (data?.treatments && Array.isArray(data.treatments)) {
+          setTreatments(data.treatments);
+        } else {
+          console.error("Unexpected data format:", data);
+        }
+      } catch (error) {
+        console.error("Error fetching treatments:", error);
+      }
+    };
+
+    fetchTreatments();
+  }, []);
 
   const data = [
     {
@@ -51,19 +82,7 @@ const Menu: React.FC<MenuProps> = ({
       name: "Our Speciality",
       url: "#",
       hasDropdown: true, // Mark this item as having a dropdown
-      subMenu: [
-        { id: 1, name: "Cancer Surgery", url: "/speciality/cancer-surgery" },
-        { id: 2, name: "Piles Surgery", url: "/speciality/piles-surgery" },
-        { id: 3, name: "Hernia Surgery", url: "/speciality/hernia-surgery" },
-        { id: 4, name: "Stone Surgery", url: "/speciality/stone-surgery" },
-        { id: 5, name: "Laparoscopy", url: "/speciality/laparoscopy" },
-      ],
     },
-    // {
-    //   id: 4,
-    //   name: "Our Treatments",
-    //   url: "/treatments",
-    // },
     {
       id: 5,
       name: "Gallery",
@@ -94,7 +113,7 @@ const Menu: React.FC<MenuProps> = ({
               <li
                 className={`relative cursor-pointer text-base hover:border-b-2 typetext hover:border-[#00008b] hover:text-primary hover:text-[#171f58] lg:text-xs xl:text-base transition-all ease-in-out duration-500 ${
                   isActive
-                    ? " border-primary border-b-2 font-semibold border-[#00008b] text-primary text-[#171f58]"
+                    ? "border-primary border-b-2 font-semibold border-[#00008b] text-primary text-[#171f58]"
                     : "border-transparent hover:text-primary group"
                 } pb-1`}
                 onMouseEnter={() =>
@@ -111,18 +130,18 @@ const Menu: React.FC<MenuProps> = ({
                 {/* Dropdown for 'Our Speciality' */}
                 {item.hasDropdown && showSpecialityMenu && (
                   <ul className="absolute left-0 top-full mt-1 pt-3 bg-white shadow-lg rounded-md w-60">
-                    {item.subMenu?.map((subItem) => (
+                    {treatments.map((treatment) => (
                       <li
-                        key={subItem.id}
+                        key={treatment.id}
                         className="px-4 py-2 hover:pl-5 duration-300 hover:bg-gray-100"
                       >
                         <Link
                           className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
-                          href={subItem.url}
+                          href={`/speciality/${treatment.slug}`}
                         >
                           <ArrowRight size={16} />
                           <span className="hover:text-primary">
-                            {subItem.name}
+                            {treatment.title}
                           </span>
                         </Link>
                       </li>
