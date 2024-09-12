@@ -49,7 +49,7 @@ const AboutHome = () => {
                   href="/about"
                   className="flex items-center bg-[#232c77] text-white py-2 px-4 rounded-lg hover:bg-[#171f56] transition"
                 >
-                  <i className="ri-send-plane-line mr-2"></i> About Dr Arpit
+                  <i className="ri-send-plane-line mr-2"></i> Know more
                 </a>
                 {/* <a
                 href="https://www.linkedin.com/"
