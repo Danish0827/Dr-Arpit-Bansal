@@ -8,7 +8,7 @@
   }
   
   body {
-    background: #eee;
+    /* background: #eee; */
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: #000;
@@ -88,3 +88,75 @@
       border-color: transparent;
     }
   }
+  .slide-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+  }
+  
+  .slide-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 1s ease-in-out;
+  }
+  
+  .text-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h3 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  blockquote {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  .banner-animate .slide-background {
+    animation: slideEffect 1s forwards ease-in-out;
+  }
+  
+  @keyframes slideEffect {
+    0% {
+      transform: scale(1.5) rotate(0deg);
+    }
+    50% {
+      transform: scale(1.2) rotate(-15deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+  
+  /* For Swiper pagination */
+  .autoplay-progress {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+  }
+  
+  .autoplay-progress svg {
+    transform: rotate(-90deg);
+  }
+  
+  .autoplay-progress circle {
+    fill: none;
+    stroke: white;
+    stroke-width: 4px;
+    stroke-dasharray: 125;
+    stroke-dashoffset: 125;
+  }
+  

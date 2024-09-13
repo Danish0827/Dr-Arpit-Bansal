@@ -94,7 +94,7 @@ const NewHeader = () => {
       className={`${headerClass} w-full px-5 py-10 xl:px-12 h-[8svh] block lg:flex items-center justify-between transition-transform duration-300`}
     >
       <Link href={"/"} className="hidden lg:block p-5">
-        <span className="dancinglogo text-2xl pr-3 md:text-3xl xl:text-4xl font-black text-transparent bg-clip-text bg-[#232c77]">
+        <span className="dancinglogo text-3xl pr-3 md:text-3xl xl:text-4xl font-black text-transparent bg-clip-text bg-[#232c77]">
           Dr Arpit Bansal
         </span>
       </Link>
@@ -132,7 +132,7 @@ const NewHeader = () => {
           <SocialIcons />
         </div>
         <Link href={"/"} className="block">
-          <span className="dancinglogo pr-3 text-2xl md:text-3xl xl:text-4xl font-black text-transparent bg-clip-text bg-[#232c77]">
+          <span className="dancinglogo pr-3 text-3xl md:text-3xl xl:text-4xl font-black text-transparent bg-clip-text bg-[#232c77]">
             Dr Arpit Bansal
           </span>
         </Link>

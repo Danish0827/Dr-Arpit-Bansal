@@ -9,12 +9,7 @@ import "./styles.css"; // Import your styles
 import banner1 from "@/assets/images/banner-1.png";
 import banner2 from "@/assets/images/banner-2.webp";
 
-import {
-  Autoplay,
-  Pagination,
-  Navigation,
-  EffectCreative,
-} from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 
 const Slider: React.FC = () => {
@@ -35,22 +30,6 @@ const Slider: React.FC = () => {
     },
   ];
 
-  const onAutoplayTimeLeft = (
-    s: SwiperType,
-    time: number,
-    progress: number
-  ) => {
-    if (progressCircle.current) {
-      progressCircle.current.style.setProperty(
-        "--progress",
-        (1 - progress).toString()
-      );
-    }
-    if (progressContent.current) {
-      progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-    }
-  };
-
   const handleSlideChange = (swiper: SwiperType) => {
     slideRefs.current.forEach((slide, index) => {
       if (index === swiper.activeIndex && slide) {
@@ -64,6 +43,7 @@ const Slider: React.FC = () => {
   return (
     <>
       <Swiper
+        autoHeight={true}
         spaceBetween={20}
         loop={true}
         autoplay={{
@@ -73,19 +53,8 @@ const Slider: React.FC = () => {
         pagination={{
           clickable: true,
         }}
-        grabCursor={true}
-        effect={"creative"}
-        creativeEffect={{
-          prev: {
-            shadow: true,
-            translate: [0, 0, -400],
-          },
-          next: {
-            translate: ["100%", 0, 0],
-          },
-        }}
         navigation={false}
-        modules={[Autoplay, Pagination, Navigation, EffectCreative]}
+        modules={[Autoplay, Pagination, Navigation]}
         onSlideChange={handleSlideChange}
         style={{ height: "auto", width: "100%" }}
       >

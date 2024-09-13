@@ -4,10 +4,15 @@ import React, { useState } from "react";
 import ContactForm from "../Contact/ContactForm";
 import about from "@/assets/images/dr-arpit-image.jpg";
 import "animate.css/animate.min.css";
+import { useInView } from "react-intersection-observer";
 
 const About = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
+  const [ref, inView] = useInView({
+    triggerOnce: false, // Animation triggers every time the section is in view
+    threshold: 0.1, // Section is considered in view when 10% of it is visible
+  });
 
   const SkeletonLoader = () => {
     return (
@@ -21,21 +26,32 @@ const About = () => {
       </div>
     );
   };
+
   const showLoading = () => {
     setOpen(true);
     setLoading(true);
 
-    // Simple loading mock. You should add cleanup logic in real world.
     setTimeout(() => {
       setLoading(false);
     }, 1000);
   };
+
   return (
     <>
-      <section className="about  py-20" id="about">
+      <section
+        ref={ref}
+        className={`about py-20 ${
+          inView ? "animate__animated animate__fadeIn" : ""
+        }`}
+        id="about"
+      >
         <div className="container mx-auto">
-          <div className=" flex flex-wrap justify-center">
-            <div className="relative flex justify-center item-center w-full lg:w-1/3 mb-10 animate-fade-in-left duration-300">
+          <div className="flex flex-wrap justify-center">
+            <div
+              className={`relative flex justify-center item-center w-full lg:w-1/3 mb-10 ${
+                inView ? "animate__animated animate__fadeInLeft" : ""
+              }`}
+            >
               <div className="relative lg:-ml-20 -ml-8">
                 <img
                   src={about.src}
@@ -47,9 +63,13 @@ const About = () => {
               </div>
             </div>
 
-            <div className="lg:pl-8 px-3 animate-fade-in-right duration-300 w-full lg:w-1/2 xl:w-2/3">
+            <div
+              className={`lg:pl-8 px-3 w-full lg:w-1/2 xl:w-2/3 ${
+                inView ? "animate__animated animate__fadeInRight" : ""
+              }`}
+            >
               <h2 className="text-3xl font-bold text-left mb-2 relative">
-                <span className="text-[#232c77] font-bold">
+                <span className="text-[#232c77] font-bold uppercase">
                   About Dr. Arpit Bansal
                 </span>
                 <div className="absolute top-0 right-0 w-10 h-7 bg-[#171f56] opacity-20 rotate-45"></div>
@@ -80,17 +100,15 @@ const About = () => {
                 under some of the finest surgeons in India, and emerged as an
                 iconic figure in the field of medicine.
               </p>
-              {/* <div className="hidden md:flex gap-4">
-              <a
-                onClick={showLoading}
-                className="flex items-center bg-[#232c77] text-white py-2 px-4 rounded-lg hover:bg-[#171f56] transition"
-              >
-                <i className="ri-send-plane-line mr-2"></i> Book Appointment
-              </a>
-            </div> */}
             </div>
           </div>
-          <div className="lg:pt-10 px-3 animate-fade-in-bottom duration-1000">
+
+          <div
+            className={`lg:pt-10 px-3 duration-1000 ${
+              inView ? "animate__animated animate__fadeInRight" : ""
+            }`}
+            style={{ animationDelay: "1s" }}
+          >
             <p className="text-base xl:hidden text-gray-800 mb-4 text-justify">
               Dr Arpit Bansal always wanted to be a doctor, owing to his
               empathetic nature. Dr Bansal is the Director of the 200-bedded
@@ -104,9 +122,9 @@ const About = () => {
               Dr Bansal is also among the biggest names in wildlife bird
               photography, in India locally, and in the world, globally. Out of
               the 1349 species of birds found in the country, Dr Bansal has
-              already captured 1145 through his dynamic lense. There are only 25
+              already captured 1145 through his dynamic lens. There are only 25
               bird photographers who have done that. This feat places him at the
-              6th position on the world famous website www.Ebird.org.{" "}
+              6th position on the world-famous website www.Ebird.org.
             </p>
 
             <p className="text-base text-gray-800 mb-4 text-justify">

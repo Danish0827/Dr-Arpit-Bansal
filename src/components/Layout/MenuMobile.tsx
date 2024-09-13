@@ -147,7 +147,7 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
       {subMenuData && subMenuData.length > 0 && (
         <div className="pt-2">
           <h3 className="px-5 text-md font-semibold">Sub Menu</h3>
-          {subMenuData.map((subItem) => (
+          {subMenuData.map((subItem,index) => (
             <li key={subItem.id} className="py-2 px-5 border-b">
               <Link href={subItem.url}>
                 <span onClick={() => setMobileMenu(false)}>{subItem.name}</span>

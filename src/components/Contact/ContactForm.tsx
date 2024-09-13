@@ -1,25 +1,31 @@
 "use client";
 import { sendContactForm } from "@/lib/ContactForm";
-import { ArrowRight, MailIcon, MapPin, PhoneCall } from "lucide-react";
-import React, { useState } from "react";
 import Swal from "sweetalert2";
+import React, { useState } from "react";
 
 const ContactForm: React.FC = () => {
   const [name, setName] = useState<string | null>(null);
   const [email, setEmail] = useState<string | null>(null);
-  const [phoneCode, setPhoneCode] = useState<string | null>(null);
   const [phone, setPhone] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState<boolean>(false);
+  const [phoneError, setPhoneError] = useState<string | null>(null);
 
   const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setPhoneError(null); // Reset phone error
+
+    // Custom validation for phone number
+    if (!phone || phone.length !== 10 || isNaN(Number(phone))) {
+      setPhoneError("Phone number must be exactly 10 digits.");
+      return;
+    }
+
     setSubmitting(true);
 
     const emailSent = await sendContactForm(
       name || undefined, // Convert null to undefined
       email || undefined,
-      phoneCode || undefined,
       phone || undefined,
       message || undefined
     );
@@ -29,7 +35,6 @@ const ContactForm: React.FC = () => {
       setSubmitting(false);
       setName("");
       setEmail("");
-      setPhoneCode("");
       setPhone("");
       setMessage("");
 
@@ -89,7 +94,7 @@ const ContactForm: React.FC = () => {
               value={name || ""}
               onChange={(e) => setName(e.target.value)}
               placeholder="Your Name"
-              className=" border-gray-300 dark:border-dark-3 dark:text-dark-6 dark:bg-dark text-body-color focus:border-primary w-full rounded-xl shadow-md border py-3 px-[14px] text-base outline-none"
+              className="border-gray-300 dark:border-dark-3 dark:text-dark-6 dark:bg-dark text-body-color focus:border-primary w-full rounded-xl shadow-md border py-3 px-[14px] text-base outline-none"
             />
           </div>
           <div className="mb-6">
@@ -111,9 +116,10 @@ const ContactForm: React.FC = () => {
               value={phone || ""}
               placeholder="Your Phone"
               onChange={(e) => setPhone(e.target.value)}
-              className="dark:border-dark-3 border-gray-300 dark:text-dark-6 dark:bg-dark text-body-color focus:border-primary w-full rounded-xl shadow-md  border py-3 px-[14px] text-base outline-none"
+              className="dark:border-dark-3 border-gray-300 dark:text-dark-6 dark:bg-dark text-body-color focus:border-primary w-full rounded-xl shadow-md border py-3 px-[14px] text-base outline-none"
             />
           </div>
+          {phoneError && <p className="text-red-600 mt-2">{phoneError}</p>}
           <div className="mb-6">
             <textarea
               rows={6}
@@ -128,7 +134,7 @@ const ContactForm: React.FC = () => {
           <div>
             <button
               type="submit"
-              className="w-full text-base text-white bg-gradient-to-r from-blue-500 to-[#171f58] font-bold p-3 transition border shadow-lg rounded-full bg-primary hover:bg-opacity-60"
+              className="w-full text-base text-white bg-[#232c77] font-bold p-3 transition border shadow-lg rounded-full bg-primary hover:bg-opacity-60"
             >
               {submitting ? "Sending..." : "Send Message"}
             </button>

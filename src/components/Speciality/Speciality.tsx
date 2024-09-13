@@ -59,7 +59,7 @@ const Speciality = ({ title }: any) => {
       </head>
 
       <div className="flex flex-col lg:flex-row items-start w-full gap-3 lg:gap-10 py-5 md:py-8 lg:py-14 bg-white">
-        <div className="w-full lg:w-[50%] px-6 md:px-16">
+        <div className="w-full lg:w-[50%] px-6 md:px-16 animate-fade-in-left">
           <img
             style={{
               boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
@@ -69,14 +69,14 @@ const Speciality = ({ title }: any) => {
             alt={decodeHtmlEntities(treatment.title)}
           />
         </div>
-        <div className="w-full lg:w-[50%] flex flex-col justify-center px-5 space-y-3 lg:space-y-5 lg:-ml-20">
+        <div className="w-full lg:w-[50%] pt-5 lg:pt-0 flex flex-col justify-center px-5 space-y-3 lg:space-y-5 lg:-ml-20 animate-fade-in-right">
           <div className="space-y-1">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl text-dark capitalize">
+            <h5 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#232c77] uppercase">
               {decodeHtmlEntities(treatment.title)}
-            </h2>
+            </h5>
           </div>
           <div
-            className="text-gray-600 mb-2"
+            className="text-gray-600  mb-2"
             dangerouslySetInnerHTML={{ __html: treatment.description }}
           />
         </div>

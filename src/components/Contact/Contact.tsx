@@ -10,7 +10,7 @@ const Contact = () => {
       >
         <div className="container mx-auto">
           <div className="flex flex-wrap -mx-4 lg:justify-center items-center">
-            <div className="w-full  px-4 lg:w-1/2">
+            <div className="w-full md:px-4 mb-3 lg:w-1/2">
               <div className="md:w-full flex justify-center items-center">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14412.230957483418!2d81.8466334!3d25.4363331!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3985353001028a4d%3A0x42a30fe2226fa5e5!2sDr%20Arpit%20Bansal%20%7C%20Laproscopy%20Doctor%2Fhernia%20Doctor%2Flaser%20Piles%20Doctor%2FVaricose%20Vein%20Doctor%20In%20Prayagraj!5e0!3m2!1sen!2sin!4v1725442881878!5m2!1sen!2sin"
@@ -22,7 +22,7 @@ const Contact = () => {
                 ></iframe>
               </div>
             </div>
-            <div className="w-full  px-4 lg:w-1/2">
+            <div className="w-full md:px-4 mb-3 lg:w-1/2">
               <div className="relative px-3  dark:bg-dark-2 sm:px-12 bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg ">
                 <ContactForm />
               </div>

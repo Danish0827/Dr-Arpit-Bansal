@@ -40,7 +40,7 @@ const Counter: React.FC = () => {
   });
 
   return (
-    <div ref={ref} className="px-5 bg-gray-100 py-10 md:p-8 lg:px-16 lg:py-12">
+    <div ref={ref} className="px-5 bg-white py-10 md:p-8 lg:px-16 lg:py-12">
       {/* <div className="space-y-2">
         <h2 className="text-center text-2xl lg:text-4xl text-primary">
           Trusted by Thousands
