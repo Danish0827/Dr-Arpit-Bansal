@@ -77,7 +77,7 @@ const SpecialityComp: React.FC = () => {
                       src={item.image}
                       alt={item.title}
                     />
-                    <h3 className="group-hover:font-bold relative md:text-lg text-xs -mt-6 w-full h-10 flex items-center justify-center text-center pb-4 pt-4 bg-[#232c77] group-hover:bg-white group-hover:text-[#232c77] font-normal text-white">
+                    <h3 className="group-hover:font-bold relative md:text-lg text-base -mt-6 w-full h-10 flex items-center justify-center text-center pb-4 pt-4 bg-[#232c77] group-hover:bg-white group-hover:text-[#232c77] font-normal text-white">
                       {item.title}
                     </h3>
                   </div>

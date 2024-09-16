@@ -129,6 +129,11 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
       url: "#",
       hasDropdown: true,
     },
+    {
+      id: 8,
+      name: "Contact Us",
+      url: "/book-appointment",
+    },
   ];
 
   const handleDropdownToggle = (id: number) => {
@@ -152,42 +157,55 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
                   </div>
 
                   {/* Dropdown for 'Our Speciality' */}
-                  {activeDropdown === item.id && item.name === "Our Speciality" && (
-                    <ul className="pl-3 pt-2">
-                      {treatments.map((treatment) => (
-                        <li key={treatment.id} className="py-2">
-                          <Link
-                            className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
-                            href={`/speciality/${treatment.slug}`}
-                          >
-                            <ArrowRight size={16} />
-                            <span onClick={() => setMobileMenu(false)}>
-                              {treatment.title}
-                            </span>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  {activeDropdown === item.id &&
+                    item.name === "Our Speciality" && (
+                      <ul className="pl-3 pt-2">
+                        {treatments.map((treatment) => (
+                          <li key={treatment.id} className="py-2">
+                            <Link
+                              className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
+                              href={`/speciality/${treatment.slug}`}
+                            >
+                              <ArrowRight size={16} />
+                              <span onClick={() => setMobileMenu(false)} className="line-clamp-1">
+                                {treatment.title}
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
 
                   {/* Dropdown for 'Patients Education' */}
-                  {activeDropdown === item.id && item.name === "Patients Education" && (
-                    <ul className="pl-3 pt-2">
-                      {diseases.map((disease) => (
-                        <li key={disease.id} className="py-2">
+                  {activeDropdown === item.id &&
+                    item.name === "Patients Education" && (
+                      <ul className="pl-3 pt-2">
+                        <li className="py-2">
                           <Link
-                            className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
-                            href={`/patients-education/${disease.slug}`}
+                            className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200 line-clamp-1"
+                            href={`/patients-education`}
                           >
                             <ArrowRight size={16} />
                             <span onClick={() => setMobileMenu(false)}>
-                              {disease.title}
+                             All Patients Education
                             </span>
                           </Link>
                         </li>
-                      ))}
-                    </ul>
-                  )}
+                        {diseases.map((disease) => (
+                          <li key={disease.id} className="py-2">
+                            <Link
+                              className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200 line-clamp-1"
+                              href={`/patients-education/${disease.slug}`}
+                            >
+                              <ArrowRight size={16} />
+                              <span onClick={() => setMobileMenu(false)} className="line-clamp-1">
+                                {disease.title}
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                 </>
               ) : (
                 <Link href={item.url}>
@@ -202,10 +220,13 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
         {subMenuData && subMenuData.length > 0 && (
           <div className="pt-2">
             <h3 className="px-5 text-md font-semibold">Sub Menu</h3>
+
             {subMenuData.map((subItem) => (
               <li key={subItem.id} className="py-2 px-5 border-b">
                 <Link href={subItem.url}>
-                  <span onClick={() => setMobileMenu(false)}>{subItem.name}</span>
+                  <span onClick={() => setMobileMenu(false)}>
+                    {subItem.name}
+                  </span>
                 </Link>
               </li>
             ))}

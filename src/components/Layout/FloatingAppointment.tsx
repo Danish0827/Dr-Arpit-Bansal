@@ -4,6 +4,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import ContactForm from "../Contact/ContactForm";
+import { IoIosArrowForward, IoMdCloseCircleOutline } from "react-icons/io";
+import { MdMenuOpen } from "react-icons/md";
 
 // Social links array
 const socialLinks = [
@@ -65,6 +67,7 @@ const SkeletonLoader = () => (
 // FloatingAppointment component
 const FloatingAppointment = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [show, setShow] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   // Show loading and open modal
@@ -77,20 +80,42 @@ const FloatingAppointment = () => {
       setIsLoading(false);
     }, 1000);
   };
+  const handleHideAppointment = () => {
+    setShow(false);
+  };
+  const handleShowAppointment = () => {
+    setShow(true);
+  };
 
   return (
     <>
-      {/* Large screen button */}
-      <div
-        className="block cursor-pointer fixed -right-[99px] z-50 -rotate-90 px-7 py-2 rounded-t-xl bottom-[63%] bg-[#232c77]"
-        onClick={handleAppointmentClick}
-      >
-        <h2 className="text-white">Book Appointment</h2>
-      </div>
+      {show === true && (
+        <>
+          {/* Large screen button */}
+          <div className="flex gap-3 items-center cursor-pointer fixed -right-[108px] z-50 -rotate-90 px-7 py-2 rounded-t-xl bottom-[63%] bg-[#232c77] ">
+            <h2 onClick={handleAppointmentClick} className="text-white ">
+              Book Appointment
+            </h2>
+            <h2 className="text-white">
+              <IoMdCloseCircleOutline
+                onClick={handleHideAppointment}
+                className="md:hidden text-lg"
+              />
+            </h2>
+          </div>
 
-      {/* Social links for large screens */}
-      <AppointmentLinks className="block fixed -right-[60px] z-50 -rotate-90 px-4 pt-3 pb-1 rounded-t-xl bottom-[30%] bg-[#232c77]" />
-
+          {/* Social links for large screens */}
+          <AppointmentLinks className="block fixed -right-[60px] z-50 -rotate-90 px-4 pt-3 pb-1 rounded-t-xl bottom-[30%] bg-[#232c77]" />
+        </>
+      )}
+      {show === false && (
+        <div className="block fixed -right-[10px] z-50 -rotate-90 px-4 pt-3 pb-1 rounded-t-xl bottom-[70%] bg-[#232c77]">
+          <MdMenuOpen
+            onClick={handleShowAppointment}
+            className="md:hidden text-xl text-white rotate-90"
+          />
+        </div>
+      )}
       {/* Modal for appointment form */}
       <Modal
         centered

@@ -182,7 +182,7 @@ const Menu: React.FC<MenuProps> = ({
                           href={`/speciality/${treatment.slug}`}
                         >
                           <ArrowRight size={16} />
-                          <span className="hover:text-primary">
+                          <span className="hover:text-primary line-clamp-1">
                             {treatment.title}
                           </span>
                         </Link>
@@ -205,7 +205,7 @@ const Menu: React.FC<MenuProps> = ({
                             href={`/patients-education/${disease.slug}`}
                           >
                             <ArrowRight size={16} />
-                            <span className="hover:text-primary">
+                            <span className="hover:text-primary line-clamp-1">
                               {disease.title}
                             </span>
                           </Link>

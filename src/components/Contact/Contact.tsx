@@ -9,6 +9,9 @@ const Contact = () => {
         className={`relative z-10 overflow-hidden  dark:bg-dark px-5 py-16`}
       >
         <div className="container mx-auto">
+          <h5 className="text-xl md:text-2xl lg:text-3xl font-bold text-center pb-5 lg:pb-7 text-[#232c77] uppercase mainPrimary">
+            Contact Us
+          </h5>
           <div className="flex flex-wrap -mx-4 lg:justify-center items-center">
             <div className="w-full md:px-4 mb-3 lg:w-1/2">
               <div className="md:w-full flex justify-center items-center">
