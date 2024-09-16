@@ -2,11 +2,12 @@
 import { Modal } from "antd";
 import React, { useState } from "react";
 import ContactForm from "../Contact/ContactForm";
-import about from "@/assets/images/dr-arpit-image.jpg";
+import about from "@/assets/images/gallery/1.png";
 import "animate.css/animate.min.css";
 import { useInView } from "react-intersection-observer";
 
 const About = () => {
+  const bg = "./white bg.png";
   const [open, setOpen] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
   const [ref, inView] = useInView({
@@ -38,13 +39,16 @@ const About = () => {
 
   return (
     <>
-      <section
-        ref={ref}
-        className={`about py-20 ${
-          inView ? "animate__animated animate__fadeIn" : ""
-        }`}
-        id="about"
-      >
+       <section
+      ref={ref}
+      style={{
+        backgroundImage: `url('${bg}')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+      className={`about py-20 ${inView ? "animate__animated animate__fadeIn" : ""}`}
+      id="about"
+    >
         <div className="container mx-auto">
           <div className="flex flex-wrap justify-center">
             <div
@@ -56,10 +60,10 @@ const About = () => {
                 <img
                   src={about.src}
                   alt="Profile"
-                  className="md:w-96 w-80 border-4 border-white rounded-lg shadow-lg m-auto relative z-20 scale-x-[-1]"
+                  className="md:w-[26rem] xl:ml-20 w-80 border-4 border-white bg-transparent rounded-lg shadow-lg m-auto relative z-20 scale-x-[-1]"
                 />
-                <div className="absolute w-80 md:w-96 h-[380px] md:h-[450px] bg-gray-300 -top-8 -right-8 rounded-lg border-b-4 border-[#171f56]"></div>
-                <div className="absolute w-16 h-16 bg-[#171f56] -top-4 -right-4 rounded-lg"></div>
+                {/* <div className="absolute w-80 md:w-96 h-[380px] md:h-[450px] bg-gray-300 -top-8 -right-8 rounded-lg border-b-4 border-[#171f56]"></div>
+                <div className="absolute w-16 h-16 bg-[#171f56] -top-4 -right-4 rounded-lg"></div> */}
               </div>
             </div>
 
@@ -69,8 +73,8 @@ const About = () => {
               }`}
             >
               <h2 className="text-3xl font-bold text-left mb-2 relative">
-                <span className="text-[#232c77] font-bold uppercase">
-                  About Dr. Arpit Bansal
+                <span className="text-[#232c77] font-bold uppercase mainPrimary">
+                  About Dr Arpit Bansal
                 </span>
                 <div className="absolute top-0 right-0 w-10 h-7 bg-[#171f56] opacity-20 rotate-45"></div>
               </h2>
@@ -104,7 +108,7 @@ const About = () => {
           </div>
 
           <div
-            className={`lg:pt-10 px-3 duration-1000 ${
+            className={` px-3 duration-1000 ${
               inView ? "animate__animated animate__fadeInRight" : ""
             }`}
             style={{ animationDelay: "1s" }}
@@ -128,7 +132,7 @@ const About = () => {
             </p>
 
             <p className="text-base text-gray-800 mb-4 text-justify">
-              As a healthcare professional, Dr. Arpit Bansal is always keen on
+              As a healthcare professional, Dr Arpit Bansal is always keen on
               cure, rather than treating a symptom. Interested in changing
               lifestyle as a medicine, he launched his online social media
               presence, via Instagram and YouTube in 2023. Already at 68K
@@ -138,7 +142,7 @@ const About = () => {
             </p>
 
             <p className="text-base text-gray-800 mb-4 text-justify">
-              Dr. Arpit Bansal conducts Cancer Awareness Programmes, especially
+              Dr Arpit Bansal conducts Cancer Awareness Programmes, especially
               in schools and colleges to enlighten youth about the importance of
               the Cervical Cancer Vaccine. Dr Arpit Bansal remained a proactive
               voice in the fight against COVID-19. He devotes time to

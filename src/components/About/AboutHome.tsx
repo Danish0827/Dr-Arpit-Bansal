@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import gallery1 from "@/assets/images/gallery/13.jpg";
 
 const AboutHome = () => {
+  const bg = "./white bg.png";
   const sectionRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
 
@@ -30,7 +31,16 @@ const AboutHome = () => {
   }, []);
 
   return (
-    <section className="about bg-white py-20" id="about" ref={sectionRef}>
+    <section
+      style={{
+        backgroundImage: `url('${bg}')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+      className="about bg-white py-20"
+      id="about"
+      ref={sectionRef}
+    >
       <div className="container mx-auto">
         <div className="flex flex-wrap justify-center items-start">
           <div
@@ -55,8 +65,8 @@ const AboutHome = () => {
             }`}
           >
             <h2 className="text-3xl font-bold text-left mb-2 relative">
-              <span className="text-[#232c77] font-bold uppercase">
-                About Dr. Arpit Bansal
+              <span className="text-[#232c77] font-bold uppercase mainPrimary">
+                About Dr Arpit Bansal
               </span>
               <div className="absolute top-0 right-0 w-10 h-7 bg-[#171f56] opacity-20 rotate-45"></div>
             </h2>
@@ -74,7 +84,7 @@ const AboutHome = () => {
               minimally invasive surgical procedures, exceptional humble
               counselling skills especially for cancer and obesity patients.
               Also had in depth knowledge regarding bariatric nutrition, cancer
-              nutrition and disease preventive nutrition
+              nutrition and disease preventive nutrition.
             </p>
             <div className="flex gap-4">
               <a

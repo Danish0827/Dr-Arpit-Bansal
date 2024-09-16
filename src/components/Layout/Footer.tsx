@@ -43,7 +43,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 xl:grid-cols-3">
           {/* About Section */}
           <div>
-            <span className="dancinglogo text-2xl pr-3 md:text-3xl xl:text-4xl font-black text-transparent bg-clip-text bg-[#232c77]">
+            <span className="text-2xl pr-3 md:text-3xl xl:text-4xl font-black text-transparent bg-clip-text bg-[#232c77] mainPrimary">
               Dr Arpit Bansal
             </span>
 
@@ -98,25 +98,25 @@ const Footer = () => {
                     href={"/about"}
                   >
                     <ArrowRight size={16} />
-                    <span>About Me</span>
+                    <span>About Dr Arpit</span>
                   </Link>
                 </li>
                 <li>
                   <Link
                     className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
-                    href={"/treatments"}
+                    href={"/gallery"}
                   >
                     <ArrowRight size={16} />
-                    <span>Our Treatments</span>
+                    <span>Gallery</span>
                   </Link>
                 </li>
                 <li>
                   <Link
                     className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
-                    href={"/schedule"}
+                    href={"/testimonial"}
                   >
                     <ArrowRight size={16} />
-                    <span>Schedule</span>
+                    <span>Testimonial</span>
                   </Link>
                 </li>
                 <li>
@@ -134,7 +134,7 @@ const Footer = () => {
                     href={"/book-appointment"}
                   >
                     <ArrowRight size={16} />
-                    <span>Book Appointment</span>
+                    <span>Contact Us</span>
                   </Link>
                 </li>
               </ul>

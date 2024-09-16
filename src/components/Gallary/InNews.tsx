@@ -1,5 +1,5 @@
 "use client";
-import portfolioDatas from "@/data/portfolioData";
+import inNewsDatas from "@/data/inNewsData";
 import { useState, useEffect } from "react";
 import { Image } from "antd";
 
@@ -18,7 +18,7 @@ interface PortfolioData {
   purl?: string; // Optional URL
 }
 
-const Gallery = () => {
+const InNews = () => {
   const bg = "./white bg.png";
   const [activeTab, setActiveTab] = useState("Home");
   const [tabColors, setTabColors] = useState({
@@ -53,11 +53,11 @@ const Gallery = () => {
     >
       <div className={`container mx-auto px-4 py-16`}>
         <h5 className="text-xl md:text-2xl lg:text-3xl font-bold text-center pb-5 lg:pb-7 text-[#232c77] uppercase mainPrimary">
-          Dr. Arpit Bansal
+          In News
         </h5>
 
         <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
-          {portfolioDatas.map((item: PortfolioData) => (
+          {inNewsDatas.map((item: PortfolioData) => (
             <div key={item.id}>
               {" "}
               {/* Add a wrapper div with a unique key */}
@@ -79,4 +79,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default InNews;

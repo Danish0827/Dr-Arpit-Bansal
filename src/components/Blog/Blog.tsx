@@ -64,6 +64,7 @@ const BlogPostComponent = ({
 };
 
 const Blog = ({ title }: { title: string }) => {
+  const bg = "./white bg.png";
   const itemsPerPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
@@ -121,13 +122,20 @@ const Blog = ({ title }: { title: string }) => {
   const data = title === "home" ? blogPosts.slice(0, 3) : blogPosts;
 
   return (
-    <div className={title === "home" ? "bg-white" : ""}>
+    <div
+      style={{
+        backgroundImage: `url('${bg}')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+      className={title === "home" ? "bg-white" : ""}
+    >
       <div
         className={`container mx-auto px-4 ${
           title === "home" ? "py-10 pt-10 " : "py-16"
         }`}
       >
-        <h5 className="text-xl md:text-2xl lg:text-3xl font-bold text-center pb-5 lg:pb-7 text-[#232c77] uppercase">
+        <h5 className="text-xl md:text-2xl lg:text-3xl font-bold text-center pb-5 lg:pb-7 text-[#232c77] uppercase mainPrimary">
           Patients Education
         </h5>
 
@@ -150,7 +158,7 @@ const Blog = ({ title }: { title: string }) => {
               )
             : data.map((post, index) => (
                 <div
-                className="w-full md:w-1/2 lg:w-1/3 p-4"
+                  className="w-full md:w-1/2 lg:w-1/3 p-4"
                   key={post.ID}
                   data-id={index}
                   ref={(el) => (observerRefs.current[index] = el)}

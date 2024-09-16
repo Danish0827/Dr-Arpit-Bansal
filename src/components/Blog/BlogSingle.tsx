@@ -4,7 +4,7 @@ import BlogLatest from "./BlogLatest";
 
 const BlogSingleSkeleton = () => (
   <div className="container py-16 mx-auto p-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div className="content-area col-span-2">
+    <div className="content-area col-span-2">
       <div className="bg-gray-300 h-48 w-full mb-4 rounded-md"></div>
       <div className="h-6 bg-gray-300 rounded w-3/4 mb-4"></div>
       <div className="h-4 bg-gray-300 rounded w-full mb-2"></div>
@@ -26,6 +26,7 @@ const BlogSingleSkeleton = () => (
 );
 
 const BlogSingle = ({ params }: any) => {
+  const bg = "./white bg.png";
   const [blog, setBlog] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
@@ -49,7 +50,14 @@ const BlogSingle = ({ params }: any) => {
   }
 
   return (
-    <div className="container py-16 mx-auto p-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div
+      style={{
+        backgroundImage: `url('${bg}')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+      className="container py-16 mx-auto p-4 grid grid-cols-1 md:grid-cols-3 gap-4"
+    >
       <div className="content-area col-span-2">
         <div className="type-post mb-6 bg-white shadow-md p-4 rounded-md">
           <div className="entry-cover relative">

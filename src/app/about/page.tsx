@@ -6,6 +6,7 @@ import { Metadata } from "next";
 import React from "react";
 import abouts from "@/assets/images/breadcrump/1.png";
 import Counter from "@/components/About/Counter";
+import Passion from "@/components/About/Passion";
 
 export const metadata: Metadata = {
   title: "About | Dr Arpit Bansal",
@@ -23,6 +24,7 @@ const about = () => {
         version={false}
       />
       <About />
+      <Passion/>
       <div className="bg-white">
         <Counter />
       </div>

@@ -1,4 +1,5 @@
 import AboutHome from "@/components/About/AboutHome";
+import LogoCarousel from "@/components/About/LogoCarousel";
 import SpecialityComp from "@/components/About/SpecialityComp";
 import Blog from "@/components/Blog/Blog";
 import RequestAppointment from "@/components/Contact/RequestAppointment";
@@ -25,6 +26,7 @@ export default function Home() {
       <Blog title="home" />
       <InstaFeed />
       <GoogleFeed />
+      <LogoCarousel/>
       <RequestAppointment/>
       {/* <FloatingAppointment /> */}
     </>

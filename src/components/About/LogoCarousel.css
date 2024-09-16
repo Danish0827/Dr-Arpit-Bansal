@@ -1,0 +1,23 @@
+.single-client img {
+    width: 100%; /* Make the logo responsive */
+    height: auto;
+  }
+  
+  .slick-prev,
+  .slick-next {
+    z-index: 1;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slick-prev:before,
+  .slick-next:before {
+    color: #fff;
+    font-size: 20px;
+  }
+  

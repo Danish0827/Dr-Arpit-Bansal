@@ -41,7 +41,7 @@ const SpecialityComp: React.FC = () => {
 
     fetchTreatments();
   }, []);
-
+  const bg = "./white bg.png";
   return (
     <>
       <div
@@ -52,7 +52,7 @@ const SpecialityComp: React.FC = () => {
         ref={sectionRef} // Attach ref to the section
       >
         <div className="block px-5 lg:px-20">
-          <h5 className="text-xl md:text-2xl lg:text-3xl font-bold text-center pb-5 lg:pb-7 text-[#232c77] uppercase">
+          <h5 className="text-xl md:text-2xl lg:text-3xl font-bold text-center pb-5 lg:pb-7 text-[#232c77] uppercase mainPrimary">
             Our Speciality
           </h5>
         </div>

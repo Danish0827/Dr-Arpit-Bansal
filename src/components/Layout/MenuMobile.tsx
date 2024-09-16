@@ -27,6 +27,12 @@ interface Treatment {
   slug: string;
 }
 
+interface Disease {
+  id: number;
+  title: string;
+  slug: string;
+}
+
 const MenuMobile: React.FC<MenuMobileProps> = ({
   showCatMenu,
   setShowCatMenu,
@@ -37,6 +43,7 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
 }) => {
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
   const [treatments, setTreatments] = useState<Treatment[]>([]); // State for treatments data
+  const [diseases, setDiseases] = useState<Disease[]>([]); // State for diseases data
 
   // Fetch the treatments data from the API
   useEffect(() => {
@@ -61,6 +68,29 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
     fetchTreatments();
   }, []);
 
+  // Fetch the diseases data from the API
+  useEffect(() => {
+    const fetchDiseases = async () => {
+      try {
+        const response = await fetch(
+          "https://drarpitbck.demo-web.live/wp-json/custom/v1/diseases?per_page=1000"
+        );
+        const data = await response.json();
+
+        // Ensure we get an array of diseases
+        if (data?.diseases && Array.isArray(data?.diseases)) {
+          setDiseases(data?.diseases);
+        } else {
+          console.error("Unexpected data format:", data);
+        }
+      } catch (error) {
+        console.error("Error fetching diseases:", error);
+      }
+    };
+
+    fetchDiseases();
+  }, []);
+
   const menuItems = [
     {
       id: 1,
@@ -76,12 +106,17 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
       id: 3,
       name: "Our Speciality",
       url: "#",
-      hasDropdown: true, // Mark this item as having a dropdown
+      hasDropdown: true,
+    },
+    {
+      id: 4,
+      name: "Gallery",
+      url: "/gallery",
     },
     {
       id: 5,
-      name: "Gallery",
-      url: "/gallery",
+      name: "In News",
+      url: "/in-news",
     },
     {
       id: 6,
@@ -91,7 +126,8 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
     {
       id: 7,
       name: "Patients Education",
-      url: "/patients-education",
+      url: "#",
+      hasDropdown: true,
     },
   ];
 
@@ -101,62 +137,81 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
 
   return (
     <div className="flex flex-col lg:hidden w-full font-normal text-lg absolute top-20 h-[100vh] overflow-x-auto left-0 bg-white border-t text-black z-50">
-    <ul className="flex flex-col lg:hidden w-full font-normal text-lg  h-[85vh] overflow-x-auto left-0 bg-white border-t text-black z-50">
-      {menuItems.map((item) => (
-        <React.Fragment key={item.id}>
-          <li className="py-4 px-5 border-b">
-            {item.hasDropdown ? (
-              <>
-                <div
-                  className="flex justify-between items-center cursor-pointer"
-                  onClick={() => handleDropdownToggle(item.id)}
-                >
-                  <span>{item.name}</span>
-                  <span>{activeDropdown === item.id ? "-" : "+"}</span>
-                </div>
+      <ul className="flex flex-col lg:hidden w-full font-normal text-lg h-[85vh] overflow-x-auto left-0 bg-white border-t text-black z-50">
+        {menuItems.map((item) => (
+          <React.Fragment key={item.id}>
+            <li className="py-4 px-5 border-b">
+              {item.hasDropdown ? (
+                <>
+                  <div
+                    className="flex justify-between items-center cursor-pointer"
+                    onClick={() => handleDropdownToggle(item.id)}
+                  >
+                    <span>{item.name}</span>
+                    <span>{activeDropdown === item.id ? "-" : "+"}</span>
+                  </div>
 
-                {/* Dropdown for 'Our Speciality' */}
-                {activeDropdown === item.id && (
-                  <ul className="pl-3 pt-2">
-                    {treatments.map((treatment) => (
-                      <li key={treatment.id} className="py-2">
-                        <Link
-                          className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
-                          href={`/speciality/${treatment.slug}`}
-                        >
-                          <ArrowRight size={16} />
-                          <span onClick={() => setMobileMenu(false)}>
-                            {treatment.title}
-                          </span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </>
-            ) : (
-              <Link href={item.url}>
-                <span onClick={() => setMobileMenu(false)}>{item.name}</span>
-              </Link>
-            )}
-          </li>
-        </React.Fragment>
-      ))}
+                  {/* Dropdown for 'Our Speciality' */}
+                  {activeDropdown === item.id && item.name === "Our Speciality" && (
+                    <ul className="pl-3 pt-2">
+                      {treatments.map((treatment) => (
+                        <li key={treatment.id} className="py-2">
+                          <Link
+                            className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
+                            href={`/speciality/${treatment.slug}`}
+                          >
+                            <ArrowRight size={16} />
+                            <span onClick={() => setMobileMenu(false)}>
+                              {treatment.title}
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
 
-      {/* Render subMenuData if it's not null */}
-      {subMenuData && subMenuData.length > 0 && (
-        <div className="pt-2">
-          <h3 className="px-5 text-md font-semibold">Sub Menu</h3>
-          {subMenuData.map((subItem,index) => (
-            <li key={subItem.id} className="py-2 px-5 border-b">
-              <Link href={subItem.url}>
-                <span onClick={() => setMobileMenu(false)}>{subItem.name}</span>
-              </Link>
+                  {/* Dropdown for 'Patients Education' */}
+                  {activeDropdown === item.id && item.name === "Patients Education" && (
+                    <ul className="pl-3 pt-2">
+                      {diseases.map((disease) => (
+                        <li key={disease.id} className="py-2">
+                          <Link
+                            className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
+                            href={`/patients-education/${disease.slug}`}
+                          >
+                            <ArrowRight size={16} />
+                            <span onClick={() => setMobileMenu(false)}>
+                              {disease.title}
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </>
+              ) : (
+                <Link href={item.url}>
+                  <span onClick={() => setMobileMenu(false)}>{item.name}</span>
+                </Link>
+              )}
             </li>
-          ))}
-        </div>
-      )}
-    </ul>
+          </React.Fragment>
+        ))}
+
+        {/* Render subMenuData if it's not null */}
+        {subMenuData && subMenuData.length > 0 && (
+          <div className="pt-2">
+            <h3 className="px-5 text-md font-semibold">Sub Menu</h3>
+            {subMenuData.map((subItem) => (
+              <li key={subItem.id} className="py-2 px-5 border-b">
+                <Link href={subItem.url}>
+                  <span onClick={() => setMobileMenu(false)}>{subItem.name}</span>
+                </Link>
+              </li>
+            ))}
+          </div>
+        )}
+      </ul>
     </div>
   );
 };
