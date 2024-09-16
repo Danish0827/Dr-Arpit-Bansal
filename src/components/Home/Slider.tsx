@@ -65,6 +65,14 @@ const Slider: React.FC = () => {
               className="relative w-full h-auto flex items-center justify-left banner-animate"
             >
               <img src={slide.backgroundImage} alt="" />
+
+              {/* Overlay for the top part */}
+              <div className="overlay-top-part"></div>
+              <div className="overlay-left-part"></div>
+
+              {/* Overlay for the bottom part */}
+              <div className="overlay-bottom-part"></div>
+              <div className="overlay-right-part"></div>
             </div>
           </SwiperSlide>
         ))}

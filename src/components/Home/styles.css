@@ -59,85 +59,128 @@
     transform: rotate(-90deg);
   }
   
-  h1.typetext {
-    color: #171f58;
-    background: -webkit-linear-gradient(25deg, #fff, #fff);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 3rem;
-    font-weight: 500;
+  .slider-container {
+    position: relative;
+    width: 100%;
+    height: auto;
     overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid;
-    animation: typetext 1.5s steps(90) 1.5s 1 normal both, cursor 1s step-end infinite;
-    position: relative;
   }
   
-  @keyframes typetext {
-    from {
-      width: 0;
-    }
-  
-    to {
-      width: 100%;
-    }
-  }
-  
-  @keyframes cursor {
-    50% {
-      border-color: transparent;
-    }
-  }
-  .split-container {
-    position: relative;
+  .overlay-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    z-index: 100;
     display: flex;
-    flex-direction: column;
   }
   
-  .split {
-    background-size: cover;
-    background-position: center;
-    width: 100%;
+  .overlay-part {
+    width: 50%; /* Each part covers half of the screen */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.787); /* Semi-transparent black overlay */
+    transition: transform 3s ease;
+    z-index: 100;
   }
   
-  .split-top {
-    height: 50%;
-    clip-path: inset(0 0 50% 0); /* Top half of the image */
-    animation: splitTop 1s ease forwards;
-  }
   
-  .split-bottom {
-    height: 50%;
-    clip-path: inset(50% 0 0 0); /* Bottom half of the image */
-    animation: splitBottom 1s ease forwards;
+  /* Overlay animation for the top part */
+.overlay-top-part {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Top 50% of the screen */
+  background-color: rgba(180, 188, 230, 0.746); /* Semi-transparent black */
+  opacity: 0;
+  z-index: 100;
+  animation: fade-in-top 3s forwards; /* Fading in from the top */
+}
+
+/* Overlay animation for the bottom part */
+.overlay-bottom-part {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Bottom 50% of the screen */
+  background-color: rgba(180, 188, 230, 0.746); /* Semi-transparent black */
+  opacity: 0;
+  z-index: 100;
+  animation: fade-in-bottom 3s forwards; /* Fading in from the bottom */
+}
+
+/* Keyframes for fading in from the top */
+@keyframes fade-in-top {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
   }
-  
-  /* Split animations */
-  @keyframes splitTop {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-100%);
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(-100%);
   }
-  
-  @keyframes splitBottom {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(100%);
-    }
+}
+
+/* Keyframes for fading in from the bottom */
+@keyframes fade-in-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
   }
-  
-  .banner-animate .split-top {
-    animation: splitTop 1s ease forwards;
+  100% {
+    opacity: 1;
+    transform: translateY(100%);
   }
-  
-  .banner-animate .split-bottom {
-    animation: splitBottom 1s ease forwards;
+}
+
+/* Overlay animation for the left part */
+.overlay-left-part {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* Left 50% of the screen */
+  height: 100%;
+  background-color: rgba(180, 188, 230, 0.746); /* Semi-transparent color */
+  opacity: 0;
+  z-index: 100;
+  animation: fade-in-left 3s forwards; /* Fading in from the left */
+}
+
+/* Overlay animation for the right part */
+.overlay-right-part {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%; /* Right 50% of the screen */
+  height: 100%;
+  background-color: rgba(180, 188, 230, 0.746); /* Semi-transparent color */
+  opacity: 0;
+  z-index: 100;
+  animation: fade-in-right 3s forwards; /* Fading in from the right */
+}
+
+/* Keyframes for fading in from the left */
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
   }
-  
+  100% {
+    opacity: 1;
+    transform: translateX(-100%);
+  }
+}
+
+/* Keyframes for fading in from the right */
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+}

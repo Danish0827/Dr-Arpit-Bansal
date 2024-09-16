@@ -92,14 +92,14 @@ const FloatingAppointment = () => {
       {show === true && (
         <>
           {/* Large screen button */}
-          <div className="flex gap-3 items-center cursor-pointer fixed -right-[108px] z-50 -rotate-90 px-7 py-2 rounded-t-xl bottom-[63%] bg-[#232c77] ">
+          <div className="flex gap-3 items-center cursor-pointer fixed -right-[108px] md:-right-[100px] z-50 -rotate-90 px-7 py-2 rounded-t-xl bottom-[63%] bg-[#232c77] ">
             <h2 onClick={handleAppointmentClick} className="text-white ">
               Book Appointment
             </h2>
             <h2 className="text-white">
               <IoMdCloseCircleOutline
                 onClick={handleHideAppointment}
-                className="md:hidden text-lg"
+                className="md:hidden text-lg mb-3"
               />
             </h2>
           </div>
