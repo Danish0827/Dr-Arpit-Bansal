@@ -56,11 +56,11 @@ const About = () => {
                 inView ? "animate__animated animate__fadeInLeft" : ""
               }`}
             >
-              <div className="relative lg:-ml-20 -ml-8">
+              <div className="relative">
                 <img
                   src={about.src}
                   alt="Profile"
-                  className="md:w-[26rem] xl:ml-20 w-80 border-4 border-white bg-transparent rounded-lg shadow-lg m-auto relative z-20 scale-x-[-1]"
+                  className="md:w-[26rem]  w-80 border-4 border-white bg-transparent rounded-lg shadow-lg m-auto relative z-20 scale-x-[-1]"
                 />
                 {/* <div className="absolute w-80 md:w-96 h-[380px] md:h-[450px] bg-gray-300 -top-8 -right-8 rounded-lg border-b-4 border-[#171f56]"></div>
                 <div className="absolute w-16 h-16 bg-[#171f56] -top-4 -right-4 rounded-lg"></div> */}
@@ -68,7 +68,7 @@ const About = () => {
             </div>
 
             <div
-              className={`lg:pl-8 px-3 w-full lg:w-1/2 xl:w-2/3 ${
+              className={`lg:pl-8 pt-6 lg:pt-0 px-3 w-full lg:w-1/2 xl:w-2/3 ${
                 inView ? "animate__animated animate__fadeInRight" : ""
               }`}
             >
@@ -108,7 +108,7 @@ const About = () => {
           </div>
 
           <div
-            className={` px-3 duration-1000 ${
+            className={`lg:pt-5 px-3 duration-1000 ${
               inView ? "animate__animated animate__fadeInRight" : ""
             }`}
             style={{ animationDelay: "1s" }}

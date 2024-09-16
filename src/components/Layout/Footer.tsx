@@ -64,7 +64,7 @@ const Footer = () => {
               <p className="font-bold text-xl">Our Speciality</p>
               <div className="w-20 h-0.5 bg-primary rounded-full"></div>
               <ul className="flex flex-col mt-4 space-y-2 text-base">
-                {treatments.slice(0, 6).map((treatment) => (
+                {treatments.slice(0, 7).map((treatment) => (
                   <li key={treatment.id}>
                     <Link
                       className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
@@ -108,6 +108,15 @@ const Footer = () => {
                   >
                     <ArrowRight size={16} />
                     <span>Gallery</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
+                    href={"/in-news"}
+                  >
+                    <ArrowRight size={16} />
+                    <span>In News</span>
                   </Link>
                 </li>
                 <li>
