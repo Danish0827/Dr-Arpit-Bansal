@@ -110,7 +110,7 @@ const ContactForm: React.FC = () => {
           </div>
           <div className="mb-6 flex gap-2 w-full">
             <input
-              type="number"
+              type="text"
               required
               name="phone"
               value={phone || ""}
