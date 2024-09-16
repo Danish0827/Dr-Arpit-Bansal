@@ -13,6 +13,23 @@ export const metadata: Metadata = {
   title: "Dr Arpit Bansal",
   description:
     "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS Is one of the renowned & Advanced Laparoscopic & Onco Surgeon & Male Infertility consultant.",
+  openGraph: {
+    title: "Dr Arpit Bansal - Cancer Specialist",
+    description:
+      "Dr. Arpit Bansal is one of the renowned Advanced Laparoscopic & Onco Surgeons and Male Infertility Consultants.",
+    url: "https://www.drarpitbansal.com",
+    type: "website",
+    locale: "en_US",
+    siteName: "Dr Arpit Bansal",
+    images: [
+      {
+        url: "./icon.png",
+        width: 500,
+        height: 500,
+        alt: "Dr Arpit Bansal - Cancer Specialist",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

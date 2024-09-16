@@ -66,121 +66,95 @@
     overflow: hidden;
   }
   
-  .overlay-animation {
+  .overlay-part {
     position: absolute;
+    background-color: rgba(180, 188, 230, 0.746); /* Semi-transparent color */
+    opacity: 0;
+    z-index: 100;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+  
+  .overlay-top-part {
     top: 0;
     left: 0;
     width: 100%;
+    height: 50%;
+    animation-name: fade-in-top;
+  }
+  
+  .overlay-bottom-part {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    animation-name: fade-in-bottom;
+  }
+  
+  .overlay-left-part {
+    top: 0;
+    left: 0;
+    width: 50%;
     height: 100%;
-    z-index: 100;
-    display: flex;
+    animation-name: fade-in-left;
   }
   
-  .overlay-part {
-    width: 50%; /* Each part covers half of the screen */
+  .overlay-right-part {
+    top: 0;
+    right: 0;
+    width: 50%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.787); /* Semi-transparent black overlay */
-    transition: transform 3s ease;
-    z-index: 100;
+    animation-name: fade-in-right;
   }
   
+  /* Keyframes */
+  @keyframes fade-in-top {
+    0% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(-100%);
+    }
+  }
   
-  /* Overlay animation for the top part */
-.overlay-top-part {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%; /* Top 50% of the screen */
-  background-color: rgba(180, 188, 230, 0.746); /* Semi-transparent black */
-  opacity: 0;
-  z-index: 100;
-  animation: fade-in-top 3s forwards; /* Fading in from the top */
-}
-
-/* Overlay animation for the bottom part */
-.overlay-bottom-part {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50%; /* Bottom 50% of the screen */
-  background-color: rgba(180, 188, 230, 0.746); /* Semi-transparent black */
-  opacity: 0;
-  z-index: 100;
-  animation: fade-in-bottom 3s forwards; /* Fading in from the bottom */
-}
-
-/* Keyframes for fading in from the top */
-@keyframes fade-in-top {
-  0% {
-    opacity: 0;
-    transform: translateY(0);
+  @keyframes fade-in-bottom {
+    0% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(100%);
+    }
   }
-  100% {
-    opacity: 1;
-    transform: translateY(-100%);
+  
+  @keyframes fade-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(-100%);
+    }
   }
-}
-
-/* Keyframes for fading in from the bottom */
-@keyframes fade-in-bottom {
-  0% {
-    opacity: 0;
-    transform: translateY(0);
+  
+  @keyframes fade-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(100%);
+    }
   }
-  100% {
-    opacity: 1;
-    transform: translateY(100%);
+  
+  .autoplay-progress {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
   }
-}
-
-/* Overlay animation for the left part */
-.overlay-left-part {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%; /* Left 50% of the screen */
-  height: 100%;
-  background-color: rgba(180, 188, 230, 0.746); /* Semi-transparent color */
-  opacity: 0;
-  z-index: 100;
-  animation: fade-in-left 3s forwards; /* Fading in from the left */
-}
-
-/* Overlay animation for the right part */
-.overlay-right-part {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%; /* Right 50% of the screen */
-  height: 100%;
-  background-color: rgba(180, 188, 230, 0.746); /* Semi-transparent color */
-  opacity: 0;
-  z-index: 100;
-  animation: fade-in-right 3s forwards; /* Fading in from the right */
-}
-
-/* Keyframes for fading in from the left */
-@keyframes fade-in-left {
-  0% {
-    opacity: 0;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(-100%);
-  }
-}
-
-/* Keyframes for fading in from the right */
-@keyframes fade-in-right {
-  0% {
-    opacity: 0;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(100%);
-  }
-}
+  
