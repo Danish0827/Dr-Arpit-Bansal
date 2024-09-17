@@ -95,7 +95,7 @@ const NewHeader = () => {
     >
       <Link href={"/"} className="hidden lg:block p-5">
         <span className="mainPrimary uppercase text-3xl md:text-2xl xl:text-3xl font-bold text-transparent bg-clip-text bg-[#232c77] ">
-          Dr Arpit Bansal
+          Dr. Arpit Bansal
         </span>
       </Link>
 
@@ -133,7 +133,7 @@ const NewHeader = () => {
         </div>
         <Link href={"/"} className="block">
           <span className="mainPrimary uppercase text-3xl md:text-3xl xl:text-4xl font-bold text-transparent bg-clip-text bg-[#232c77] ">
-            Dr Arpit Bansal
+            Dr. Arpit Bansal
           </span>
         </Link>
 

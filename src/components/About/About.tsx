@@ -76,7 +76,7 @@ const About = () => {
             >
               <h2 className="text-3xl font-bold text-left mb-2 relative">
                 <span className="text-[#232c77] font-bold uppercase mainPrimary">
-                  About Dr Arpit Bansal
+                  About Dr. Arpit Bansal
                 </span>
                 <div className="absolute top-0 right-0 w-10 h-7 bg-[#171f56] opacity-20 rotate-45"></div>
               </h2>

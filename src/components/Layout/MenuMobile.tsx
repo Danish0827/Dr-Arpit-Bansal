@@ -99,7 +99,7 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
     },
     {
       id: 2,
-      name: "About Dr Arpit",
+      name: "About Dr. Arpit",
       url: "/about",
     },
     {
