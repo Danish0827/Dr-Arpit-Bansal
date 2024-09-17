@@ -99,7 +99,7 @@ const FloatingAppointment = () => {
             <h2 className="text-white">
               <IoMdCloseCircleOutline
                 onClick={handleHideAppointment}
-                className="md:hidden text-lg mb-3"
+                className="md:hidden text-lg "
               />
             </h2>
           </div>
@@ -112,7 +112,7 @@ const FloatingAppointment = () => {
         <div className="block fixed -right-[10px] z-50 -rotate-90 px-4 pt-3 pb-1 rounded-t-xl bottom-[70%] bg-[#232c77]">
           <MdMenuOpen
             onClick={handleShowAppointment}
-            className="md:hidden text-xl text-white rotate-90"
+            className="md:hidden text-xl text-white rotate-90 mb-3"
           />
         </div>
       )}
