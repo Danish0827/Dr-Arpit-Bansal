@@ -39,16 +39,18 @@ const About = () => {
 
   return (
     <>
-       <section
-      ref={ref}
-      style={{
-        backgroundImage: `url('${bg}')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-      className={`about py-20 ${inView ? "animate__animated animate__fadeIn" : ""}`}
-      id="about"
-    >
+      <section
+        ref={ref}
+        style={{
+          backgroundImage: `url('${bg}')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        className={`about py-20 ${
+          inView ? "animate__animated animate__fadeIn" : ""
+        }`}
+        id="about"
+      >
         <div className="container mx-auto">
           <div className="flex flex-wrap justify-center">
             <div
@@ -81,106 +83,101 @@ const About = () => {
               <span className="text-xl mt-0 lg:mt-2 mb-2">
                 MBBS, MS - General Surgery
               </span>
-              <p className="text-base text-gray-800 my-4 text-justify">
-                Laparoscopic Surgeon, General Surgeon, Bariatric Surgeon,
-                Special Interest in Surgical Oncology 15 Years Experience
-                Overall (10 years as specialist)
-              </p>
-              <p className="text-base text-gray-800 my-4 text-justify">
-                Dr Arpit Bansal, an Advanced Laparoscopy and Cancer Surgeon, has
-                mastered an art, which many struggle to understand. A man of
+              <p className="text-base text-gray-800 my-4 text-left">
+                Dr. Arpit Bansal, an Advanced Laparoscopy and Cancer Surgeon,
+                has mastered an art that many struggle to understand. A man of
                 varied interests, he has created a fine balance between his
-                profession and passion. According to Dr Arpit Bansal, with time
+                profession and passion. According to Dr. Arpit Bansal, with time
                 management and focus, one can excel in both fields. His journey
-                stands testament to his extraordinary talent and unyielding
+                stands as a testament to his extraordinary talent and unyielding
                 determination.
               </p>
-              <p className="text-base hidden xl:block text-gray-800 mb-4 text-justify">
-                Dr Arpit Bansal always wanted to be a doctor, owing to his
-                empathetic nature. Dr Bansal is the Director of the 200-bedded
-                NABH Accredited Multi-Specialty Jeevan Jyoti Hospital in
-                Prayagraj, Uttar Pradesh. With his Fellowship from UK, he is
-                future-ready for Robotic surgeries. Dr Arpit Bansal has trained
-                under some of the finest surgeons in India, and emerged as an
-                iconic figure in the field of medicine.
+              <p className="text-base text-gray-800 my-4 text-left">
+                Growing up in Prayagraj, Dr. Arpit Bansal always aspired to be a
+                doctor, owing to his empathetic nature. He is the Director of
+                the 200-bed NABH Accredited Multi-Specialty Jeevan Jyoti
+                Hospital in Prayagraj, Uttar Pradesh. With a Fellowship from the
+                UK, he is future-ready for robotic surgeries. Dr. Arpit Bansal
+                has trained under some of the finest surgeons in India and has
+                emerged as an iconic figure in the field of medicine.
+              </p>
+              <p className="text-base hidden xl:block text-gray-800 mb-4 text-left">
+                Dr. Bansal is also among the biggest names in wildlife bird
+                photography, both in India and globally. Out of the 1,349
+                species of birds found in the country, Dr. Bansal has already
+                captured 1,145 through his dynamic lens. There are only 25 bird
+                photographers who have accomplished this feat, placing him in
+                6th position on the world-famous website, www.Ebird.org.
               </p>
             </div>
           </div>
 
           <div
-            className={`lg:pt-5 px-3 duration-1000 ${
+            className={`px-3 duration-1000 ${
               inView ? "animate__animated animate__fadeInRight" : ""
             }`}
             style={{ animationDelay: "1s" }}
           >
-            <p className="text-base xl:hidden text-gray-800 mb-4 text-justify">
-              Dr Arpit Bansal always wanted to be a doctor, owing to his
-              empathetic nature. Dr Bansal is the Director of the 200-bedded
-              NABH Accredited Multi-Specialty Jeevan Jyoti Hospital in
-              Prayagraj, Uttar Pradesh. With his Fellowship from UK, he is
-              future-ready for Robotic surgeries. Dr Arpit Bansal has trained
-              under some of the finest surgeons in India, and emerged as an
-              iconic figure in the field of medicine.
+            <p className="text-base xl:hidden text-gray-800 mb-4 text-left">
+              Dr. Bansal is also among the biggest names in wildlife bird
+              photography, both in India and globally. Out of the 1,349 species
+              of birds found in the country, Dr. Bansal has already captured
+              1,145 through his dynamic lens. There are only 25 bird
+              photographers who have accomplished this feat, placing him in 6th
+              position on the world-famous website, www.Ebird.org.
             </p>
-            <p className="text-base text-gray-800 mb-4 text-justify">
-              Dr Bansal is also among the biggest names in wildlife bird
-              photography, in India locally, and in the world, globally. Out of
-              the 1349 species of birds found in the country, Dr Bansal has
-              already captured 1145 through his dynamic lens. There are only 25
-              bird photographers who have done that. This feat places him at the
-              6th position on the world-famous website www.Ebird.org.
-            </p>
-
-            <p className="text-base text-gray-800 mb-4 text-justify">
-              As a healthcare professional, Dr Arpit Bansal is always keen on
-              cure, rather than treating a symptom. Interested in changing
-              lifestyle as a medicine, he launched his online social media
-              presence, via Instagram and YouTube in 2023. Already at 68K
-              organic followers, his reach is growing rapidly with his videos
-              putting health information out there, for humans to benefit from.
-              His engagement with his followers is enviable :)
+            <p className="text-base text-gray-800 mb-4 text-left">
+              As a healthcare professional, Dr. Arpit Bansal is always focused
+              on cures rather than merely treating symptoms. Interested in
+              promoting lifestyle changes as a form of medicine, he launched his
+              online social media presence via Instagram and YouTube in 2023.
+              With 68K organic followers and growing rapidly, his videos are
+              spreading valuable health information for people to benefit from.
+              His engagement with his followers is enviable.
             </p>
 
-            <p className="text-base text-gray-800 mb-4 text-justify">
-              Dr Arpit Bansal conducts Cancer Awareness Programmes, especially
-              in schools and colleges to enlighten youth about the importance of
-              the Cervical Cancer Vaccine. Dr Arpit Bansal remained a proactive
-              voice in the fight against COVID-19. He devotes time to
-              motivational speeches, talks on environment, nature and wildlife
+            <p className="text-base text-gray-800 mb-4 text-left">
+              Dr. Arpit Bansal conducts Cancer Awareness Programmes, especially
+              in schools and colleges, to educate the youth about the importance
+              of the Cervical Cancer Vaccine. He was also a proactive voice in
+              the fight against COVID-19. Additionally, he devotes time to
+              motivational speeches, talks on environmental and wildlife
               conservation, and encourages students to make choices that benefit
               Mother Earth.
             </p>
 
-            <p className="text-base text-gray-800 mb-4 text-justify">
-              So captivated with the Blue Mind Movement by Dr Wallace J Nichols,
-              he took up the 100 day challenge to be in, on, near, or under
-              water, and decided to launch the Blue Mind India chapter. To be in
-              your Blue Mind, to be in your moment, joyfully, is the source of
-              living healthy, happy and successfully.
+            <p className="text-base text-gray-800 mb-4 text-left">
+              So captivated by the Blue Mind Movement, introduced by Dr. Wallace
+              J. Nichols, Dr. Bansal took up the 100-day challenge to be in, on,
+              near, or under water. He then launched the Blue Mind India
+              chapter, promoting the idea that being in your “Blue
+              Mind”—joyfully in the moment—is the key to living healthily,
+              happily, and successfully.
             </p>
 
-            <p className="text-base text-gray-800 mb-4 text-justify">
-              Being a TEDX speaker, a doctor interested in prevention and cure,
-              meditative by nature, it is no wonder then that he is involved
-              with longevity, ageing healthily, and stem cell research. The
-              latest feather in his cap being the 9th IASRM Longevity Revolution
-              Conference, New Delhi, where he was the opening speaker. His talk
-              on hydration and ageing focussed on the importance of structured
-              water for living to your highest potential, as a human being.
+            <p className="text-base text-gray-800 mb-4 text-left">
+              A TEDx speaker, a doctor committed to prevention and cure,
+              meditative by nature, it's no wonder that Dr. Bansal is involved
+              in longevity research, healthy aging, and stem cell advancements.
+              The latest feather in his cap was being the opening speaker at the
+              9th IASRM Longevity Revolution Conference in New Delhi. His talk
+              on hydration and aging focused on the importance of structured
+              water in living to one's highest potential as a human being.
             </p>
-            <p className="text-base text-gray-800 mb-4 text-justify">
+
+            <p className="text-base text-gray-800 mb-4 text-left">
               An active runner, a tree saver, an underwater meditation and water
-              enthusiast, a healthcare professional, Dr Arpit Bansal has his
-              Blue Mind On, 24/7. Leading by example in his profession and his
-              passions.
+              enthusiast, Dr. Arpit Bansal embodies the Blue Mind philosophy
+              24/7. He leads by example in both his profession and his passions.
             </p>
-            <p className="text-base text-gray-800 mb-4 text-justify">
+            <p className="text-base text-gray-800 mb-4 text-left">
               His future goals include expanding his work in longevity,
-              functional medicine, robotic surgeries and stem cell regenerative
-              medicine. As also to spread the importance of GUT HEALTH and BLUE
-              MIND to the youth and masses through his channel. He is determined
-              to age healthily, age energetically and to be his best as a human
-              being, living on planet earth, for the time he is here.
+              functional medicine, robotic surgeries, and stem cell regenerative
+              medicine. He also aims to spread awareness about gut health and
+              the Blue Mind movement to the youth and the masses through his
+              channel. Dr. Bansal is determined to age healthily, energetically,
+              and to be the best human being he can be during his time on planet
+              Earth.
             </p>
             <div className="flex gap-4">
               <a

@@ -73,18 +73,21 @@ const AboutHome = () => {
             <span className="text-xl mt-0 lg:mt-2 mb-2">
               MBBS, MS - General Surgery
             </span>
-            <p className="text-base text-gray-800 my-4 text-justify">
-              Laparoscopic Surgeon, General Surgeon, Bariatric Surgeon, Special
-              Interest in Surgical Oncology 15 Years Experience Overall (10
-              years as specialist)
+            <p className="text-base text-gray-800 my-4 text-left">
+              I am Arpit Bansal, a doctor, specialized in advanced laparoscopic,
+              cancer, and laser surgery, combined with my role as the Director
+              of a 200-bed Multispecialty NABH Hospital in Prayagraj, positions
+              me uniquely to deliver content that is both authoritative and
+              engaging.
             </p>
-            <p className="text-base text-gray-800 my-4 text-justify">
-              Over 14 years rich experience with in-depth knowledge, skills &
-              clinical experience to perform both standard as well as advanced
-              minimally invasive surgical procedures, exceptional humble
-              counselling skills especially for cancer and obesity patients.
-              Also had in depth knowledge regarding bariatric nutrition, cancer
-              nutrition and disease preventive nutrition.
+            <p className="text-base text-gray-800 my-4 text-left">
+              As an experienced medical professional and health advocate, I am
+              passionate about leveraging social media, particularly through
+              Instagram and YouTube, to spread vital health knowledge.
+            </p>
+            <p className="text-base text-gray-800 my-4 text-left">
+              I am on a quest to promote prevention, to treat disease at it's
+              source, to age healthily, and to lead by example.
             </p>
             <div className="flex gap-4">
               <a

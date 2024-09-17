@@ -9,7 +9,7 @@ import Counter from "@/components/About/Counter";
 import Passion from "@/components/About/Passion";
 
 export const metadata: Metadata = {
-  title: "About | Dr Arpit Bansal",
+  title: "About | Dr. Arpit Bansal",
   description:
     "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS Is one of the renowned & Advanced Laparoscopic & Onco Surgeon & Male Infertility consultant.",
 };
@@ -18,7 +18,7 @@ const about = () => {
   return (
     <>
       <BreadCrumb
-        title={"Dr. Arpit Bansal"}
+        title={""}
         page={"About Dr. Arpit Bansal"}
         img={abouts.src}
         version={false}

@@ -6,7 +6,7 @@ import React from "react";
 import abouts from '@/assets/images/breadcrump/4.png'
 
 export const metadata: Metadata = {
-  title: "Patients Education | Dr Arpit Bansal",
+  title: "Patients Education | Dr. Arpit Bansal",
   description:
     "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS Is one of the renowned & Advanced Laparoscopic & Onco Surgeon & Male Infertility consultant.",
 };
