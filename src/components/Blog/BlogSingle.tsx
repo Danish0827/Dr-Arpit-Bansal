@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import BlogLatest from "./BlogLatest";
+import { Modal } from "antd";
 
 const BlogSingleSkeleton = () => (
   <div className="container py-16 mx-auto p-4 grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -29,6 +30,19 @@ const BlogSingle = ({ params }: any) => {
   const bg = "./white bg.png";
   const [blog, setBlog] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [videoSrc, setVideoSrc] = useState(""); // Initialize with an empty string for videoSrc
+
+  const openModal = () => {
+    setIsModalOpen(true);
+    setVideoSrc(blog?.video_link || ""); // Safely set video link
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setVideoSrc(""); // Clear the video link on modal close
+  };
 
   useEffect(() => {
     fetch(
@@ -61,11 +75,38 @@ const BlogSingle = ({ params }: any) => {
       <div className="content-area col-span-2">
         <div className="type-post mb-6 bg-white shadow-md p-4 rounded-md">
           <div className="entry-cover relative">
-            <img
-              className="w-full rounded-md"
-              alt={blog.title}
-              src={blog.image}
-            />
+            <div>
+              <img
+                className="w-full rounded-md"
+                alt={blog.title}
+                src={blog.image}
+                onClick={blog.video_link ? openModal : closeModal}
+              />
+            </div>
+            {/* Modal component */}
+            <Modal
+              open={isModalOpen}
+              onCancel={closeModal} // Close modal and clear video
+              title={<p className="py-3 px-2">{blog.title}</p>} // Use blog.title directly, not setVideo
+              className="modal"
+              centered
+              width={700}
+              footer={null} // Remove footer
+            >
+              {videoSrc ? (
+                <iframe
+                  width="100%"
+                  height="400"
+                  src={videoSrc}
+                  title={blog.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              ) : (
+                <p>No video available</p>
+              )}
+            </Modal>
             <div className="post-date-bg absolute top-2 left-2 bg-blue-600 text-white rounded-md p-2">
               <div className="post-date text-center">
                 <span>{new Date().toLocaleDateString()}</span>

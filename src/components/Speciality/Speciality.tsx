@@ -94,7 +94,7 @@ const Speciality: React.FC<SpecialityProps> = ({ title }) => {
           />
         </div>
         <div className="w-full lg:w-[50%] pt-5 lg:pt-0 flex flex-col justify-center px-5 space-y-3 lg:space-y-5 lg:-ml-20 animate-fade-in-right">
-          <h5 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#232c77] uppercase">
+          <h5 className="mainPrimary text-xl md:text-2xl lg:text-3xl font-bold text-[#232c77] uppercase">
             {decodeHtmlEntities(treatment.title)}
           </h5>
           <div
