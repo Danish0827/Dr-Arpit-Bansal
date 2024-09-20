@@ -141,7 +141,12 @@ const Menu: React.FC<MenuProps> = ({
       <ul className="hidden lg:flex items-center gap-4 xl:gap-5 text-black">
         {data.map((item) => {
           const isActive =
-            (item.hasDropdown && path.startsWith("/speciality")) ||
+            (item.hasDropdown &&
+              item.name === "Our Speciality" &&
+              path.startsWith("/speciality")) ||
+            (item.hasDropdown &&
+              item.name === "Patients Education" &&
+              path.startsWith("/patients-education")) ||
             path === item.url;
 
           return (

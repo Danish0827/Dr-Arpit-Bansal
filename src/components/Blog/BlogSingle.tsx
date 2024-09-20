@@ -30,7 +30,6 @@ const BlogSingle = ({ params }: any) => {
   const bg = "./white bg.png";
   const [blog, setBlog] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [videoSrc, setVideoSrc] = useState(""); // Initialize with an empty string for videoSrc
 
@@ -107,11 +106,11 @@ const BlogSingle = ({ params }: any) => {
                 <p>No video available</p>
               )}
             </Modal>
-            <div className="post-date-bg absolute top-2 left-2 bg-blue-600 text-white rounded-md p-2">
+            {/* <div className="post-date-bg absolute top-2 left-2 bg-blue-600 text-white rounded-md p-2">
               <div className="post-date text-center">
                 <span>{new Date().toLocaleDateString()}</span>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="latest-news-content mt-4">
             <div className="entry-header">

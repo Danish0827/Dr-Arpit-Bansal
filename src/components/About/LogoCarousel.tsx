@@ -37,10 +37,17 @@ const LogoCarousel = () => {
         BRAND COLLABORATIONS
       </h5>
 
-      <div className="logo-carousel overflow-hidden w-full">
+      <div className="logo-carousel overflow-hidden w-full gap-4">
         <Slider {...settings}>
           {logosDatas.map((item) => (
-            <div key={item.id} className="single-client">
+            <div
+              style={{
+                boxShadow:
+                  "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px",
+              }}
+              key={item.id}
+              className="single-client shadow-lg rounded-lg  my-3"
+            >
               <img className="p-7" src={item.image.src} alt={item.heading} />
             </div>
           ))}

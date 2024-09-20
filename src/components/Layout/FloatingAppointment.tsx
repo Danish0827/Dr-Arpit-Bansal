@@ -92,7 +92,7 @@ const FloatingAppointment = () => {
       {show === true && (
         <>
           {/* Large screen button */}
-          <div className="flex gap-3 items-center cursor-pointer fixed -right-[108px] md:-right-[100px] z-50 -rotate-90 px-7 py-2 rounded-t-xl bottom-[63%] bg-[#232c77] ">
+          <div className="flex gap-3 items-center cursor-pointer fixed -right-[110px] md:-right-[82px] z-50 -rotate-90 px-7 md:px-3 md:pr-0 py-2 rounded-t-xl bottom-[63%] bg-[#232c77] ">
             <h2 onClick={handleAppointmentClick} className="text-white ">
               Book Appointment
             </h2>

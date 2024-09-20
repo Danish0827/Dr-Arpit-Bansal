@@ -67,9 +67,9 @@ const BlogLatest = () => {
                     {disease.title}
                   </a>
                 </h5>
-                <span className="text-sm text-gray-500 mt-1 block">
+                {/* <span className="text-sm text-gray-500 mt-1 block">
                   <i className="pi pi-calendar mr-1"></i>{new Date().toLocaleDateString()}
-                </span>
+                </span> */}
               </div>
             </div>
           ))}
