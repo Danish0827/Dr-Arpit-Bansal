@@ -98,7 +98,6 @@ const Speciality: React.FC<SpecialityProps> = ({ title }) => {
             {decodeHtmlEntities(treatment.title)}
           </h5>
           <div
-            className="text-gray-600 mb-2"
             dangerouslySetInnerHTML={{ __html: treatment.description }}
           />
         </div>
