@@ -41,8 +41,9 @@ const InstaFeed: React.FC = () => {
       anchorTags.forEach((anchor) => {
         // Check if textContent is not null and contains specific keywords
         if (
-          anchor.href.includes("elfsight.com") || 
-          (anchor.textContent && anchor.textContent.includes("Widget is deactivated"))
+          anchor.href.includes("elfsight.com") ||
+          (anchor.textContent &&
+            anchor.textContent.includes("Widget is deactivated"))
         ) {
           // Hide the anchor tag by setting display: none;
           anchor.style.display = "none";
@@ -64,7 +65,7 @@ const InstaFeed: React.FC = () => {
         isInView ? "animate__animated animate__fadeInLeft" : ""
       }`}
     >
-      <ElfsightWidget widgetId="c96312c0-f1a8-45b0-87e9-8e70aed338a5" />
+      <ElfsightWidget widgetId="d754fd3d-9234-4231-85be-14f64e17f618" />
     </div>
   );
 };
