@@ -84,7 +84,7 @@ const ContactForm: React.FC = () => {
 
   return (
     <>
-      <div className="relative p-3 border-t-4 border-b-4 border-primary rounded-lg shadow-lg dark:bg-dark-2 sm:p-12">
+      <div className="relative p-3  border-primary rounded-lg shadow-lg dark:bg-dark-2 sm:p-12">
         <form onSubmit={handleContactSubmit}>
           <div className="mb-6">
             <input

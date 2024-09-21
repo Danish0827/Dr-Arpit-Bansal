@@ -43,9 +43,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 xl:grid-cols-3">
           {/* About Section */}
           <div>
-            <span className="text-2xl pr-3 md:text-3xl xl:text-4xl font-black text-transparent bg-clip-text bg-[#232c77] mainPrimary">
-              Dr Arpit Bansal
-            </span>
+          <span className="mainPrimary uppercase text-3xl md:text-3xl xl:text-4xl font-bold text-transparent bg-clip-text bg-[#232c77] ">
+            Dr. Arpit Bansal
+          </span>
 
             <p className="mt-5 text-base font-medium text-justify">
               Dr. Arpit Bansal, an Advanced Laparoscopy and Cancer Surgeon, has
@@ -98,7 +98,7 @@ const Footer = () => {
                     href={"/about"}
                   >
                     <ArrowRight size={16} />
-                    <span>About Dr Arpit</span>
+                    <span>About Dr. Arpit</span>
                   </Link>
                 </li>
                 <li>

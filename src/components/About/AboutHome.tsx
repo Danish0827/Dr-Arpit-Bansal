@@ -64,12 +64,12 @@ const AboutHome = () => {
               isInView ? "animate-fade-in-right" : "opacity-0"
             }`}
           >
-            <h2 className="text-3xl font-bold text-left mb-2 relative">
+            <h1 className="text-3xl font-bold text-left mb-2 relative">
               <span className="text-[#232c77] font-bold uppercase mainPrimary">
                 About Dr. Arpit Bansal
               </span>
               <div className="absolute top-0 right-0 w-10 h-7 bg-[#171f56] opacity-20 rotate-45"></div>
-            </h2>
+            </h1>
             <span className="text-xl mt-0 lg:mt-2 mb-2">
               MBBS, MS - General Surgery
             </span>

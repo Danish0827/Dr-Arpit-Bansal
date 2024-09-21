@@ -2,6 +2,7 @@
 import { Modal } from "antd";
 import React, { useState } from "react";
 import ContactForm from "./ContactForm";
+import Link from "next/link";
 
 const RequestAppointment: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -51,13 +52,15 @@ const RequestAppointment: React.FC = () => {
 
           {/* Right section with button */}
           <div className="md:w-1/3 m-auto text-center md:text-right">
+          <Link target="_blank" href='https://wa.me/+918141402111?text=Hello'>
             <button
-              onClick={showLoading}
+              // onClick={showLoading}
               type="button"
-              className="px-6 py-3 bg-teal-500 text-white font-semibold rounded-lg shadow-md hover:bg-teal-600 transition duration-300"
+              className="px-6 py-3 text-black bg-white font-semibold rounded-lg shadow-md hover:bg-[#f5f5f5] transition duration-300"
             >
               Request Appointment
             </button>
+            </Link>
           </div>
         </div>
       </div>

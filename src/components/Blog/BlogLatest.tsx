@@ -25,7 +25,7 @@ const BlogLatestSkeleton = () => (
   </aside>
 );
 
-const BlogLatest = () => {
+const BlogLatest = ({ params }: any) => {
   const [diseases, setDiseases] = useState<Disease[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -53,7 +53,12 @@ const BlogLatest = () => {
       <div className="tab-content">
         <div className="latest-content space-y-5">
           {diseases.map((disease) => (
-            <div key={disease.ID} className="flex gap-4 items-start">
+            <div
+              key={disease.ID}
+              className={`flex gap-4 items-center ${
+                params === disease.slug ? "bg-gray-200" : "bg-white"
+              } p-2 rounded-md`}
+            >
               <a href={`/patients-education/${disease.slug}`}>
                 <img
                   className="w-16 h-16 rounded-lg blog-lg object-cover"
@@ -62,7 +67,11 @@ const BlogLatest = () => {
                 />
               </a>
               <div className="flex-1">
-                <h5 className="text-md font-bold">
+                <h5
+                  className={`text-md lg:text-lg font-bold ${
+                    params === disease.slug ? "text-[#232c77]" : "text-black"
+                  }`}
+                >
                   <a href={`/patients-education/${disease.slug}`}>
                     {disease.title}
                   </a>

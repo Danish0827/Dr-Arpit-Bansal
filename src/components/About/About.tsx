@@ -74,12 +74,12 @@ const About = () => {
                 inView ? "animate__animated animate__fadeInRight" : ""
               }`}
             >
-              <h2 className="text-3xl font-bold text-left mb-2 relative">
+              <h1 className="text-3xl font-bold text-left mb-2 relative">
                 <span className="text-[#232c77] font-bold uppercase mainPrimary">
                   About Dr. Arpit Bansal
                 </span>
                 <div className="absolute top-0 right-0 w-10 h-7 bg-[#171f56] opacity-20 rotate-45"></div>
-              </h2>
+              </h1>
               <span className="text-xl mt-0 lg:mt-2 mb-2">
                 MBBS, MS - General Surgery
               </span>
@@ -182,7 +182,7 @@ const About = () => {
             <div className="flex gap-4">
               <a
                 onClick={showLoading}
-                className="flex items-center bg-[#232c77] text-white py-2 px-4 rounded-lg hover:bg-[#171f56] transition"
+                className="flex items-center cursor-pointer bg-[#232c77] text-white py-2 px-4 rounded-lg hover:bg-[#171f56] transition"
               >
                 <i className="ri-send-plane-line mr-2"></i> Book Appointment
               </a>

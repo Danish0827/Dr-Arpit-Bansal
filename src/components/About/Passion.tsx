@@ -52,13 +52,13 @@ const Passion = () => {
               <img
                 src={about.src}
                 alt="Profile"
-                className="w-full bg-transparent rounded-lg  relative z-20"
+                className="w-full bg-transparent rounded-lg lg:px-5 relative z-20"
               />
             </div>
           </div>
 
           <div
-            className={`lg:pl-8 mt-5 p-6 duration-300 w-full lg:w-1/2 bg-[#232c77] border-dashed border-2 border-white ${
+            className={`lg:pl-8 mt-2 p-6 duration-300 w-full lg:w-1/2 2xl:w-5/12  bg-[#232c77] border-dashed border-2 border-white ${
               isInView ? "animate-fade-in-right" : "opacity-0"
             }`}
           >
@@ -79,7 +79,7 @@ const Passion = () => {
               But wait, there's more! Each year, I team up with WWF to create an
               annual bird calendar featuring some of my favorite feathered
               friends. It's my way of sharing the beauty of our avian companions
-              and contributing to conservation efforts. 🌍�
+              and contributing to conservation efforts. 🌍
             </p>
             <p className="text-base text-white my-4 text-justify">
               Beyond birding, I also connect with nature and find inner peace

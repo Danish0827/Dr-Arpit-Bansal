@@ -126,7 +126,7 @@ const BlogSingle = ({ params }: any) => {
         </div>
       </div>
       <div className="widget-area">
-        <BlogLatest />
+        <BlogLatest params={params} />
       </div>
     </div>
   );
