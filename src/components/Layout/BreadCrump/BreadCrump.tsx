@@ -56,7 +56,7 @@ const BreadCrumb: React.FC<BreadCrumbProps> = ({
                   </Link>
                 </li>
                 <ChevronRight size={19} color="white" />
-                <li className="text-white">{page}</li>
+                <li className="text-white capitalize">{page}</li>
               </ul>
             </div>
           </div>
