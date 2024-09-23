@@ -190,6 +190,11 @@ const About = () => {
           </div>
         </div>
         <Modal
+          title={
+            <span className="relative top-3 left-5 mx-3 my-3 text-[#232c77] text-xl font-bold uppercase">
+              Book Appointment
+            </span>
+          }
           centered
           footer={false}
           open={open}
