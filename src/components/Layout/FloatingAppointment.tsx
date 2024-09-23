@@ -118,6 +118,9 @@ const FloatingAppointment = () => {
       )}
       {/* Modal for appointment form */}
       <Modal
+        title={
+          <span className="relative top-3 left-5 mx-3 my-3 text-[#232c77] text-xl font-bold uppercase">Book Appointment</span>
+        }
         centered
         footer={null}
         open={isOpen}

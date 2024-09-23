@@ -39,32 +39,30 @@ const RequestAppointment: React.FC = () => {
               Request an Appointment
             </h3>
             <p className="text-white mt-4 text-center md:text-left">
-              If the hospitals{" "}
-              {/* <a
-                href="#hospitals"
-                className="font-bold text-teal-500 hover:text-teal-700"
-              > */}
-              mentioned above
-              {/* </a>*/} are not reachable, you can book an appointment online
-              and we will get back to you.
+              Don't Wait, Consult with Dr. Arpit Bansal Today!
             </p>
           </div>
 
           {/* Right section with button */}
           <div className="md:w-1/3 m-auto text-center md:text-right">
-          <Link target="_blank" href='https://wa.me/+918141402111?text=Hello'>
-            <button
-              // onClick={showLoading}
-              type="button"
-              className="px-6 py-3 text-black bg-white font-semibold rounded-lg shadow-md hover:bg-[#f5f5f5] transition duration-300"
-            >
-              Request Appointment
-            </button>
+            <Link target="_blank" href="https://wa.me/+918141402111?text=Hello">
+              <button
+                // onClick={showLoading}
+                type="button"
+                className="px-6 py-3 text-black bg-white font-semibold rounded-lg shadow-md hover:bg-[#f5f5f5] transition duration-300"
+              >
+                Request Appointment
+              </button>
             </Link>
           </div>
         </div>
       </div>
       <Modal
+        title={
+          <span className="relative top-3 left-5 mx-3 my-3 text-[#232c77] text-xl font-bold uppercase">
+            Book Appointment
+          </span>
+        }
         centered
         footer={false}
         open={open}
