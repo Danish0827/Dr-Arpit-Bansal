@@ -32,13 +32,27 @@ export default function Paper() {
   return (
     <>
       <Swiper
-        slidesPerView={4}
+        // slidesPerView={4}
         centeredSlides={true}
         spaceBetween={30}
         loop={true}
         grabCursor={true}
         pagination={{
           clickable: true,
+        }}
+        breakpoints={{
+          // when window width is >= 640px
+          640: {
+            slidesPerView: 3, // Show 2 slides on mobile
+          },
+          // when window width is >= 768px
+          768: {
+            slidesPerView: 3, // Show 3 slides on tablet
+          },
+          // when window width is >= 1024px
+          1024: {
+            slidesPerView: 4, // Show 4 slides on desktop
+          },
         }}
         modules={[Pagination]}
         className="mySwiper w-[93%] right-0 ml-auto m-0  py-40 overflow-hidden"
@@ -53,8 +67,8 @@ export default function Paper() {
             {" "}
             <Image.PreviewGroup>
               <Image
-                  src={item.image.src} // Access the src from the image object
-                  alt={item.heading}
+                src={item.image.src} // Access the src from the image object
+                alt={item.heading}
                 className="rounded-lg"
                 // layout="responsive"
                 // width={item.image.width}
