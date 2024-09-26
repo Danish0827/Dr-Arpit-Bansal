@@ -49,7 +49,7 @@ const RequestAppointment: React.FC = () => {
               <button
                 // onClick={showLoading}
                 type="button"
-                className="px-6 py-3 text-black bg-white font-semibold rounded-lg shadow-md hover:bg-[#f5f5f5] transition duration-300"
+                className="px-6 py-3 text-black bg-white font-semibold rounded-lg shadow-md hover:bg-[#f5f5f5] transition duration-300 text-lg"
               >
                 Request Appointment
               </button>

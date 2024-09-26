@@ -12,7 +12,7 @@ interface Treatment {
   slug: string;
 }
 
-const SpecialityComp: React.FC = () => {
+const China: React.FC = () => {
   const [treatments, setTreatments] = useState<Treatment[]>([]); // Initialize as an array of Treatment objects
   const { ref: sectionRef, inView: sectionInView } = useInView({
     triggerOnce: true, // Trigger animation only once
@@ -126,5 +126,4 @@ const SpecialityComp: React.FC = () => {
   );
 };
 
-
-export default SpecialityComp;
+export default China;

@@ -1,6 +1,11 @@
 import AboutHome from "@/components/About/AboutHome";
+import China from "@/components/About/China";
+import Features from "@/components/About/Features";
 import LogoCarousel from "@/components/About/LogoCarousel";
+import Passion from "@/components/About/Passion";
+import Sample from "@/components/About/Sample";
 import SpecialityComp from "@/components/About/SpecialityComp";
+import SpecialityCompOld from "@/components/About/SpecialityCompOld";
 import Blog from "@/components/Blog/Blog";
 import RequestAppointment from "@/components/Contact/RequestAppointment";
 import Slider from "@/components/Home/Slider";
@@ -20,14 +25,14 @@ export default function Home() {
   return (
     <>
       <Slider />
-      <AboutHome/>
-      <SpecialityComp/>
-      {/* <Treatments title="home" /> */}
+      <AboutHome />
+      <SpecialityComp />
       <Blog title="home" />
+      <Features />
       <InstaFeed />
       <GoogleFeed />
-      <LogoCarousel/>
-      <RequestAppointment/>
+      <LogoCarousel />
+      <RequestAppointment />
       {/* <FloatingAppointment /> */}
     </>
   );

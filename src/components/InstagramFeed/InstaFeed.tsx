@@ -4,6 +4,7 @@ import { ElfsightWidget } from "react-elfsight-widget";
 import "animate.css"; // Import animate.css for animations
 
 const InstaFeed: React.FC = () => {
+  const bg = "./white bg.png";
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -61,9 +62,14 @@ const InstaFeed: React.FC = () => {
   return (
     <div
       ref={sectionRef}
-      className={`p-5 md:p-10 lg:p-16 ${
-        isInView ? "animate__animated animate__fadeInLeft" : ""
+      className={`p-5 md:p-10 lg:p-16 bg-white ${
+        isInView ? "animate__animated animate__fadeInRight" : ""
       }`}
+      style={{
+        backgroundImage: `url('${bg}')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
       <ElfsightWidget widgetId="d754fd3d-9234-4231-85be-14f64e17f618" />
     </div>

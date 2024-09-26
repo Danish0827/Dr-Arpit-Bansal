@@ -12,7 +12,7 @@ interface Treatment {
   slug: string;
 }
 
-const SpecialityComp: React.FC = () => {
+const SpecialityCompOld: React.FC = () => {
   const [treatments, setTreatments] = useState<Treatment[]>([]); // Initialize as an array of Treatment objects
   const { ref: sectionRef, inView: sectionInView } = useInView({
     triggerOnce: true, // Trigger animation only once
@@ -45,11 +45,6 @@ const SpecialityComp: React.FC = () => {
   return (
     <>
       <div
-        // style={{
-        //   backgroundImage: `url('${bg}')`,
-        //   backgroundSize: "cover",
-        //   backgroundPosition: "center",
-        // }}
         id="service"
         className={`block py-10 expertise-logo bg-[#232c77] ${
           sectionInView ? "animate__animated animate__fadeInUp" : ""
@@ -59,7 +54,7 @@ const SpecialityComp: React.FC = () => {
         <div className="block px-5 lg:px-20">
           <h5
             style={{ letterSpacing: "3px" }}
-            className="text-[#fff] text-center pb-5 font-bold uppercase mainPrimary text-4xl lg:text-6xl"
+            className="text-[#ffffff] text-center pb-5 font-bold uppercase mainPrimary text-4xl lg:text-6xl"
           >
             Our Speciality
           </h5>
@@ -80,41 +75,41 @@ const SpecialityComp: React.FC = () => {
               >
                 <Link href={`/speciality/${item.slug}`}>
                   <div
-                    style={{
-                      boxShadow:
-                        //     "rgba(255, 255, 255, 0.25) 0px 54px 55px,rgba(255, 255, 255, 0.12) 0px -12px 30px,rgba(255, 255, 255, 0.12) 0px 4px 6px,rgba(255, 255, 255, 0.17) 0px 12px 13px,rgba(255, 255, 255, 0.09) 0px -3px 5px",
-                        "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-                    }}
-                    className="gdfg overflow-hidden group shadow-2xl relative rounded-lg border-2 border-[#fff]  border-dashed"
+                    // style={{
+                    //   boxShadow:
+                    //     "rgba(255, 255, 255, 0.25) 0px 54px 55px,rgba(255, 255, 255, 0.12) 0px -12px 30px,rgba(255, 255, 255, 0.12) 0px 4px 6px,rgba(255, 255, 255, 0.17) 0px 12px 13px,rgba(255, 255, 255, 0.09) 0px -3px 5px",
+                    // }}
+                    className="gdfg overflow-hidden group shadow-2xl relative rounded-lg border-2 border-white  border-dashed"
                   >
                     <img
-                      className="hover:scale-150 scale-125  group-hover:bg-[#232c77] relative duration-100 object-cover  m-auto"
+                      className="hover:scale-150 scale-125  group-hover:bg-white relative duration-100 object-cover  m-auto"
                       src={item.image}
                       alt={item.title}
                     />
                     {/* White Overlay */}
-                    <div className="absolute inset-0  opacity-30 bg-black  group-hover:bg-[#232c77] group-hover:opacity-30 transition-opacity duration-300"></div>
-                  </div>
-                </Link>
-                <h3
-                  className=" group-hover:font-bold  md:text-2xl text-[#fff] z-50 
-                      text-center uppercase text-base m-0 w-full flex items-end px-3
+                    <div className="absolute inset-0  opacity-30 bg-black  group-hover:bg-white group-hover:opacity-30 transition-opacity duration-300"></div>
+
+                    <h3
+                      className=" group-hover:font-bold  md:text-3xl text-white z-50 absolute bottom-0
+                      text-center uppercase text-base m-0 w-full h-10 flex items-end px-3
                    
-                      group-hover:items- justify-center pb-4 pt-4  
+                      group-hover:items- justify-end pb-4 pt-4  shadow-lg
                       group-hover:text-[#232c77] font-bold"
-                  // style={{
-                  //   clipPath:
-                  //     "polygon(114% -6%, 0 100%, 100% 100%, 100% 100%)",
-                  // }}
-                >
-                  {/* {item.title.split(" ").map((word, index) => (
+                      // style={{
+                      //   clipPath:
+                      //     "polygon(114% -6%, 0 100%, 100% 100%, 100% 100%)",
+                      // }}
+                    >
+                      {/* {item.title.split(" ").map((word, index) => (
                         <React.Fragment key={index}>
                           {word}
                           {index === 0 && <br />}
                         </React.Fragment>
                       ))} */}
-                  {item.title}
-                </h3>
+                      {item.title}
+                    </h3>
+                  </div>
+                </Link>
               </div>
             ))
           ) : (
@@ -126,5 +121,4 @@ const SpecialityComp: React.FC = () => {
   );
 };
 
-
-export default SpecialityComp;
+export default SpecialityCompOld;

@@ -29,7 +29,7 @@ html, body{
 
 .mainPrimary {
   font-family: "Anton", sans-serif;
-  font-weight: 400;
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -76,4 +76,13 @@ h2,h3 {
 }
 .WidgetTitle__Header-sc-ruy1gu-2.huflDf {
   display: none;
+}
+
+.clip-path-default {
+  clip-path: polygon(150% -6%, 0 100%, 100% 100%, 100% 100%);
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.group:hover .clip-path-default {
+  clip-path: none; /* Remove clip-path on hover */
 }

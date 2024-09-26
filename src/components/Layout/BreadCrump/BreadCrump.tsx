@@ -1,7 +1,7 @@
 import { ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import bread from "@/assets/images/breadcrump/2.png"
+import bread from "@/assets/images/breadcrump/2.png";
 
 interface BreadCrumbProps {
   title: string;
