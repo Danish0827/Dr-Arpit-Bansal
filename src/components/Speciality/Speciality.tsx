@@ -21,12 +21,12 @@ const Speciality: React.FC<SpecialityProps> = ({ title }) => {
   const [treatment, setTreatment] = useState<Treatment | null>(null);
   const [loading, setLoading] = useState(true);
   const bg = "/white-bg.png"; // Updated path to be more consistent
-  
+
   useEffect(() => {
     const fetchTreatment = async () => {
       try {
         const response = await fetch(
-          `https://drarpitbck.demo-web.live/wp-json/custom/v1/getTreatmentBySlug/${title}`
+          `${process.env.BACKEND}/getTreatmentBySlug/${title}`
         );
         const data = await response.json();
         setTreatment(data);
@@ -70,7 +70,9 @@ const Speciality: React.FC<SpecialityProps> = ({ title }) => {
         <title>{treatment.meta_title || "Default Page Title"}</title>
         <meta
           name="description"
-          content={treatment.meta_description || "Default description for the page."}
+          content={
+            treatment.meta_description || "Default description for the page."
+          }
         />
         <meta
           name="keywords"
@@ -90,16 +92,17 @@ const Speciality: React.FC<SpecialityProps> = ({ title }) => {
           <img
             src={treatment.image}
             alt={decodeHtmlEntities(treatment.title)}
-            className="w-full object-cover border-4 border-solid border-white rounded-md shadow-lg"
+            className="w-full object-cover border-2 border-dashed border-[#232c77] rounded-md shadow-lg"
           />
         </div>
         <div className="w-full lg:w-[50%] pt-5 lg:pt-0 flex flex-col justify-center px-5 space-y-3 lg:space-y-5 lg:-ml-20 animate-fade-in-right">
-          <h5 className="mainPrimary text-xl md:text-2xl lg:text-3xl font-bold text-[#232c77] uppercase">
+          <h5
+            style={{ letterSpacing: "3px" }}
+            className="text-[#232c77] font-bold uppercase mainPrimary text-4xl lg:text-6xl"
+          >
             {decodeHtmlEntities(treatment.title)}
           </h5>
-          <div
-            dangerouslySetInnerHTML={{ __html: treatment.description }}
-          />
+          <div dangerouslySetInnerHTML={{ __html: treatment.description }} />
         </div>
       </div>
     </>

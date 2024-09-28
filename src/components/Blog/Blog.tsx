@@ -80,7 +80,7 @@ const Blog = ({ title }: { title: string }) => {
       setLoading(true);
       try {
         const response = await fetch(
-          `https://drarpitbck.demo-web.live/wp-json/custom/v1/diseases?per_page=${itemsPerPage}&page=${currentPage}`
+          `${process.env.BACKEND}/diseases?per_page=${itemsPerPage}&page=${currentPage}`
         );
         const data = await response.json();
         setBlogPosts(data.diseases);

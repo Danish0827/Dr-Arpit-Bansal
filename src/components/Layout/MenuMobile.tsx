@@ -50,7 +50,7 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
     const fetchTreatments = async () => {
       try {
         const response = await fetch(
-          "https://drarpitbck.demo-web.live/wp-json/custom/v1/getAllTreatments?per_page=1000"
+          `${process.env.BACKEND}/getAllTreatments?per_page=1000`
         );
         const data = await response.json();
 
@@ -73,7 +73,7 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
     const fetchDiseases = async () => {
       try {
         const response = await fetch(
-          "https://drarpitbck.demo-web.live/wp-json/custom/v1/diseases?per_page=1000"
+          `${process.env.BACKEND}/diseases?per_page=1000`
         );
         const data = await response.json();
 
@@ -167,7 +167,10 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
                               href={`/speciality/${treatment.slug}`}
                             >
                               <ArrowRight size={16} />
-                              <span onClick={() => setMobileMenu(false)} className="line-clamp-1">
+                              <span
+                                onClick={() => setMobileMenu(false)}
+                                className="line-clamp-1"
+                              >
                                 {treatment.title}
                               </span>
                             </Link>
@@ -187,7 +190,7 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
                           >
                             <ArrowRight size={16} />
                             <span onClick={() => setMobileMenu(false)}>
-                             All Patients Education
+                              All Patients Education
                             </span>
                           </Link>
                         </li>
@@ -198,7 +201,10 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
                               href={`/patients-education/${disease.slug}`}
                             >
                               <ArrowRight size={16} />
-                              <span onClick={() => setMobileMenu(false)} className="line-clamp-1">
+                              <span
+                                onClick={() => setMobileMenu(false)}
+                                className="line-clamp-1"
+                              >
                                 {disease.title}
                               </span>
                             </Link>

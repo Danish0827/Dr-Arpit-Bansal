@@ -3,7 +3,8 @@ import Schedule from "@/components/Schedule/Schedule";
 import { Metadata } from "next";
 import React from "react";
 import abouts from "@/assets/images/breadcrump/3.png";
-import GoogleAll from "@/components/InstagramFeed/GoogleAll";
+import GoogleFeed from "@/components/InstagramFeed/GoogleFeed";
+import TestimonialComp from "@/components/TestimonialComp/TestimonialComp";
 
 export const metadata: Metadata = {
   title: "Schedule | Dr. Arpit Bansal",
@@ -20,7 +21,7 @@ const schedule = () => {
         img={abouts.src}
         version={false}
       />
-      <GoogleAll />
+      <TestimonialComp />
     </>
   );
 };

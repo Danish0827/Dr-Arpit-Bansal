@@ -1,3 +1,6 @@
+import newData1 from "@/assets/images/innews/new1.png";
+import newData2 from "@/assets/images/innews/new2.png";
+import newData3 from "@/assets/images/innews/new3.png";
 import news1 from "@/assets/images/innews/9.png";
 import news2 from "@/assets/images/innews/10.png";
 import news3 from "@/assets/images/innews/11.png";
@@ -16,9 +19,9 @@ import news15 from "@/assets/images/innews/23.png";
 import news16 from "@/assets/images/innews/24.png";
 
 const inNewsDatas = [
-  { id: 1, image: news1, heading: "News 1" },
-  { id: 2, image: news2, heading: "News 2" },
-  { id: 3, image: news3, heading: "News 3" },
+  { id: 1, image: newData1, heading: "News 1" },
+  { id: 2, image: newData2, heading: "News 2" },
+  { id: 3, image: newData3, heading: "News 3" },
   { id: 4, image: news4, heading: "News 4" },
   { id: 5, image: news5, heading: "News 5" },
   { id: 6, image: news6, heading: "News 6" },
@@ -32,6 +35,9 @@ const inNewsDatas = [
   { id: 14, image: news14, heading: "News 14" },
   { id: 15, image: news15, heading: "News 15" },
   { id: 16, image: news16, heading: "News 16" },
+  { id: 17, image: news1, heading: "News 1" },
+  { id: 18, image: news2, heading: "News 2" },
+  { id: 19, image: news3, heading: "News 3" },
 ];
 
 export default inNewsDatas;

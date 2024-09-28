@@ -45,7 +45,7 @@ const BlogSingle = ({ params }: any) => {
 
   useEffect(() => {
     fetch(
-      `https://drarpitbck.demo-web.live/wp-json/custom/v1/disease/${params}`
+      `${process.env.BACKEND}/disease/${params}`
     )
       .then((response) => response.json())
       .then((data) => {

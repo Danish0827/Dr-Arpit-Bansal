@@ -42,7 +42,10 @@ const BreadCrumb: React.FC<BreadCrumbProps> = ({
       <div className="flex flex-col items-start justify-center relative px-5 md:px-10 lg:px-16 z-10">
         <div className="flex items-center justify-between w-full">
           <div>
-            <h1 className="text-2xl lg:text-5xl capitalize text-white mainPrimary">
+            <h1
+              style={{ letterSpacing: "3px" }}
+              className="text-2xl lg:text-5xl text-white mainPrimary uppercase"
+            >
               {title}
             </h1>
             <div>

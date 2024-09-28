@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   description:
     "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS Is one of the renowned & Advanced Laparoscopic & Onco Surgeon & Male Infertility consultant.",
 };
-
 export default function Home() {
+   console.log(process.env.BACKEND, "fdsfdsfdsf");
   return (
     <>
       <Slider />
@@ -37,3 +37,4 @@ export default function Home() {
     </>
   );
 }
+

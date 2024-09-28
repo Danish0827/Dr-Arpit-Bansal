@@ -57,7 +57,7 @@ const Menu: React.FC<MenuProps> = ({
     const fetchTreatments = async () => {
       try {
         const response = await fetch(
-          "https://drarpitbck.demo-web.live/wp-json/custom/v1/getAllTreatments?per_page=1000"
+          `${process.env.BACKEND}/getAllTreatments?per_page=1000`
         );
         const data = await response.json();
 
@@ -79,7 +79,7 @@ const Menu: React.FC<MenuProps> = ({
     const fetchDiseases = async () => {
       try {
         const response = await fetch(
-          "https://drarpitbck.demo-web.live/wp-json/custom/v1/diseases?per_page=1000"
+          `${process.env.BACKEND}/diseases?per_page=1000`
         );
         const data = await response.json();
 

@@ -92,7 +92,7 @@ const AboutHome = () => {
               I am on a quest to promote prevention, to treat disease at it's
               source, to age healthily, and to lead by example.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 pb-7 xl:pb-0">
               <a
                 href="/about"
                 className="flex items-center text-lg bg-[#232c77] text-white py-2 px-4 rounded-lg hover:bg-[#171f56] transition"

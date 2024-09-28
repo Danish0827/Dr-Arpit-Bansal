@@ -20,7 +20,7 @@ const Footer = () => {
     const fetchTreatments = async () => {
       try {
         const response = await fetch(
-          "https://drarpitbck.demo-web.live/wp-json/custom/v1/getAllTreatments?per_page=1000"
+          `${process.env.BACKEND}/getAllTreatments?per_page=1000`
         );
         const data = await response.json();
 

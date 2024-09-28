@@ -3,6 +3,7 @@ import { Modal } from "antd";
 import React, { useState } from "react";
 import ContactForm from "../Contact/ContactForm";
 import about from "@/assets/images/gallery/1.png";
+// import about from "@/assets/images/gallery/about.jpg";
 import "animate.css/animate.min.css";
 import { useInView } from "react-intersection-observer";
 
@@ -63,6 +64,8 @@ const About = () => {
                   src={about.src}
                   alt="Profile"
                   className="w-full -mt-12 lg:-mt-0 xl:-mt-12 relative z-20 scale-x-[-1]"
+                  // className="w-full  relative z-20 rounded-lg"
+
                   // className="md:w-full  w-80  relative z-20 "
                 />
                 {/* <div className="absolute w-80 md:w-96 h-[380px] md:h-[450px] bg-gray-300 -top-8 -right-8 rounded-lg border-b-4 border-[#171f56]"></div>

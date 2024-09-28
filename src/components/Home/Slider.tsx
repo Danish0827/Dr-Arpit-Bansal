@@ -6,9 +6,14 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./styles.css"; // Import your styles
 
-import banner1 from "@/assets/images/1.png";
-import banner2 from "@/assets/images/2.png";
-import banner3 from "@/assets/images/3.png";
+import banner1 from "@/assets/images/1.webp";
+import banner2 from "@/assets/images/2.webp";
+import banner3 from "@/assets/images/3.webp";
+import banner4 from "@/assets/images/4.webp";
+import banner5 from "@/assets/images/5.webp";
+import banner6 from "@/assets/images/6.webp";
+import banner7 from "@/assets/images/7.webp";
+import banner8 from "@/assets/images/8.webp";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 
@@ -16,6 +21,11 @@ const slidesData = [
   { title: "", description: "", backgroundImage: banner1.src },
   { title: "", description: "", backgroundImage: banner2.src },
   { title: "", description: "", backgroundImage: banner3.src },
+  { title: "", description: "", backgroundImage: banner4.src },
+  { title: "", description: "", backgroundImage: banner5.src },
+  { title: "", description: "", backgroundImage: banner6.src },
+  { title: "", description: "", backgroundImage: banner7.src },
+  { title: "", description: "", backgroundImage: banner8.src },
 ];
 
 const Slider: React.FC = () => {

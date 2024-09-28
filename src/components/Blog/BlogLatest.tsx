@@ -30,9 +30,7 @@ const BlogLatest = ({ params }: any) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(
-      "https://drarpitbck.demo-web.live/wp-json/custom/v1/diseases?per_page=1000"
-    )
+    fetch(`${process.env.BACKEND}/diseases?per_page=1000`)
       .then((response) => response.json())
       .then((data) => {
         setDiseases(data.diseases);

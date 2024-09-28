@@ -32,7 +32,7 @@ export default function Paper() {
   return (
     <>
       <Swiper
-        // slidesPerView={4}
+        slidesPerView={2}
         centeredSlides={true}
         spaceBetween={30}
         loop={true}
@@ -54,17 +54,12 @@ export default function Paper() {
             slidesPerView: 4, // Show 4 slides on desktop
           },
         }}
+        style={{ position: "unset" }}
         modules={[Pagination]}
-        className="mySwiper w-[93%] right-0 ml-auto m-0  py-40 overflow-hidden"
-        style={{
-          padding: "100px 0",
-          boxShadow:
-            "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
-        }}
+        className=" mySwiper w-[93%] right-0 ml-auto m-0  overflow-hidden"
       >
         {inNewsDatas.map((item: PortfolioData) => (
           <SwiperSlide>
-            {" "}
             <Image.PreviewGroup>
               <Image
                 src={item.image.src} // Access the src from the image object
