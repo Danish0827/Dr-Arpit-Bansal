@@ -34,6 +34,7 @@ export default function Paper() {
       <Swiper
         slidesPerView={2}
         centeredSlides={true}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         spaceBetween={30}
         loop={true}
         grabCursor={true}

@@ -79,7 +79,7 @@ const TestimonialComp = () => {
                   />
                   <h4 className="text-white text-xl font-semibold text-center py-2 absolute top-0 w-full h-full flex items-center justify-center bg-[#00000066]">
                     <Link
-                      onClick={openModal}
+                      // onClick={openModal}
                       target="_blank"
                       href={items.meta.url}
                     >

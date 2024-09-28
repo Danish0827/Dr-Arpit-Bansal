@@ -22,7 +22,7 @@ const socialLinks = [
     icon: FaLinkedin,
   },
   {
-    href: "https://www.facebook.com/drarpitbansal/",
+    href: "https://www.facebook.com/drarpit/",
     icon: FaFacebook,
   },
 ];
