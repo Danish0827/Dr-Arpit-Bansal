@@ -104,7 +104,7 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
     },
     {
       id: 3,
-      name: "Our Speciality",
+      name: "His Speciality",
       url: "#",
       hasDropdown: true,
     },
@@ -156,9 +156,9 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
                     <span>{activeDropdown === item.id ? "-" : "+"}</span>
                   </div>
 
-                  {/* Dropdown for 'Our Speciality' */}
+                  {/* Dropdown for 'His Speciality' */}
                   {activeDropdown === item.id &&
-                    item.name === "Our Speciality" && (
+                    item.name === "His Speciality" && (
                       <ul className="pl-3 pt-2">
                         {treatments.map((treatment) => (
                           <li key={treatment.id} className="py-2">

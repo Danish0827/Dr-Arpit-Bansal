@@ -77,14 +77,11 @@ const TestimonialComp = () => {
                     src={items.meta.image}
                     alt=""
                   />
-                  <h4 className="text-white text-xl font-semibold text-center py-2 absolute top-0 w-full h-full flex items-center justify-center bg-[#00000066]">
-                    <Link
-                      // onClick={openModal}
-                      target="_blank"
-                      href={items.meta.url}
-                    >
-                      <IoPlayCircleSharp className="text-7xl" />
-                    </Link>
+                  <h4 className="text-white cursor-pointer text-xl font-semibold text-center py-2 absolute top-0 w-full h-full flex items-center justify-center bg-[#00000066]">
+                    <IoPlayCircleSharp
+                      onClick={openModal}
+                      className="text-7xl"
+                    />
                   </h4>
                   <Modal
                     open={isModalOpen}

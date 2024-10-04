@@ -109,7 +109,7 @@ const Menu: React.FC<MenuProps> = ({
     },
     {
       id: 3,
-      name: "Our Speciality",
+      name: "His Speciality",
       url: "#",
       hasDropdown: true,
     },
@@ -142,7 +142,7 @@ const Menu: React.FC<MenuProps> = ({
         {data.map((item) => {
           const isActive =
             (item.hasDropdown &&
-              item.name === "Our Speciality" &&
+              item.name === "His Speciality" &&
               path.startsWith("/speciality")) ||
             (item.hasDropdown &&
               item.name === "Patients Education" &&
@@ -159,13 +159,13 @@ const Menu: React.FC<MenuProps> = ({
                 } pb-1`}
                 onMouseEnter={() =>
                   item.hasDropdown &&
-                  (item.name === "Our Speciality"
+                  (item.name === "His Speciality"
                     ? setShowSpecialityMenu(true)
                     : setShowPatientsEducationMenu(true))
                 }
                 onMouseLeave={() =>
                   item.hasDropdown &&
-                  (item.name === "Our Speciality"
+                  (item.name === "His Speciality"
                     ? setShowSpecialityMenu(false)
                     : setShowPatientsEducationMenu(false))
                 }
@@ -174,8 +174,8 @@ const Menu: React.FC<MenuProps> = ({
                   {item.name}
                 </Link>
 
-                {/* Dropdown for 'Our Speciality' */}
-                {item.name === "Our Speciality" && showSpecialityMenu && (
+                {/* Dropdown for 'His Speciality' */}
+                {item.name === "His Speciality" && showSpecialityMenu && (
                   <ul className="absolute left-0 top-full mt-1 pt-3 bg-white shadow-lg rounded-md w-60 overflow-y-auto h-auto">
                     {treatments.map((treatment) => (
                       <li

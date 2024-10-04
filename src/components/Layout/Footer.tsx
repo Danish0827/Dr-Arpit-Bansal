@@ -61,7 +61,7 @@ const Footer = () => {
           {/* Speciality Section */}
           <div className="grid grid-cols-1 gap-5 px-3 lg:px-10 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-3">
             <div className="space-y-2">
-              <p className="font-bold text-xl">Our Speciality</p>
+              <p className="font-bold text-xl">His Speciality</p>
               <div className="w-20 h-0.5 bg-primary rounded-full"></div>
               <ul className="flex flex-col mt-4 space-y-2 text-base">
                 {treatments.slice(0, 7).map((treatment) => (

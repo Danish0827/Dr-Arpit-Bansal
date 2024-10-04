@@ -27,7 +27,7 @@ import gallery26 from "@/assets/images/gallery/26.webp";
 import gallery27 from "@/assets/images/gallery/27.webp";
 import gallery28 from "@/assets/images/gallery/28.webp";
 import gallery29 from "@/assets/images/gallery/29.webp";
-import gallery30 from "@/assets/images/dr-arpit-image.jpg";
+// import gallery30 from "@/assets/images/dr-arpit-image.jpg";
 
 
 const portfolioDatas = [

@@ -92,11 +92,11 @@ const About = () => {
               </span> */}
               <p className="text-lg text-[#444] my-4 text-left font-normal">
                 Dr. Arpit Bansal, an Advanced Laparoscopy and Cancer Surgeon,
-                has mastered an art that many struggle to understand. A man of
-                varied interests, he has created a fine balance between his
-                profession and passion. According to Dr. Arpit Bansal, with time
-                management and focus, one can excel in both fields. His journey
-                stands as a testament to his extraordinary talent and unyielding
+                has mastered an art that many struggle to understand. As a
+                surgeon, he operates skilfully, doing his best to be his best.
+                As a man of varied interests, he has created a fine balance
+                between his profession and his passions. His journey stands as a
+                testament to his extraordinary talent and unyielding
                 determination.
               </p>
               <p className="text-lg hidden xl:block text-[#444] mb-4 text-left font-normal">

@@ -56,7 +56,7 @@ const SpecialityCompOld: React.FC = () => {
             style={{ letterSpacing: "3px" }}
             className="text-[#ffffff] text-center pb-5 font-bold uppercase mainPrimary text-4xl lg:text-6xl"
           >
-            Our Speciality
+            His Speciality
           </h5>
         </div>
 

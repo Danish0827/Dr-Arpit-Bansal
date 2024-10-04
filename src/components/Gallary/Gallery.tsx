@@ -1,7 +1,9 @@
 "use client";
 import portfolioDatas from "@/data/portfolioData";
 import { useState, useEffect } from "react";
-import { Image } from "antd";
+import { Image, Modal } from "antd";
+import { IoPlayCircleSharp } from "react-icons/io5";
+import { videoData } from "@/data/headerData";
 
 // Assuming StaticImageData type is used for images
 interface StaticImageData {
@@ -42,6 +44,21 @@ const Gallery = () => {
       [pageName]: color,
     });
   };
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentVideoUrl, setCurrentVideoUrl] = useState<string | null>(null);
+
+  const openModal = (videoUrl: string) => {
+    setCurrentVideoUrl(null); // Clear the current video first
+    setTimeout(() => {
+      setCurrentVideoUrl(videoUrl); // Set the new video URL
+      setIsModalOpen(true); // Open the modal after setting URL
+    }, 100); // Adding a slight delay to ensure state gets updated
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setCurrentVideoUrl(null); // Reset the video URL when modal is closed
+  };
 
   return (
     <div
@@ -58,6 +75,54 @@ const Gallery = () => {
         >
           Dr. Arpit Bansal
         </h5>
+        <div className="grid grid-cols-1 gap-5  lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
+          {videoData?.map((item: any) => (
+            <div className="space-y-2" key={item.id}>
+              <div className="px-5">
+                <div className="relative">
+                  <img
+                    className="mb-5 m-auto"
+                    width={"70%"}
+                    height={"300px"}
+                    src={item.img.src}
+                    alt=""
+                  />
+                  <h4 className="text-white text-xl font-semibold text-center py-2 absolute top-0 w-full h-full flex items-center justify-center bg-[#00000066]">
+                    <IoPlayCircleSharp
+                      onClick={() => openModal(item.video)} // Ensure correct video URL is passed
+                      className="text-7xl cursor-pointer"
+                    />
+                  </h4>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <Modal
+          open={isModalOpen}
+          onCancel={closeModal}
+          title={<p className="py-3 px-2">Dr Arpit Bansal</p>}
+          className="modal"
+          centered
+          width={700}
+          footer={null}
+        >
+          {currentVideoUrl ? (
+            <video
+              className="m-auto"
+              width="50%"
+              height="400"
+              controls
+              autoPlay
+            >
+              <source src={currentVideoUrl} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          ) : (
+            <p>No video available</p>
+          )}
+        </Modal>
 
         <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
           {portfolioDatas.map((item: PortfolioData) => (
