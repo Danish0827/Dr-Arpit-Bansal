@@ -78,16 +78,16 @@ const Gallery = () => {
         <div className="grid grid-cols-1 gap-5  lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
           {videoData?.map((item: any) => (
             <div className="space-y-2" key={item.id}>
-              <div className="px-5">
+              <div className="px-0 border-2 border-dashed border-[#232c77] mb-5 rounded-lg">
                 <div className="relative">
                   <img
-                    className="mb-5 m-auto"
+                    className="m-auto rounded-lg"
                     width={"100%"}
                     height={"300px"}
                     src={item.img.src}
                     alt=""
                   />
-                  <h4 className="text-white text-xl font-semibold text-center py-2 absolute top-0 w-full h-full flex items-center justify-center bg-[#00000066]">
+                  <h4 className="text-white text-xl font-semibold text-center py-2 absolute top-0 w-full h-full flex items-center justify-center rounded-lg bg-[#00000066]">
                     <IoPlayCircleSharp
                       onClick={() => openModal(item.video)} // Ensure correct video URL is passed
                       className="text-7xl cursor-pointer"
@@ -127,9 +127,8 @@ const Gallery = () => {
 
         <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
           {portfolioDatas.map((item: PortfolioData) => (
-            <div key={item.id}>
+            <div key={item.id} className="mb-5">
               {" "}
-              
               <Image.PreviewGroup>
                 <Image
                   src={item.image.src} // Access the src from the image object

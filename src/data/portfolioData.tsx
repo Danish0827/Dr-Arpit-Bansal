@@ -20,9 +20,9 @@ import gallery19 from "@/assets/images/gallery/19.webp";
 import gallery20 from "@/assets/images/gallery/20.webp";
 import gallery21 from "@/assets/images/gallery/21.webp";
 import gallery22 from "@/assets/images/gallery/22.webp";
-// import gallery23 from "@/assets/images/gallery/23.webp";
+import gallery23 from "@/assets/images/gallery/23.jpg";
 import gallery24 from "@/assets/images/gallery/24.webp";
-// import gallery25 from "@/assets/images/gallery/25.webp";
+import gallery25 from "@/assets/images/gallery/25.jpg";
 import gallery26 from "@/assets/images/gallery/26.webp";
 import gallery27 from "@/assets/images/gallery/27.webp";
 import gallery28 from "@/assets/images/gallery/28.webp";
@@ -53,9 +53,9 @@ const portfolioDatas = [
   { id: 20, image: gallery20, heading: "PROJECT 18" },
   { id: 21, image: gallery21, heading: "PROJECT 19" },
   { id: 22, image: gallery22, heading: "PROJECT 20" },
-  // { id: 23, image: gallery23, heading: "PROJECT 21" },
+  { id: 23, image: gallery23, heading: "PROJECT 21" },
   { id: 24, image: gallery24, heading: "PROJECT 22" },
-  // { id: 25, image: gallery25, heading: "PROJECT 23" },
+  { id: 25, image: gallery25, heading: "PROJECT 23" },
   { id: 26, image: gallery26, heading: "PROJECT 24" },
   { id: 27, image: gallery27, heading: "PROJECT 25" },
   { id: 28, image: gallery28, heading: "PROJECT 26" },
