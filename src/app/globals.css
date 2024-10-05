@@ -118,3 +118,7 @@ img.ant-image-img.rounded-lg.css-vn1oyg {
   object-position: top center !important;
   width: 100% !important;
 }
+.ant-image.css-vn1oyg {
+  border: 2px dashed blue;
+  border-radius: 10px;
+}

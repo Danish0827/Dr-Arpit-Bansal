@@ -54,14 +54,14 @@ const InNews = () => {
       <div className={`container mx-auto px-4 py-16`}>
         <h5
           style={{ letterSpacing: "3px" }}
-          className="text-[#232c77] text-center pb-5 font-bold uppercase mainPrimary text-4xl lg:text-6xl"
+          className="text-[#232c77] text-center pb-8 font-bold uppercase mainPrimary text-4xl lg:text-6xl"
         >
           In News
         </h5>
 
         <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
           {inNewsDatas.map((item: PortfolioData) => (
-            <div key={item.id}>
+            <div key={item.id} className="mb-5">
               {" "}
               {/* Add a wrapper div with a unique key */}
               <Image.PreviewGroup>
