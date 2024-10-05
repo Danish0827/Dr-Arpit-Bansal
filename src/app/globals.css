@@ -106,3 +106,15 @@ img.ant-image-img.rounded-lg.css-dev-only-do-not-override-vn1oyg {
   object-position: top center !important;
   width: 100% !important;
 }
+.ant-image.css-vn1oyg {
+  height: 210px !important;
+  overflow: hidden !important;
+  object-fit: cover !important;
+  width: 100% !important;
+}
+img.ant-image-img.rounded-lg.css-vn1oyg {
+  height: 210px !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  width: 100% !important;
+}
