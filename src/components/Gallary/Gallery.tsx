@@ -82,7 +82,7 @@ const Gallery = () => {
                 <div className="relative">
                   <img
                     className="mb-5 m-auto"
-                    width={"70%"}
+                    width={"100%"}
                     height={"300px"}
                     src={item.img.src}
                     alt=""
