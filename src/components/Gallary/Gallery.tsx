@@ -107,6 +107,7 @@ const Gallery = () => {
           centered
           width={700}
           footer={null}
+          key={currentVideoUrl}
         >
           {currentVideoUrl ? (
             <video
@@ -128,7 +129,7 @@ const Gallery = () => {
           {portfolioDatas.map((item: PortfolioData) => (
             <div key={item.id}>
               {" "}
-              {/* Add a wrapper div with a unique key */}
+              
               <Image.PreviewGroup>
                 <Image
                   src={item.image.src} // Access the src from the image object
