@@ -14,6 +14,8 @@ import banner5 from "@/assets/images/5.jpg";
 import banner6 from "@/assets/images/6.jpg";
 import banner7 from "@/assets/images/7.jpg";
 import banner8 from "@/assets/images/8.jpg";
+import banner9 from "@/assets/images/9.png";
+
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import Link from "next/link";
@@ -27,12 +29,12 @@ const slidesData = [
   {
     url: "/speciality/piles-surgery",
     description: "",
-    backgroundImage: banner2.src,
+    backgroundImage: banner3.src,
   },
   {
     url: "/speciality/hernia-surgery",
     description: "",
-    backgroundImage: banner3.src,
+    backgroundImage: banner2.src,
   },
   {
     url: "/speciality/stone-surgery",
@@ -43,6 +45,7 @@ const slidesData = [
   { url: "/in-news", description: "", backgroundImage: banner6.src },
   { url: "/book-appointment", description: "", backgroundImage: banner7.src },
   { url: "/gallery", description: "", backgroundImage: banner8.src },
+  { url: "/gallery", description: "", backgroundImage: banner9.src },
 ];
 
 const Slider: React.FC = () => {
