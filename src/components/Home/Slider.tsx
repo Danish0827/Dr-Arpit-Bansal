@@ -48,6 +48,7 @@ const slidesData = [
   { url: "/gallery", description: "", backgroundImage: banner9.src },
 ];
 
+
 const Slider: React.FC = () => {
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
   const progressCircle = useRef<SVGSVGElement | null>(null);
