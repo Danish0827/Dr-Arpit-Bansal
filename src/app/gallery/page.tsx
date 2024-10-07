@@ -2,7 +2,7 @@ import RequestAppointment from "@/components/Contact/RequestAppointment";
 import Gallery from "@/components/Gallary/Gallery";
 import BreadCrumb from "@/components/Layout/BreadCrump/BreadCrump";
 import { Metadata } from "next";
-import abouts from '@/assets/images/breadcrump/2.png'
+import abouts from '@/assets/images/breadcrump/2.jpg'
 
 export const metadata: Metadata = {
   title: "Gallery | Dr. Arpit Bansal",

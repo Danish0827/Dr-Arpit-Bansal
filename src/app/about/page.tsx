@@ -4,7 +4,7 @@ import GoogleFeed from "@/components/InstagramFeed/GoogleFeed";
 import BreadCrumb from "@/components/Layout/BreadCrump/BreadCrump";
 import { Metadata } from "next";
 import React from "react";
-import abouts from "@/assets/images/breadcrump/1.png";
+import abouts from "@/assets/images/breadcrump/1.jpg";
 import Counter from "@/components/About/Counter";
 import Passion from "@/components/About/Passion";
 

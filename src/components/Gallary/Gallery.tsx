@@ -125,7 +125,7 @@ const Gallery = () => {
           )}
         </Modal>
 
-        <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
+        <div className="dad columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
           {portfolioDatas.map((item: PortfolioData) => (
             <div key={item.id} className="mb-5">
               {" "}

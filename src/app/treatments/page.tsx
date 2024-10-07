@@ -2,7 +2,7 @@ import BreadCrumb from "@/components/Layout/BreadCrump/BreadCrump";
 import Treatments from "@/components/Treatments/Treatments";
 import { Metadata } from "next";
 import React from "react";
-import abouts from '@/assets/images/breadcrump/2.png'
+import abouts from '@/assets/images/breadcrump/2.jpg'
 
 export const metadata: Metadata = {
   title: "Our Treatments | Dr. Arpit Bansal",

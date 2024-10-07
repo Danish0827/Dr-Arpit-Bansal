@@ -2,7 +2,7 @@ import BreadCrumb from "@/components/Layout/BreadCrump/BreadCrump";
 import Schedule from "@/components/Schedule/Schedule";
 import { Metadata } from "next";
 import React from "react";
-import abouts from "@/assets/images/breadcrump/3.png";
+import abouts from "@/assets/images/breadcrump/2.jpg";
 import GoogleFeed from "@/components/InstagramFeed/GoogleFeed";
 import TestimonialComp from "@/components/TestimonialComp/TestimonialComp";
 

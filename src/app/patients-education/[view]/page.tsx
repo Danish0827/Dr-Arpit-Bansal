@@ -3,7 +3,7 @@ import RequestAppointment from "@/components/Contact/RequestAppointment";
 import BreadCrumb from "@/components/Layout/BreadCrump/BreadCrump";
 import { Metadata } from "next";
 import React from "react";
-import abouts from "@/assets/images/breadcrump/4.png";
+import abouts from "@/assets/images/breadcrump/2.jpg";
 
 export const metadata: Metadata = {
   title: "Patients Education | Dr. Arpit Bansal",

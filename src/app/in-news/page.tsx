@@ -2,7 +2,7 @@ import RequestAppointment from "@/components/Contact/RequestAppointment";
 import InNews from "@/components/Gallary/InNews";
 import BreadCrumb from "@/components/Layout/BreadCrump/BreadCrump";
 import React from "react";
-import abouts from "@/assets/images/breadcrump/2.png";
+import abouts from "@/assets/images/breadcrump/2.jpg";
 const inNews = () => {
   return (
     <>

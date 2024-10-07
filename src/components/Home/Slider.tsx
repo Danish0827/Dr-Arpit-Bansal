@@ -6,26 +6,43 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./styles.css"; // Import your styles
 
-import banner1 from "@/assets/images/1.webp";
-import banner2 from "@/assets/images/2.webp";
-import banner3 from "@/assets/images/3.webp";
-import banner4 from "@/assets/images/4.webp";
-import banner5 from "@/assets/images/5.webp";
-import banner6 from "@/assets/images/6.webp";
-import banner7 from "@/assets/images/7.webp";
-import banner8 from "@/assets/images/8.webp";
+import banner1 from "@/assets/images/1.jpg";
+import banner2 from "@/assets/images/2.jpg";
+import banner3 from "@/assets/images/3.jpg";
+import banner4 from "@/assets/images/4.jpg";
+import banner5 from "@/assets/images/5.jpg";
+import banner6 from "@/assets/images/6.jpg";
+import banner7 from "@/assets/images/7.jpg";
+import banner8 from "@/assets/images/8.jpg";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
+import Link from "next/link";
 
 const slidesData = [
-  { title: "", description: "", backgroundImage: banner1.src },
-  { title: "", description: "", backgroundImage: banner2.src },
-  { title: "", description: "", backgroundImage: banner3.src },
-  { title: "", description: "", backgroundImage: banner4.src },
-  { title: "", description: "", backgroundImage: banner5.src },
-  { title: "", description: "", backgroundImage: banner6.src },
-  { title: "", description: "", backgroundImage: banner7.src },
-  { title: "", description: "", backgroundImage: banner8.src },
+  {
+    url: "/speciality/cancer-treatment",
+    description: "",
+    backgroundImage: banner1.src,
+  },
+  {
+    url: "/speciality/piles-surgery",
+    description: "",
+    backgroundImage: banner2.src,
+  },
+  {
+    url: "/speciality/hernia-surgery",
+    description: "",
+    backgroundImage: banner3.src,
+  },
+  {
+    url: "/speciality/stone-surgery",
+    description: "",
+    backgroundImage: banner4.src,
+  },
+  { url: "/about", description: "", backgroundImage: banner5.src },
+  { url: "/in-news", description: "", backgroundImage: banner6.src },
+  { url: "/book-appointment", description: "", backgroundImage: banner7.src },
+  { url: "/gallery", description: "", backgroundImage: banner8.src },
 ];
 
 const Slider: React.FC = () => {
@@ -42,7 +59,6 @@ const Slider: React.FC = () => {
       }
     });
   };
-
   return (
     <>
       <Swiper
@@ -58,17 +74,19 @@ const Slider: React.FC = () => {
       >
         {slidesData.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div
-              ref={(el) => (slideRefs.current[index] = el)}
-              className="relative w-full h-auto flex items-center justify-left banner-animate"
-            >
-              <img src={slide.backgroundImage} alt="" />
-              {/* Overlay parts */}
-              <div className="overlay-top-part overlay-part"></div>
-              <div className="overlay-bottom-part overlay-part"></div>
-              {/* <div className="overlay-left-part overlay-part"></div> */}
-              {/* <div className="overlay-right-part overlay-part"></div> */}
-            </div>
+            <Link href={slide.url}>
+              <div
+                ref={(el: any) => (slideRefs.current[index] = el)}
+                className="relative w-full h-auto flex items-center justify-left banner-animate"
+              >
+                <img src={slide.backgroundImage} alt="" />
+                {/* Overlay parts */}
+                <div className="overlay-top-part overlay-part"></div>
+                <div className="overlay-bottom-part overlay-part"></div>
+                {/* <div className="overlay-left-part overlay-part"></div> */}
+                {/* <div className="overlay-right-part overlay-part"></div> */}
+              </div>
+            </Link>
           </SwiperSlide>
         ))}
 
