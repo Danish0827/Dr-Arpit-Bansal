@@ -121,3 +121,8 @@ h3 {
   border: 2px dashed blue;
   border-radius: 10px;
 }
+.dad.columns-1.gap-5.sm\:columns-2.sm\:gap-8.md\:columns-3.lg\:columns-4.\[\&\>img\:not\(\:first-child\)\]\:mt-8 div.mb-5 div.ant-image.css-vn1oyg img.ant-image-img.rounded-lg.css-vn1oyg {
+  height: 210px !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+}
