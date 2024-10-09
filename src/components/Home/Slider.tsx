@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./styles.css"; // Import your styles
 
+
 import banner1 from "@/assets/images/1.jpg";
 import banner2 from "@/assets/images/2.jpg";
 import banner3 from "@/assets/images/3.jpg";
