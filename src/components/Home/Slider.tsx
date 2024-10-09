@@ -14,7 +14,9 @@ import banner5 from "@/assets/images/5.jpg";
 import banner6 from "@/assets/images/6.jpg";
 import banner7 from "@/assets/images/7.jpg";
 import banner8 from "@/assets/images/8.jpg";
-import banner9 from "@/assets/images/9.png";
+import banner9 from "@/assets/images/9.jpg";
+import banner10 from "@/assets/images/10.jpg";
+
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
@@ -22,9 +24,14 @@ import Link from "next/link";
 
 const slidesData = [
   {
-    url: "/speciality/cancer-treatment",
+    url: "/about",
     description: "",
     backgroundImage: banner1.src,
+  },
+  {
+    url: "/speciality/cancer-treatment",
+    description: "",
+    backgroundImage: banner10.src,
   },
   {
     url: "/speciality/piles-surgery",
