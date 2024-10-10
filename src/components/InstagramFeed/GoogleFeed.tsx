@@ -69,7 +69,7 @@ const GoogleFeed = () => {
       >
         What our Patients say
       </h5>
-      <ElfsightWidget widgetId={"8f6c1e5a-1f9f-4456-ac07-ca451a33c51b"} />
+      <ElfsightWidget widgetId={"834c7f42-857d-4ede-bf2c-6ab30a5ed78e"} />
     </div>
   );
 };
