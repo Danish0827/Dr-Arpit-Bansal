@@ -93,7 +93,18 @@ h3 {
   border: 2px dashed blue;
   border-radius: 10px;
 }
-
+.ant-image.css-vn1oyg {
+  border: 2px dashed blue;
+  border-radius: 10px;
+}
+.w-\[90\%\].md\:w-\[95\%\].lg\:w-\[94\%\].xl\:w-\[92\%\].m-0.ml-auto.py-3.lg\:py-20.xl\:py-24.relative div.ant-image.css-dev-only-do-not-override-vn1oyg {
+  border: 2px dashed #ffffff;
+  border-radius: 10px;
+}
+.w-\[90\%\].md\:w-\[95\%\].lg\:w-\[94\%\].xl\:w-\[92\%\].m-0.ml-auto.py-3.lg\:py-20.xl\:py-24.relative div.ant-image.css-vn1oyg {
+  border: 2px dashed #ffffff;
+  border-radius: 10px;
+}
 /* .dad.columns-1.gap-5.sm\:columns-2.sm\:gap-8.md\:columns-3.lg\:columns-4.\[\&\>img\:not\(\:first-child\)\]\:mt-8 div.mb-5 div.ant-image.css-dev-only-do-not-override-vn1oyg {  height: 210px !important;
   overflow: hidden !important;
   object-fit: cover !important;
@@ -117,10 +128,7 @@ h3 {
   object-position: top center !important;
   width: 100% !important;
 }
-.ant-image.css-vn1oyg {
-  border: 2px dashed blue;
-  border-radius: 10px;
-}
+
 .dad.columns-1.gap-5.sm\:columns-2.sm\:gap-8.md\:columns-3.lg\:columns-4.\[\&\>img\:not\(\:first-child\)\]\:mt-8 div.mb-5 div.ant-image.css-vn1oyg img.ant-image-img.rounded-lg.css-vn1oyg {
   height: 210px !important;
   object-fit: cover !important;
