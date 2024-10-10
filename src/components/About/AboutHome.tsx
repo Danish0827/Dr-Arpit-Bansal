@@ -44,7 +44,7 @@ const AboutHome = () => {
       <div className="container mx-auto">
         <div className="flex flex-wrap justify-center items-start lg:flex-row-reverse">
           <div
-            className={`relative flex justify-center items-center w-full lg:w-1/2 mb-10 duration-300 ${
+            className={`relative flex justify-center items-center w-full lg:w-1/2 xl:w-5/12 mb-10 duration-300 ${
               isInView ? "animate-fade-in-left" : "opacity-0"
             }`}
           >
@@ -52,7 +52,7 @@ const AboutHome = () => {
               <img
                 src={gallery1.src}
                 alt="Profile"
-                className="w-full h-full -mt-12 xl:-mt-20 relative z-20"
+                className="w-full h-full -mt-12  relative z-20"
               />
               {/* <div className="absolute w-80 md:w-96 h-[380px] md:h-[450px] bg-gray-300 -top-8 -right-8 rounded-lg border-b-4 border-[#171f56]"></div>
               <div className="absolute w-16 h-16 bg-[#171f56] -top-4 -right-4 rounded-lg"></div> */}
@@ -60,7 +60,7 @@ const AboutHome = () => {
           </div>
 
           <div
-            className={`lg:pl-8 px-3 duration-300 w-full lg:w-1/2  ${
+            className={`lg:pl-8 px-3 duration-300 w-full lg:w-1/2 xl:w-7/12 ${
               isInView ? "animate-fade-in-right" : "opacity-0"
             }`}
           >
