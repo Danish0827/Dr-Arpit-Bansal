@@ -1,6 +1,9 @@
-import React from 'react';
-import { Tabs } from 'antd';
-import LDC from './Events/LDC';
+import React from "react";
+import { Tabs } from "antd";
+import LDC from "./Events/LDC";
+import Kanpur from "./Events/Kanpur";
+import Lala from "./Events/Lala";
+import Maharishi from "./Events/Maharishi";
 
 // Placeholder components
 // const LDC: React.FC = () => <div>LDC Component Content</div>;
@@ -12,19 +15,24 @@ const App: React.FC = () => (
     centered
     items={[
       {
-        label: 'Custom Tab 1',
-        key: '1',
-        children: <LDC />,  // Render LDC component in Tab 1
+        label: "Kanpur - IIT",
+        key: "1",
+        children: <Kanpur />, // Render LDC component in Tab 1
       },
       {
-        label: 'Custom Tab 2',
-        key: '2',
-        children: <AnotherComponent />,  // Render another component in Tab 2
+        label: "LDC Public School",
+        key: "2",
+        children: <LDC />, // Render another component in Tab 2
       },
       {
-        label: 'Custom Tab 3',
-        key: '3',
-        children: 'Content of Tab Pane 3',  // You can replace this with any other content
+        label: "Maharishi Patanjali School",
+        key: "3",
+        children: <Maharishi />, // You can replace this with any other content
+      },
+      {
+        label: "Lala Mohan Das College",
+        key: "4",
+        children: <Lala />, // You can replace this with any other content
       },
     ]}
   />

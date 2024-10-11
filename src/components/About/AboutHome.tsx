@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import gallery1 from "@/assets/images/gallery/27.jpg";
+import gallery1 from "@/assets/images/gallery/270.png";
 
 const AboutHome = () => {
   const bg = "./white bg.png";

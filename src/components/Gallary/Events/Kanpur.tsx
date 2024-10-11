@@ -1,5 +1,5 @@
 import React from "react";
-import LDCDatas from "@/data/LDCData";
+import KanpurDatas from "@/data/KanpurData";
 import { Image } from "antd";
 
 interface StaticImageData {
@@ -16,14 +16,12 @@ interface PortfolioData {
   purl?: string; // Optional URL
 }
 
-const LDC = () => {
+const Kanpur = () => {
   return (
     <>
-      <p className="text-center mb-5 text-2xl">
-        Talk on cervical cancer, longevity and hyderation
-      </p>
+      <p className="text-center mb-5 text-2xl">Talk on hyderation and longevity</p>
       <div className="dad columns-1 gap-5 sm:columns-2  md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
-        {LDCDatas.map((item: PortfolioData) => (
+        {KanpurDatas.map((item: PortfolioData) => (
           <div key={item.id} className="mb-3">
             {" "}
             <Image.PreviewGroup>
@@ -43,4 +41,4 @@ const LDC = () => {
   );
 };
 
-export default LDC;
+export default Kanpur;
