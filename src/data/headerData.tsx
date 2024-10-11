@@ -73,16 +73,16 @@ const headerData = {
 
 
 const videoData = [
-  {
-    id: 1,
-    img: image1,
-    video: 'https://drarpitbck.demo-web.live/wp-content/uploads/2024/10/1.mp4',
-  },
-  {
-    id: 2,
-    img: image2,
-    video: 'https://drarpitbck.demo-web.live/wp-content/uploads/2024/10/2.mp4',
-  },
+  // {
+  //   id: 1,
+  //   img: image1,
+  //   video: 'https://drarpitbck.demo-web.live/wp-content/uploads/2024/10/1.mp4',
+  // },
+  // {
+  //   id: 2,
+  //   img: image2,
+  //   video: 'https://drarpitbck.demo-web.live/wp-content/uploads/2024/10/2.mp4',
+  // },
   
   {
     id: 3,
