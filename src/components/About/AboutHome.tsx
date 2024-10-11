@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import gallery1 from "@/assets/images/gallery/1.png";
+import gallery1 from "@/assets/images/gallery/27.jpg";
 
 const AboutHome = () => {
   const bg = "./white bg.png";
@@ -52,7 +52,8 @@ const AboutHome = () => {
               <img
                 src={gallery1.src}
                 alt="Profile"
-                className="w-full h-full -mt-12  relative z-20"
+                // className="w-full h-full -mt-12  relative z-20"
+                 className="w-[500px] h-[500px] object-cover object-top -mt-12 lg:-mt-0 xl:-mt-12 relative z-20 "
               />
               {/* <div className="absolute w-80 md:w-96 h-[380px] md:h-[450px] bg-gray-300 -top-8 -right-8 rounded-lg border-b-4 border-[#171f56]"></div>
               <div className="absolute w-16 h-16 bg-[#171f56] -top-4 -right-4 rounded-lg"></div> */}
