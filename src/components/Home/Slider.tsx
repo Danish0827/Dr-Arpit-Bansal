@@ -48,10 +48,10 @@ const slidesData = [
     description: "",
     backgroundImage: banner4.src,
   },
-  { url: "/about", description: "", backgroundImage: banner5.src },
+  { url: "/bringing-people-together", description: "", backgroundImage: banner5.src },
   { url: "/in-news", description: "", backgroundImage: banner6.src },
   { url: "/book-appointment", description: "", backgroundImage: banner7.src },
-  { url: "/gallery", description: "", backgroundImage: banner8.src },
+  { url: "/where-passion-meets-recognition", description: "", backgroundImage: banner8.src },
   { url: "/gallery", description: "", backgroundImage: banner9.src },
 ];
 

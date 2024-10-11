@@ -32,7 +32,7 @@ import gallery29 from "@/assets/images/gallery/29.jpg";
 
 const portfolioDatas = [
   { id: 1, image: gallery1, heading: "HOME" },
-  { id: 2, image: gallery2, heading: "OFFICE" },
+  // { id: 2, image: gallery2, heading: "OFFICE" },
   { id: 3, image: gallery3, heading: "PROJECT 1" },
   // { id: 4, image: gallery4, heading: "PROJECT 2" },
   // { id: 5, image: gallery5, heading: "PROJECT 3" },
@@ -40,7 +40,7 @@ const portfolioDatas = [
   { id: 7, image: gallery7, heading: "PROJECT 5" },
   { id: 8, image: gallery8, heading: "PROJECT 6" },
   // { id: 9, image: gallery9, heading: "PROJECT 7" },
-  { id: 10, image: gallery10, heading: "PROJECT 8" },
+  // { id: 10, image: gallery10, heading: "PROJECT 8" },
   { id: 11, image: gallery11, heading: "PROJECT 9" },
   // { id: 12, image: gallery12, heading: "PROJECT 10" },
   // { id: 13, image: gallery13, heading: "PROJECT 11" },
@@ -53,7 +53,7 @@ const portfolioDatas = [
   { id: 20, image: gallery20, heading: "PROJECT 18" },
   { id: 21, image: gallery21, heading: "PROJECT 19" },
   { id: 22, image: gallery22, heading: "PROJECT 20" },
-  { id: 23, image: gallery23, heading: "PROJECT 21" },
+  // { id: 23, image: gallery23, heading: "PROJECT 21" },
   { id: 24, image: gallery24, heading: "PROJECT 22" },
   { id: 25, image: gallery25, heading: "PROJECT 23" },
   { id: 26, image: gallery26, heading: "PROJECT 24" },
