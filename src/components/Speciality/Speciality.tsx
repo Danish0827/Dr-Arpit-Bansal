@@ -92,13 +92,16 @@ const Speciality: React.FC<SpecialityProps> = ({ title }) => {
           <img
             src={treatment.image}
             alt={decodeHtmlEntities(treatment.title)}
-            className="w-full object-cover border-2 border-solid border-[#fff] rounded-md shadow-lg"
+            className="w-full object-cover border-2 border-solid border-[#fff] rounded-md"
+            style={{
+              boxShadow: 'rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px'
+            }}
           />
         </div>
         <div className="w-full lg:w-[50%] pt-5 lg:pt-0 flex flex-col justify-center px-5 space-y-3 lg:space-y-5 lg:-ml-20 animate-fade-in-right">
           <h5
             style={{ letterSpacing: "3px" }}
-            className="text-[#232c77] font-bold uppercase mainPrimary text-4xl lg:text-6xl"
+            className="text-[#232c77] font-bold uppercase mainPrimary text-4xl lg:text-5xl"
           >
             {decodeHtmlEntities(treatment.title)}
           </h5>

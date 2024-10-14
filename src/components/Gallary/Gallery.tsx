@@ -86,6 +86,9 @@ const Gallery = () => {
                     height={"300px"}
                     src={item.img.src}
                     alt=""
+                    style={{
+                      boxShadow: 'rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px'
+                    }}
                   />
                   <h4 className="text-white text-xl font-semibold text-center py-2 absolute top-0 w-full h-full flex items-center justify-center rounded-lg bg-[#00000066]">
                     <IoPlayCircleSharp
@@ -131,6 +134,9 @@ const Gallery = () => {
               {" "}
               <Image.PreviewGroup>
                 <Image
+                style={{
+                  boxShadow: 'rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px'
+                }}
                   src={item.image.src} // Access the src from the image object
                   alt={item.heading}
                   className="rounded-lg"
