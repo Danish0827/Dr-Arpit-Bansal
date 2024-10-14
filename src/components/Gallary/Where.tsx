@@ -31,7 +31,7 @@ const Where = () => {
           style={{ letterSpacing: "3px" }}
           className="text-[#232c77] text-center pb-8 font-bold uppercase mainPrimary text-4xl lg:text-6xl"
         >
-          {/* Awards */}
+            {/* Awards */}
           Where Passion Meets Recognition
         </h5>
         <div className="dad columns-1 gap-5 sm:columns-2  md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
@@ -40,10 +40,6 @@ const Where = () => {
               {" "}
               <Image.PreviewGroup>
                 <Image
-                  style={{
-                    boxShadow:
-                      "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",
-                  }}
                   src={item.image.src} // Access the src from the image object
                   alt={item.heading}
                   className="rounded-lg"
