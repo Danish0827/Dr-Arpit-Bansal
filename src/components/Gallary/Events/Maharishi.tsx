@@ -19,7 +19,7 @@ interface PortfolioData {
 const Maharishi = () => {
   return (
     <>
-      <p className="text-center mb-5 text-2xl">
+     <p className="text-center mb-5 text-2xl">
         Talk on cervical cancer, longevity, hyderation, ageing healthily
       </p>
       <div className="dad columns-1 gap-5 sm:columns-2  md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
@@ -28,10 +28,6 @@ const Maharishi = () => {
             {" "}
             <Image.PreviewGroup>
               <Image
-                style={{
-                  boxShadow:
-                    "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",
-                }}
                 src={item.image.src} // Access the src from the image object
                 alt={item.heading}
                 className="rounded-lg"
@@ -46,4 +42,4 @@ const Maharishi = () => {
     </>
   );
 };
-export default Maharishi;
+export default Maharishi
