@@ -41,7 +41,7 @@ const BlogPostComponent = ({
             <a
               href={`/patients-education/${post.slug}`}
               title={post.title}
-              className="text-gray-800 hover:text-gray-600"
+              className="text-[#232c77] hover:text-gray-600"
             >
               {post.title}
             </a>
@@ -53,7 +53,7 @@ const BlogPostComponent = ({
           <a
             href={`/patients-education/${post.slug}`}
             title="Read More"
-            className="text-blue-500 hover:text-blue-700 font-semibold"
+            className="text-[#232c77] hover:text-blue-700 font-semibold"
           >
             Read More
           </a>
