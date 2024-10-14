@@ -92,7 +92,7 @@ const Speciality: React.FC<SpecialityProps> = ({ title }) => {
           <img
             src={treatment.image}
             alt={decodeHtmlEntities(treatment.title)}
-            className="w-full object-cover border-2 border-dashed border-[#232c77] rounded-md shadow-lg"
+            className="w-full object-cover border-2 border-solid border-[#fff] rounded-md shadow-lg"
           />
         </div>
         <div className="w-full lg:w-[50%] pt-5 lg:pt-0 flex flex-col justify-center px-5 space-y-3 lg:space-y-5 lg:-ml-20 animate-fade-in-right">

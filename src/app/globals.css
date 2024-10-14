@@ -90,11 +90,11 @@ h3 {
   clip-path: none; /* Remove clip-path on hover */
 }
 .ant-image.css-dev-only-do-not-override-vn1oyg {
-  border: 2px solid blue;
+  border: 2px solid #232c77;
   border-radius: 10px;
 }
 .ant-image.css-vn1oyg {
-  border: 2px solid blue;
+  border: 2px solid #232c77;
   border-radius: 10px;
 }
 .w-\[90\%\].md\:w-\[95\%\].lg\:w-\[94\%\].xl\:w-\[92\%\].m-0.ml-auto.py-3.lg\:py-20.xl\:py-24.relative div.ant-image.css-dev-only-do-not-override-vn1oyg {
@@ -134,3 +134,9 @@ h3 {
   object-fit: cover !important;
   object-position: top center !important;
 } */
+@media only screen and (max-width: 767px) {
+  :where(.css-dev-only-do-not-override-vn1oyg).ant-tabs-centered > .ant-tabs-nav .ant-tabs-nav-wrap:not([class*='.ant-tabs-nav-wrap-ping']),
+  :where(.css-dev-only-do-not-override-vn1oyg).ant-tabs-centered > div > .ant-tabs-nav .ant-tabs-nav-wrap:not([class*='.ant-tabs-nav-wrap-ping']) {
+      justify-content: center;
+  }
+}

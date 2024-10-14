@@ -30,7 +30,7 @@ const RequestAppointment: React.FC = () => {
     }, 1000);
   };
   return (
-    <div className="appointment bg-[#414cb1] py-12">
+    <div className="appointment bg-[#232c77] py-12">
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
           {/* Left section with heading and description */}
