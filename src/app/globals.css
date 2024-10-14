@@ -134,9 +134,18 @@ h3 {
   object-fit: cover !important;
   object-position: top center !important;
 } */
+
+.katVDP {
+  font-size: 16px;
+  color: #232c77;
+}
 @media only screen and (max-width: 767px) {
   :where(.css-dev-only-do-not-override-vn1oyg).ant-tabs-centered > .ant-tabs-nav .ant-tabs-nav-wrap:not([class*='.ant-tabs-nav-wrap-ping']),
   :where(.css-dev-only-do-not-override-vn1oyg).ant-tabs-centered > div > .ant-tabs-nav .ant-tabs-nav-wrap:not([class*='.ant-tabs-nav-wrap-ping']) {
-      justify-content: center;
+      justify-content: unset !important;
+  }
+
+  :where(.css-dev-only-do-not-override-vn1oyg).ant-tabs-centered >.ant-tabs-nav .ant-tabs-nav-wrap:not([class*='.ant-tabs-nav-wrap-ping']), :where(.css-dev-only-do-not-override-vn1oyg).ant-tabs-centered >div>.ant-tabs-nav .ant-tabs-nav-wrap:not([class*='.ant-tabs-nav-wrap-ping']){
+    justify-content: unset !important;
   }
 }

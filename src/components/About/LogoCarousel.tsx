@@ -56,7 +56,7 @@ const LogoCarousel = () => {
               key={item.id}
               className="single-client shadow-lg rounded-lg bg-[#fff] my-3"
             >
-              <img className="p-7" src={item.image.src} alt={item.heading} />
+              <img className="p-0" src={item.image.src} alt={item.heading} />
             </div>
           ))}
         </Slider>
