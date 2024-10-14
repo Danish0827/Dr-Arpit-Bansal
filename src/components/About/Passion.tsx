@@ -58,7 +58,7 @@ const Passion = () => {
           </div>
 
           <div
-            className={`lg:pl-8 mt-2 p-6 duration-300 w-full lg:w-1/2 2xl:w-5/12  bg-[#232c77] border-dashed border-2 border-white ${
+            className={`lg:pl-8 mt-2 p-6 duration-300 w-full lg:w-1/2 2xl:w-5/12  bg-[#232c77] border-solid border-2 border-white ${
               isInView ? "animate-fade-in-right" : "opacity-0"
             }`}
           >

@@ -79,7 +79,7 @@ const SpecialityCompOld: React.FC = () => {
                     //   boxShadow:
                     //     "rgba(255, 255, 255, 0.25) 0px 54px 55px,rgba(255, 255, 255, 0.12) 0px -12px 30px,rgba(255, 255, 255, 0.12) 0px 4px 6px,rgba(255, 255, 255, 0.17) 0px 12px 13px,rgba(255, 255, 255, 0.09) 0px -3px 5px",
                     // }}
-                    className="gdfg overflow-hidden group shadow-2xl relative rounded-lg border-2 border-white  border-dashed"
+                    className="gdfg overflow-hidden group shadow-2xl relative rounded-lg border-2 border-white  border-solid"
                   >
                     <img
                       className="hover:scale-150 scale-125  group-hover:bg-white relative duration-100 object-cover  m-auto"

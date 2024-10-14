@@ -78,7 +78,7 @@ const Gallery = () => {
         <div className=" grid-cols-1 gap-5 flex justify-center lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
           {videoData?.map((item: any) => (
             <div className="space-y-2 w-1/4" key={item.id}>
-              <div className="px-0 border-2 border-dashed border-[#232c77] mb-5 rounded-lg">
+              <div className="px-0 border-2 border-solid border-[#232c77] mb-5 rounded-lg">
                 <div className="relative">
                   <img
                     className="m-auto rounded-lg"
