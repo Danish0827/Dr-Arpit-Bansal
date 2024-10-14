@@ -54,34 +54,41 @@ const Counter: React.FC = () => {
         <div className="">
           <div className="flex flex-col gap-5 lg:gap-14 md:flex-row lg:justify-between">
             <div className="w-full lg:w-1/3">
-              <div className="font-manrope font-bold text-3xl lg:text-4xl text-primary mb-2 text-center">
-                {inView && <CountUp end={5000} />}+
-              </div>
-              <p className="lg:text-lg text-dark text-center">Happy patients</p>
-            </div>
-            <div className="w-full lg:w-1/3">
-              <div className="font-manrope font-bold text-3xl lg:text-4xl text-primary mb-2 text-center">
-                {inView && <CountUp end={4} />}+
-              </div>
-              <p className="lg:text-lg text-dark text-center">
-                Hospital Affiliations
+              <p className="lg:text-2xl font-bold text-[#232c77] uppercase text-dark text-center mb-3">
+                Years of <br />
+                Experience
               </p>
-            </div>
-            <div className="w-full lg:w-1/3">
               <div className="font-manrope font-bold text-3xl lg:text-4xl text-primary mb-2 text-center">
                 {inView && <CountUp end={15} />}+
               </div>
-              <p className="lg:text-lg text-dark text-center">
-                Years of Experience
-              </p>
             </div>
             <div className="w-full lg:w-1/3">
+              <p className="lg:text-2xl font-bold text-[#232c77] uppercase text-dark text-center mb-3">
+                Happy <br />
+                patients
+              </p>
+              <div className="font-manrope font-bold text-3xl lg:text-4xl text-primary mb-2 text-center">
+                {inView && <CountUp end={5000} />}+
+              </div>
+            </div>
+            <div className="w-full lg:w-1/3">
+              <p className="lg:text-2xl font-bold text-[#232c77] uppercase text-dark text-center mb-3">
+                Hospital <br />
+                Affiliations
+              </p>
+              <div className="font-manrope font-bold text-3xl lg:text-4xl text-primary mb-2 text-center">
+                {inView && <CountUp end={4} />}+
+              </div>
+            </div>
+
+            <div className="w-full lg:w-1/3">
+              <p className="lg:text-2xl font-bold text-[#232c77] uppercase text-dark text-center mb-3">
+                Publications & <br />
+                Research
+              </p>
               <div className="font-manrope font-bold text-3xl lg:text-4xl text-primary mb-2 text-center">
                 {inView && <CountUp end={20} />}+
               </div>
-              <p className="lg:text-lg text-dark text-center">
-                Publications and Research Done
-              </p>
             </div>
           </div>
         </div>
