@@ -32,7 +32,6 @@ import gallery29 from "@/assets/images/gallery/29.jpg";
 
 const portfolioDatas = [
   { id: 1, image: gallery1, heading: "HOME" },
-  { id: 29, image: gallery29, heading: "Dr. Arpit" },
   // { id: 2, image: gallery2, heading: "OFFICE" },
   // { id: 3, image: gallery3, heading: "PROJECT 1" },
   // { id: 4, image: gallery4, heading: "PROJECT 2" },
@@ -55,12 +54,12 @@ const portfolioDatas = [
   { id: 21, image: gallery21, heading: "PROJECT 19" },
   { id: 22, image: gallery22, heading: "PROJECT 20" },
   // { id: 23, image: gallery23, heading: "PROJECT 21" },
-  { id: 25, image: gallery25, heading: "PROJECT 23" },
   { id: 24, image: gallery24, heading: "PROJECT 22" },
+  { id: 25, image: gallery25, heading: "PROJECT 23" },
   // { id: 26, image: gallery26, heading: "PROJECT 24" },
   // { id: 27, image: gallery27, heading: "PROJECT 25" },
   // { id: 28, image: gallery28, heading: "PROJECT 26" },
- 
+  { id: 29, image: gallery29, heading: "Dr. Arpit" },
 ];
 
 export default portfolioDatas;
