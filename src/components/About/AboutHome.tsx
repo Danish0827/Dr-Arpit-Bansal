@@ -37,12 +37,12 @@ const AboutHome = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="about bg-white pt-20"
+      className="about bg-white pt-20 pb-10"
       id="about"
       ref={sectionRef}
     >
       <div className="container mx-auto">
-        <div className="flex flex-wrap justify-center items-start lg:flex-row-reverse">
+        <div className="flex flex-wrap justify-center items-start lg:flex-row-reverse lg:mb-5">
           <div
             className={`relative flex justify-center items-center w-full lg:w-1/2 xl:w-5/12 mb-10 duration-300 ${
               isInView ? "animate-fade-in-left" : "opacity-0"
