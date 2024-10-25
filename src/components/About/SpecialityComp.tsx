@@ -51,7 +51,7 @@ const SpecialityComp: React.FC = () => {
         //   backgroundPosition: "center",
         // }}
         id="service"
-        className={`block py-10 expertise-logo bg-[#232c77] ${
+        className={`block mt-5 py-10 expertise-logo bg-[#232c77] ${
           sectionInView ? "animate__animated animate__fadeInUp" : ""
         }`} // Add animation class when section is in view
         ref={sectionRef} // Attach ref to the section
