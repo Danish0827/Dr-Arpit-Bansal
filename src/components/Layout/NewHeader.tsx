@@ -6,7 +6,7 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
 import MenuMobile from "./MenuMobile";
 import { Phone } from "lucide-react";
-import logo from "@/assets/arpitlogo.png";
+
 // Define types for SubMenuItem
 
 interface SubMenuItem {
@@ -94,7 +94,9 @@ const NewHeader = () => {
       className={`${headerClass} w-full px-5 py-10 xl:px-8 h-[8svh] block lg:flex items-center justify-between transition-transform duration-300`}
     >
       <Link href={"/"} className="hidden lg:block p-5">
-        <img className="w-52" src={logo.src} alt="Dr Arpit Bansal" />
+        <span className="mainPrimary uppercase text-3xl md:text-2xl xl:text-3xl font-bold text-transparent bg-clip-text bg-[#232c77] ">
+          Dr. Arpit Bansal
+        </span>
       </Link>
 
       <Menu
@@ -130,7 +132,9 @@ const NewHeader = () => {
           <SocialIcons />
         </div>
         <Link href={"/"} className="block">
-          <img className="w-52 -mt-2" src={logo.src} alt="Dr Arpit Bansal" />
+          <span className="mainPrimary uppercase text-3xl md:text-3xl xl:text-4xl font-bold text-transparent bg-clip-text bg-[#232c77] ">
+            Dr. Arpit Bansal
+          </span>
         </Link>
 
         <div className="flex gap-2 items-center">

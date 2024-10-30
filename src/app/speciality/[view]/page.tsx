@@ -15,7 +15,7 @@ const speciality = ({params}:any) => {
         version={false}
       />
      <Speciality title={params.view}/>
-     <RequestAppointment />
+     <RequestAppointment/>
     </>
   )
 }
