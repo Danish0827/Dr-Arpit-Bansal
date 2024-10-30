@@ -6,40 +6,37 @@ import Announcement from "@/components/Layout/Announcement";
 import Footer from "@/components/Layout/Footer";
 import FloatingAppointment from "@/components/Layout/FloatingAppointment";
 import FloatingButton from "@/components/Layout/FloatingButton";
-import abouts from "@/assets/images/breadcrump/2.jpg";
+import metaImage from "@/assets/arpit.jpg";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Dr Arpit Bansal",
   description:
-    "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS Is one of the renowned & Advanced Laparoscopic & Onco Surgeon & Male Infertility consultant.",
-  keywords:
-    "MBBS, MS, FMAS, FCS, laparoscopic surgery, male infertility, onco surgeon",
+    "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS and FIBC is one of the renowned & Advanced Laparoscopic & Onco Surgeon & Male Infertility consultant.",
+  keywords: "MBBS | MS | FACS | FMAS | FCS | FIBC",
 
   // SEO meta tags
-  authors: [{ name: "Dr. Arpit Bansal", url: "https://www.drapitbansal.com" }],
+  authors: [{ name: "Dr. Arpit Bansal", url: "https://drarpitbansal.in" }],
   robots: "index, follow", // To allow search engine crawling and indexing
   publisher: "Dr. Arpit Bansal's Clinic",
 
   // Canonical URL (change it to your actual URL)
   alternates: {
-    canonical: "https://www.drapitbansal.com/about",
+    canonical: "https://drarpitbansal.in",
   },
 
   // Open Graph meta tags
   openGraph: {
     type: "website",
-    url: "https://www.drapitbansal.com/about",
-    title: "About | Dr. Arpit Bansal",
+    url: "https://drarpitbansal.in",
+    title: "Dr. Arpit Bansal",
     description:
-      "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS, is a renowned Advanced Laparoscopic & Onco Surgeon and Male Infertility Consultant.",
+      "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS and FIBC is one of the renowned & Advanced Laparoscopic & Onco Surgeon & Male Infertility consultant.",
     images: [
       {
-        url: abouts.src,
-        width: 1200,
-        height: 630,
-        alt: "About Dr. Arpit Bansal - Laparoscopic & Onco Surgeon",
+        url: metaImage.src,
+        alt: "Dr. Arpit Bansal - Laparoscopic & Onco Surgeon",
       },
     ],
   },
@@ -48,10 +45,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@DrArpitBansal",
-    title: "About | Dr. Arpit Bansal",
+    title: "Dr. Arpit Bansal",
     description:
-      "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS, is a renowned Advanced Laparoscopic & Onco Surgeon and Male Infertility Consultant.",
-    images: [abouts.src],
+      "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS and FIBC is one of the renowned & Advanced Laparoscopic & Onco Surgeon & Male Infertility consultant.",
+    images: [metaImage.src],
   },
 };
 export default function RootLayout({
