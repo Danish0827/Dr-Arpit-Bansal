@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, MapPin, PhoneCall, MailIcon } from "lucide-react";
-import logo from "@/assets/images/logo.png";
+import logo from "@/assets/arpitlogo.png";
 
 interface Treatment {
   id: number;
@@ -43,12 +43,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 xl:grid-cols-3">
           {/* About Section */}
           <div>
-            <span className="mainPrimary uppercase text-3xl md:text-3xl xl:text-4xl font-bold text-transparent bg-clip-text bg-[#232c77] ">
-              Dr. Arpit Bansal
-            </span>
-            <p className="font-semibold text-[#232c77] text-sm md:text-lg">
-              MBBS | MS | FACS | FMAS | FCS | FIBC
-            </p>
+            <img className="w-60 mb-2" src={logo.src} alt="Dr Arpit Bansal" />
 
             <p className="mt-5 text-base font-medium text-justify">
               Dr. Arpit Bansal, an Advanced Laparoscopy and Cancer Surgeon, has
