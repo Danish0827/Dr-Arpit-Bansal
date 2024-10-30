@@ -4,6 +4,8 @@ import where3 from "@/assets/images/where/3.jpg";
 import where4 from "@/assets/images/where/4.jpeg";
 import where5 from "@/assets/images/where/5.jpg";
 import where6 from "@/assets/images/where/6.jpg";
+import where7 from "@/assets/images/where/7.jpeg";
+
 // import where7 from "@/assets/images/where/7.jpg";
 // import where8 from "@/assets/images/where/8.jpg";
 // import where9 from "@/assets/images/where/9.jpg";
@@ -68,6 +70,7 @@ const whereDatas = [
 //   { id: 31, image: where31, heading: "PROJECT 29" },
 //   { id: 32, image: where32, heading: "PROJECT 30" },
 //   { id: 33, image: where33, heading: "PROJECT 31" },
+{ id: 6, image: where7, heading: "PROJECT 4" },
 ];
 
 export default whereDatas;
