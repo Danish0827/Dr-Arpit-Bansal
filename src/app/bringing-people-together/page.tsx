@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     { name: "Dr. Arpit Bansal", url: "https://drarpitbansal.in/bringing-people-together" },
   ],
   robots: "index, follow", // To allow search engine crawling and indexing
-  publisher: "Dr. Arpit Bansal's Clinic",
+  publisher: "Dr. Arpit Bansal",
 
   // Canonical URL (change it to your actual URL)
   alternates: {
