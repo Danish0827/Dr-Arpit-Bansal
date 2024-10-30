@@ -91,12 +91,15 @@ const NewHeader = () => {
 
   return (
     <header
-      className={`${headerClass} w-full px-5 py-10 xl:px-8 h-[8svh] block lg:flex items-center justify-between transition-transform duration-300`}
+      className={`${headerClass} w-full px-5 pt-8 pb-12 md:pt-10 md:pb-10 xl:px-8 h-[8svh] block lg:flex items-center justify-between transition-transform duration-300`}
     >
       <Link href={"/"} className="hidden lg:block p-5">
         <span className="mainPrimary uppercase text-3xl md:text-2xl xl:text-3xl font-bold text-transparent bg-clip-text bg-[#232c77] ">
           Dr. Arpit Bansal
         </span>
+        <p className="font-semibold text-[#232c77] lg:text-xs xl:text-base m-0">
+          MBBS | MS | FACS | FMAS | FCS | FIBC
+        </p>
       </Link>
 
       <Menu
@@ -135,6 +138,9 @@ const NewHeader = () => {
           <span className="mainPrimary uppercase text-3xl md:text-3xl xl:text-4xl font-bold text-transparent bg-clip-text bg-[#232c77] ">
             Dr. Arpit Bansal
           </span>
+          <p className="font-semibold text-sm text-[#232c77]">
+            MBBS | MS | FACS | FMAS | FCS | FIBC
+          </p>
         </Link>
 
         <div className="flex gap-2 items-center">
