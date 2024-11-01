@@ -8,6 +8,7 @@ import abouts from "@/assets/images/breadcrump/2.jpg";
 import Counter from "@/components/About/Counter";
 import Passion from "@/components/About/Passion";
 
+
 export const metadata: Metadata = {
   title: "About | Dr. Arpit Bansal",
   description:
