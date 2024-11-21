@@ -71,7 +71,7 @@ const InstaFeed: React.FC = () => {
         backgroundPosition: "center",
       }}
     >
-      <ElfsightWidget widgetId="3075b6ef-161d-4777-9901-8c6f50a29100" />
+      <ElfsightWidget widgetId="7a8c4182-6046-49df-9bad-2aa6bc47fbe3" />
     </div>
   );
 };

@@ -26,7 +26,7 @@ const BlogSingleSkeleton = () => (
   </div>
 );
 
-const BlogSingle = ({ params }: any) => {
+const BlogSingle = ({ params, BlogData }: any) => {
   const bg = "./white bg.png";
   const [blog, setBlog] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -44,12 +44,11 @@ const BlogSingle = ({ params }: any) => {
   };
 
   useEffect(() => {
-    fetch(
-      `${process.env.BACKEND}/disease/${params}`
-    )
+    fetch(`${process.env.BACKEND}/disease/${params}`)
       .then((response) => response.json())
       .then((data) => {
         setBlog(data);
+        BlogData(data);
         setLoading(false);
       })
       .catch((error) => {
@@ -63,6 +62,21 @@ const BlogSingle = ({ params }: any) => {
   }
 
   return (
+    <>  <head>
+    <title>{blog.meta_title || "Default Page Title"}</title>
+    <meta
+      name="description"
+      content={
+        blog.meta_description || "Default description for the page."
+      }
+    />
+    <meta
+      name="keywords"
+      content={blog.meta_keyword || "default, keywords, here"}
+    />
+    <link rel="canonical" href={`https://drarpitbansal.in/patients-education/${blog.slug}`} />
+
+  </head>
     <div
       style={{
         backgroundImage: `url('${bg}')`,
@@ -129,6 +143,7 @@ const BlogSingle = ({ params }: any) => {
         <BlogLatest params={params} />
       </div>
     </div>
+    </>
   );
 };
 

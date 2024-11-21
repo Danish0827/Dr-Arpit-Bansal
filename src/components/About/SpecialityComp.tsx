@@ -2,11 +2,12 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer"; // Import the useInView hook
+import Image from "next/image";
 
 // Define the types for the treatment data
 interface Treatment {
   id: number;
-  image: string;
+  image: any;
   title: string;
   description: string;
   slug: string;
@@ -87,44 +88,48 @@ const SpecialityComp: React.FC = () => {
                     }}
                     className="gdfg overflow-hidden group shadow-2xl relative rounded-lg border-2 border-[#fff]  border-solid"
                   >
-                    <img
-                      className="hover:scale-150 scale-125  group-hover:bg-[#232c77] relative duration-100 object-cover  m-auto"
-                      src={item.image}
-                      alt={item.title}
-                    />
+                    <div className="w-full h-full relative">
+                      <Image
+                        width={500} // Set an initial width (can be any value) to be responsive
+                        height={500} // Set an initial height
+                        className="w-full h-full hover:scale-150 group-hover:bg-[#232c77] duration-100 object-cover m-auto"
+                        src={item.image}
+                        alt={item.title}
+                      />
+                    </div>
+
                     {/* White Overlay */}
                     <div className="absolute inset-0  opacity-30 bg-black  group-hover:bg-[#232c77] group-hover:opacity-30 transition-opacity duration-300"></div>
                   </div>
-                </Link>
-                <h3
-                  className=" group-hover:font-bold  md:text-2xl text-[#fff] z-50 
-                      text-center uppercase text-base m-0 w-full flex items-end px-3
-                   
+                  <h3
+                    className="hover:text-[#ded7d7] group-hover:font-bold  md:text-2xl text-[#fff] z-50 
+                  text-center uppercase text-base m-0 w-full flex items-end px-3
+                  
                       group-hover:items- justify-center pb-4 pt-4  
                       group-hover:text-[#232c77] font-bold"
-                  // style={{
-                  //   clipPath:
-                  //     "polygon(114% -6%, 0 100%, 100% 100%, 100% 100%)",
-                  // }}
-                >
-                  {/* {item.title.split(" ").map((word, index) => (
+                    // style={{
+                    //   clipPath:
+                    //     "polygon(114% -6%, 0 100%, 100% 100%, 100% 100%)",
+                    // }}
+                  >
+                    {/* {item.title.split(" ").map((word, index) => (
                         <React.Fragment key={index}>
                           {word}
                           {index === 0 && <br />}
-                        </React.Fragment>
-                      ))} */}
-                  {item.title}
-                </h3>
+                          </React.Fragment>
+                          ))} */}
+                    {item.title}
+                  </h3>
+                </Link>
               </div>
             ))
           ) : (
-            <p>No treatments available.</p> // Show a message if no treatments are available
+            <p></p> // Show a message if no treatments are available
           )}
         </div>
       </div>
     </>
   );
 };
-
 
 export default SpecialityComp;

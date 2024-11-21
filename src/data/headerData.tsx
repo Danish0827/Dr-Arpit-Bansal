@@ -2,7 +2,7 @@ import logo from "@/assets/images/logo.png";
 import image1 from "@/assets/images/video/1.jpeg"
 import image2 from "@/assets/images/video/2.jpeg"
 import image3 from "@/assets/images/video/3.jpeg"
-import image4 from "@/assets/images/video/4.jpeg"
+import image4 from "@/assets/images/video/4.jpg"
 
 
 
@@ -87,12 +87,12 @@ const videoData = [
   {
     id: 3,
     img: image3,
-    video: 'https://drarpitbck.demo-web.live/wp-content/uploads/2024/10/3.mp4',
+    video: 'https://backend.drarpitbansal.in/wp-content/uploads/2024/10/3.mp4',
   },
   {
     id: 4,
     img: image4,
-    video: 'https://drarpitbck.demo-web.live/wp-content/uploads/2024/10/4.mp4',
+    video: 'https://backend.drarpitbansal.in/wp-content/uploads/2024/10/4.mp4',
   },
   
 ]
