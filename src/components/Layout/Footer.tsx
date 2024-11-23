@@ -61,6 +61,7 @@ const Footer = () => {
   //     }
   //   };
   // }, []);
+
   return (
     <footer className="bg-gray-100 text-gray-800 border-t pt-5">
       <div className="px-4 pt-10 pb-5 mx-auto sm:px-6 lg:px-16 space-y-8">
