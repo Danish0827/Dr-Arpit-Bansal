@@ -15,6 +15,7 @@ import FloatingAppointment from "@/components/Layout/FloatingAppointment";
 import Treatments from "@/components/Treatments/Treatments";
 import { Metadata } from "next";
 import metaImage from "@/assets/arpit.jpg";
+import HomeFAQ from "@/components/About/HomeFAQ";
 
 export const metadata: Metadata = {
   title: "Best Cancer Specialist in India | Top Oncologist | Dr Arpit Bansal",
@@ -66,12 +67,11 @@ export default function Home() {
       <SpecialityComp />
       <Blog title="home" />
       <Features />
-
       <InstaFeed />
       <GoogleFeed />
       <LogoCarousel />
-
       <RequestAppointment />
+      <HomeFAQ />
       {/* <FloatingAppointment /> */}
     </>
   );
